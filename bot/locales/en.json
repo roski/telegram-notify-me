@@ -1,0 +1,62 @@
+{
+  "welcome": "👋 Welcome, {name}!\n\nChoose an option from the menu below:",
+  "main_menu": {
+    "create_notification": "➕ Create Notification",
+    "scheduled_notifications": "📅 Scheduled Notifications"
+  },
+  "create": {
+    "start": "Let's create a new notification!\n\nStep 1/5 — Enter the notification <b>title</b>:",
+    "description": "Step 2/5 — Enter the notification <b>description</b>:",
+    "date": "Step 3/5 — Enter the <b>date</b> in format <code>YYYY-MM-DD</code>\n(e.g. <code>2025-12-31</code>):",
+    "time": "Step 4/5 — Enter the <b>time</b> in format <code>HH:MM</code>\n(e.g. <code>09:00</code>):",
+    "recurrence": "Step 5/5 — Choose the <b>recurrence</b>:",
+    "confirm": "✅ <b>Notification created!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Invalid date format. Please use <code>YYYY-MM-DD</code> (e.g. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Invalid time format. Please use <code>HH:MM</code> (e.g. <code>09:00</code>):",
+    "date_in_past": "❌ The date and time must be in the future. Please try again:",
+    "cancelled": "❌ Notification creation cancelled."
+  },
+  "recurrence": {
+    "once": "Once",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly"
+  },
+  "scheduled": {
+    "title": "📅 <b>Scheduled Notifications</b>",
+    "week": "📆 Next 7 days",
+    "month": "📆 Next 30 days",
+    "year": "📆 Next 365 days",
+    "empty": "No notifications found for this period.",
+    "view_month": "🗓 View Month",
+    "view_year": "📅 View Year",
+    "back": "⬅️ Back"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Date:</b> {date}\n⏰ <b>Time:</b> {time}\n🔁 <b>Recurrence:</b> {recurrence}\n📊 <b>Sent:</b> {count} time(s)",
+    "edit": "✏️ Edit",
+    "delete": "🗑 Delete",
+    "back": "⬅️ Back",
+    "deleted": "🗑 Notification deleted.",
+    "edit_field": "What would you like to edit?",
+    "edit_title": "Enter the new <b>title</b>:",
+    "edit_description": "Enter the new <b>description</b>:",
+    "edit_date": "Enter the new <b>date</b> in format <code>YYYY-MM-DD</code>:",
+    "edit_time": "Enter the new <b>time</b> in format <code>HH:MM</code>:",
+    "edit_recurrence": "Choose the new <b>recurrence</b>:",
+    "updated": "✅ Notification updated!",
+    "not_found": "❌ Notification not found."
+  },
+  "send": {
+    "message": "🔔 <b>Reminder!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Cancel",
+  "edit_fields": {
+    "title": "📝 Title",
+    "description": "📄 Description",
+    "date": "🗓 Date",
+    "time": "⏰ Time",
+    "recurrence": "🔁 Recurrence"
+  }
+}

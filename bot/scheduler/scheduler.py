@@ -70,12 +70,16 @@ async def _send_notification(notification_id: int, telegram_id: int) -> None:
 
         delivery_status = DeliveryStatus.sent
         try:
+            # Display time in user's local timezone
+            from bot.utils.timezone import utc_to_user
+            user_tz = user.timezone if user and user.timezone else "UTC"
+            local_time = utc_to_user(notif.next_run_at, user_tz) if notif.next_run_at else None
             await _bot.send_message(
                 chat_id=telegram_id,
                 text=get_text("send.message", lang).format(
                     title=notif.title,
                     description=notif.description,
-                    time=notif.next_run_at.strftime("%H:%M") if notif.next_run_at else "",
+                    time=local_time.strftime("%H:%M") if local_time else "",
                 ),
                 parse_mode="HTML",
             )

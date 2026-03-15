@@ -52,6 +52,17 @@
     "message": "🔔 <b>Нагадування!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
   },
   "cancel": "❌ Скасувати",
+  "timezone": {
+    "setup_prompt": "🌍 Щоб надсилати сповіщення у правильний час, будь ласка, вкажіть свій часовий пояс.\n\nОберіть варіант:",
+    "share_location_button": "📍 Поділитися локацією",
+    "select_manually_button": "🗺 Вибрати вручну",
+    "detected": "✅ Ваш часовий пояс встановлено: <b>{timezone}</b>.",
+    "detection_failed": "❌ Не вдалося визначити часовий пояс за локацією. Будь ласка, виберіть вручну.",
+    "select_region": "🌍 Оберіть ваш регіон:",
+    "select_city": "🏙 Оберіть місто в регіоні <b>{region}</b>:",
+    "saved": "✅ Часовий пояс встановлено: <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Назад до регіонів"
+  },
   "edit_fields": {
     "title": "📝 Назва",
     "description": "📄 Опис",

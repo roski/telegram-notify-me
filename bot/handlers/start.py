@@ -1,5 +1,6 @@
 from aiogram import Router
 from aiogram.filters import CommandStart
+from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -30,9 +31,16 @@ async def _get_or_create_user(session: AsyncSession, message: Message) -> User:
 
 
 @router.message(CommandStart())
-async def cmd_start(message: Message, session: AsyncSession) -> None:
+async def cmd_start(message: Message, state: FSMContext, session: AsyncSession) -> None:
     user = await _get_or_create_user(session, message)
     lang = user.language_code
+
+    if not user.timezone:
+        # Import here to avoid circular imports
+        from bot.handlers.timezone import prompt_timezone_setup
+        await prompt_timezone_setup(message, state, lang)
+        return
+
     name = message.from_user.first_name or message.from_user.username or "there"
     await message.answer(
         get_text("welcome", lang).format(name=name),

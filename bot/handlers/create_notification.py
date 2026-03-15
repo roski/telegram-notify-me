@@ -11,6 +11,7 @@ from bot.database.models import Notification, RecurrenceType, User
 from bot.i18n import get_text
 from bot.keyboards.keyboards import main_menu_keyboard, recurrence_keyboard
 from bot.scheduler.scheduler import schedule_notification
+from bot.utils.timezone import user_to_utc
 
 router = Router()
 
@@ -29,11 +30,18 @@ async def _get_user_lang(session: AsyncSession, telegram_id: int) -> str:
     return user.language_code if user else "en"
 
 
+async def _get_user(session: AsyncSession, telegram_id: int) -> User | None:
+    result = await session.execute(select(User).where(User.telegram_id == telegram_id))
+    return result.scalar_one_or_none()
+
+
 @router.callback_query(lambda c: c.data == "create_notification")
 async def cb_create_notification(callback: CallbackQuery, state: FSMContext, session: AsyncSession) -> None:
     lang = await _get_user_lang(session, callback.from_user.id)
+    user = await _get_user(session, callback.from_user.id)
+    user_tz = user.timezone if user and user.timezone else "UTC"
     await state.set_state(CreateNotificationStates.waiting_title)
-    await state.update_data(lang=lang)
+    await state.update_data(lang=lang, user_tz=user_tz)
     await callback.message.edit_text(
         get_text("create.start", lang),
         parse_mode="HTML",
@@ -78,17 +86,19 @@ async def process_date(message: Message, state: FSMContext) -> None:
 async def process_time(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     lang = data.get("lang", "en")
+    user_tz = data.get("user_tz", "UTC")
     text = message.text.strip()
     try:
         datetime.strptime(text, "%H:%M")
     except ValueError:
         await message.answer(get_text("create.invalid_time", lang), parse_mode="HTML")
         return
-    # Validate that scheduled datetime is in the future
+    # Validate that scheduled datetime is in the future (using user's local timezone)
     date_str = data.get("date")
     dt_str = f"{date_str} {text}"
-    scheduled_at = datetime.strptime(dt_str, "%Y-%m-%d %H:%M").replace(tzinfo=timezone.utc)
-    if scheduled_at <= datetime.now(timezone.utc):
+    naive_local = datetime.strptime(dt_str, "%Y-%m-%d %H:%M")
+    scheduled_at_utc = user_to_utc(naive_local, user_tz)
+    if scheduled_at_utc <= datetime.now(timezone.utc):
         await message.answer(get_text("create.date_in_past", lang), parse_mode="HTML")
         return
     await state.update_data(time=text)
@@ -106,8 +116,11 @@ async def process_recurrence(callback: CallbackQuery, state: FSMContext, session
     time_str = data.get("time")
     title = data.get("title")
     description = data.get("description")
+    user_tz = data.get("user_tz", "UTC")
 
-    scheduled_at = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M").replace(tzinfo=timezone.utc)
+    # Convert user's local time to UTC for storage
+    naive_local = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
+    scheduled_at = user_to_utc(naive_local, user_tz)
     recurrence_type = RecurrenceType(recurrence_value)
 
     # Look up user

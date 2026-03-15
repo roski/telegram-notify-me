@@ -52,6 +52,17 @@
     "message": "🔔 <b>Reminder!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
   },
   "cancel": "❌ Cancel",
+  "timezone": {
+    "setup_prompt": "🌍 To send notifications at the right time, please set your timezone.\n\nChoose an option:",
+    "share_location_button": "📍 Share Location",
+    "select_manually_button": "🗺 Select manually",
+    "detected": "✅ Your timezone has been set to <b>{timezone}</b>.",
+    "detection_failed": "❌ Could not detect your timezone from the location. Please select manually.",
+    "select_region": "🌍 Select your region:",
+    "select_city": "🏙 Select your city in <b>{region}</b>:",
+    "saved": "✅ Timezone set to <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Back to regions"
+  },
   "edit_fields": {
     "title": "📝 Title",
     "description": "📄 Description",

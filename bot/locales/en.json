@@ -93,6 +93,13 @@
     "1day": "⏰ Remind in 1 day",
     "1month": "⏰ Remind in 1 month",
     "1year": "⏰ Remind in 1 year",
-    "confirmed": "✅ Reminder rescheduled for {time}."
+    "confirmed": "✅ Reminder rescheduled for {time}.",
+    "button": "🔔 Remind me",
+    "will_remind": "✅ We will remind you about this event in {delay}",
+    "delay_5min": "5 minutes",
+    "delay_10min": "10 minutes",
+    "delay_1day": "1 day",
+    "delay_1month": "1 month",
+    "delay_1year": "1 year"
   }
 }

@@ -93,6 +93,13 @@
     "1day": "⏰ Recordar en 1 día",
     "1month": "⏰ Recordar en 1 mes",
     "1year": "⏰ Recordar en 1 año",
-    "confirmed": "✅ Recordatorio reprogramado para {time}."
+    "confirmed": "✅ Recordatorio reprogramado para {time}.",
+    "button": "🔔 Recuérdame",
+    "will_remind": "✅ Te recordaremos este evento en {delay}",
+    "delay_5min": "5 minutos",
+    "delay_10min": "10 minutos",
+    "delay_1day": "1 día",
+    "delay_1month": "1 mes",
+    "delay_1year": "1 año"
   }
 }

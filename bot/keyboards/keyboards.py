@@ -404,3 +404,16 @@ def language_select_keyboard(current_lang: str) -> InlineKeyboardMarkup:
 def get_language_name(lang_code: str) -> str:
     """Return the human-readable name for a language code."""
     return _LANGUAGE_NAMES.get(lang_code, lang_code)
+
+
+def remind_me_later_keyboard(notification_id: int, lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard attached to sent notification messages for rescheduling."""
+    delays = ["5min", "10min", "1day", "1month", "1year"]
+    rows = [
+        [InlineKeyboardButton(
+            text=get_text(f"remind_later.{d}", lang),
+            callback_data=f"remind_later:{notification_id}:{d}",
+        )]
+        for d in delays
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=rows)

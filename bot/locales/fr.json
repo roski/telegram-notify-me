@@ -86,5 +86,13 @@
     "date": "🗓 Date",
     "time": "⏰ Heure",
     "recurrence": "🔁 Récurrence"
+  },
+  "remind_later": {
+    "5min": "⏰ Rappel dans 5 minutes",
+    "10min": "⏰ Rappel dans 10 minutes",
+    "1day": "⏰ Rappel dans 1 jour",
+    "1month": "⏰ Rappel dans 1 mois",
+    "1year": "⏰ Rappel dans 1 an",
+    "confirmed": "✅ Rappel reprogrammé pour {time}."
   }
 }

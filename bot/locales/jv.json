@@ -86,5 +86,13 @@
     "date": "🗓 Tanggal",
     "time": "⏰ Wektu",
     "recurrence": "🔁 Pengulangan"
+  },
+  "remind_later": {
+    "5min": "⏰ Ingatake ing 5 menit",
+    "10min": "⏰ Ingatake ing 10 menit",
+    "1day": "⏰ Ingatake ing 1 dina",
+    "1month": "⏰ Ingatake ing 1 sasi",
+    "1year": "⏰ Ingatake ing 1 taun",
+    "confirmed": "✅ Pengeling-eling dijadwal maneh kanggo {time}."
   }
 }

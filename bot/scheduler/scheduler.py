@@ -72,6 +72,7 @@ async def _send_notification(notification_id: int, telegram_id: int) -> None:
         try:
             # Display time in user's local timezone
             from bot.utils.timezone import utc_to_user
+            from bot.keyboards.keyboards import remind_me_later_keyboard
             user_tz = user.timezone if user and user.timezone else "UTC"
             local_time = utc_to_user(notif.next_run_at, user_tz) if notif.next_run_at else None
             await _bot.send_message(
@@ -82,6 +83,7 @@ async def _send_notification(notification_id: int, telegram_id: int) -> None:
                     time=local_time.strftime("%H:%M") if local_time else "",
                 ),
                 parse_mode="HTML",
+                reply_markup=remind_me_later_keyboard(notif.id, lang),
             )
         except Exception as e:
             logger.error("Failed to send notification %d to user %d: %s", notification_id, telegram_id, e)

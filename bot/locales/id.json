@@ -86,5 +86,13 @@
     "date": "🗓 Tanggal",
     "time": "⏰ Waktu",
     "recurrence": "🔁 Pengulangan"
+  },
+  "remind_later": {
+    "5min": "⏰ Ingatkan dalam 5 menit",
+    "10min": "⏰ Ingatkan dalam 10 menit",
+    "1day": "⏰ Ingatkan dalam 1 hari",
+    "1month": "⏰ Ingatkan dalam 1 bulan",
+    "1year": "⏰ Ingatkan dalam 1 tahun",
+    "confirmed": "✅ Pengingat dijadwalkan ulang ke {time}."
   }
 }

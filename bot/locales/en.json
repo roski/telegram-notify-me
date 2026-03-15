@@ -86,5 +86,13 @@
     "date": "🗓 Date",
     "time": "⏰ Time",
     "recurrence": "🔁 Recurrence"
+  },
+  "remind_later": {
+    "5min": "⏰ Remind in 5 minutes",
+    "10min": "⏰ Remind in 10 minutes",
+    "1day": "⏰ Remind in 1 day",
+    "1month": "⏰ Remind in 1 month",
+    "1year": "⏰ Remind in 1 year",
+    "confirmed": "✅ Reminder rescheduled for {time}."
   }
 }

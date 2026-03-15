@@ -86,5 +86,13 @@
     "date": "🗓 Datum",
     "time": "⏰ Uhrzeit",
     "recurrence": "🔁 Wiederholung"
+  },
+  "remind_later": {
+    "5min": "⏰ In 5 Minuten erinnern",
+    "10min": "⏰ In 10 Minuten erinnern",
+    "1day": "⏰ In 1 Tag erinnern",
+    "1month": "⏰ In 1 Monat erinnern",
+    "1year": "⏰ In 1 Jahr erinnern",
+    "confirmed": "✅ Erinnerung auf {time} verschoben."
   }
 }

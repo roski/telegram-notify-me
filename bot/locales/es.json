@@ -86,5 +86,13 @@
     "date": "🗓 Fecha",
     "time": "⏰ Hora",
     "recurrence": "🔁 Recurrencia"
+  },
+  "remind_later": {
+    "5min": "⏰ Recordar en 5 minutos",
+    "10min": "⏰ Recordar en 10 minutos",
+    "1day": "⏰ Recordar en 1 día",
+    "1month": "⏰ Recordar en 1 mes",
+    "1year": "⏰ Recordar en 1 año",
+    "confirmed": "✅ Recordatorio reprogramado para {time}."
   }
 }

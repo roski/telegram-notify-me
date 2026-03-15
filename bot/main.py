@@ -13,6 +13,7 @@ from bot.database.models import Base
 from bot.handlers import create_notification, scheduled_notifications, start
 from bot.handlers import config as config_handler
 from bot.handlers import timezone as timezone_handler
+from bot.handlers import remind_later as remind_later_handler
 from bot.scheduler.scheduler import init_scheduler, load_pending_notifications
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -59,6 +60,7 @@ async def main() -> None:
     dp.include_router(config_handler.router)
     dp.include_router(create_notification.router)
     dp.include_router(scheduled_notifications.router)
+    dp.include_router(remind_later_handler.router)
 
     # Initialize and start scheduler
     init_scheduler(bot, session_factory)

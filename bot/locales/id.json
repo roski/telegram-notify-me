@@ -101,5 +101,10 @@
     "delay_1day": "1 hari",
     "delay_1month": "1 bulan",
     "delay_1year": "1 tahun"
+  },
+  "commands": {
+    "create": "Buat notifikasi baru",
+    "notifications": "Lihat notifikasi terjadwal",
+    "settings": "Pengaturan zona waktu dan bahasa"
   }
 }

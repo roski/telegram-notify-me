@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-from sqlalchemy.ext.asyncio import AsyncSession
+from aiogram.types import BotCommand, BotCommandScopeDefault
 
 from bot.config import load_config
 from bot.database.database import get_session_factory, init_db
@@ -26,6 +26,33 @@ async def create_tables(config) -> None:
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     await engine.dispose()
+
+
+async def _set_bot_commands(bot: Bot) -> None:
+    """Register the Telegram app menu commands for each supported language."""
+    from aiogram.exceptions import TelegramAPIError
+    from bot.i18n import get_text, _SUPPORTED_LANGS
+
+    # Set English as the global default (no language_code scope)
+    default_commands = [
+        BotCommand(command="create", description=get_text("commands.create", "en")),
+        BotCommand(command="notifications", description=get_text("commands.notifications", "en")),
+        BotCommand(command="settings", description=get_text("commands.settings", "en")),
+    ]
+    await bot.set_my_commands(default_commands, scope=BotCommandScopeDefault())
+
+    # Override with localized descriptions for each supported language
+    for lang in _SUPPORTED_LANGS:
+        commands = [
+            BotCommand(command="create", description=get_text("commands.create", lang)),
+            BotCommand(command="notifications", description=get_text("commands.notifications", lang)),
+            BotCommand(command="settings", description=get_text("commands.settings", lang)),
+        ]
+        try:
+            await bot.set_my_commands(commands, language_code=lang)
+        except TelegramAPIError:
+            # Telegram may reject unsupported language codes; fall back to default
+            logger.debug("Could not set commands for language %s, skipping", lang)
 
 
 async def main() -> None:
@@ -61,6 +88,9 @@ async def main() -> None:
     dp.include_router(create_notification.router)
     dp.include_router(scheduled_notifications.router)
     dp.include_router(remind_later_handler.router)
+
+    # Register Telegram app menu commands
+    await _set_bot_commands(bot)
 
     # Initialize and start scheduler
     init_scheduler(bot, session_factory)

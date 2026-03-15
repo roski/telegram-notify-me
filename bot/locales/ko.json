@@ -101,5 +101,10 @@
     "delay_1day": "1일",
     "delay_1month": "1달",
     "delay_1year": "1년"
+  },
+  "commands": {
+    "create": "새 알림 만들기",
+    "notifications": "예약된 알림 보기",
+    "settings": "시간대 및 언어 설정"
   }
 }

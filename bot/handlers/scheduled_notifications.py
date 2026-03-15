@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
 from aiogram import F, Router
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message
@@ -91,6 +92,20 @@ async def _show_scheduled(callback: CallbackQuery, session: AsyncSession, period
     keyboard = notification_list_keyboard(notifications, lang, period)
     await callback.message.edit_text(text, reply_markup=keyboard, parse_mode="HTML")
     await callback.answer()
+
+
+@router.message(Command("notifications"))
+async def cmd_notifications(message: Message, session: AsyncSession) -> None:
+    user = await _get_user(session, message.from_user.id)
+    if not user:
+        return
+    lang = user.language_code
+    user_tz = user.timezone or "UTC"
+    period = "week"
+    notifications = await _get_notifications_for_period(session, user.id, period)
+    text = _format_notification_list(notifications, lang, period, user_tz)
+    keyboard = notification_list_keyboard(notifications, lang, period)
+    await message.answer(text, reply_markup=keyboard, parse_mode="HTML")
 
 
 @router.callback_query(F.data.startswith("notif_detail:"))

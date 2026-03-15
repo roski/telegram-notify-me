@@ -101,5 +101,10 @@
     "delay_1day": "1天",
     "delay_1month": "1个月",
     "delay_1year": "1年"
+  },
+  "commands": {
+    "create": "创建新通知",
+    "notifications": "查看已计划的通知",
+    "settings": "时区和语言设置"
   }
 }

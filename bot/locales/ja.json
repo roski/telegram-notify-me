@@ -101,5 +101,10 @@
     "delay_1day": "1日",
     "delay_1month": "1ヶ月",
     "delay_1year": "1年"
+  },
+  "commands": {
+    "create": "新しい通知を作成する",
+    "notifications": "スケジュールされた通知を表示する",
+    "settings": "タイムゾーンと言語の設定"
   }
 }

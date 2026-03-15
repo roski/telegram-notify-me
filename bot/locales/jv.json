@@ -101,5 +101,10 @@
     "delay_1day": "1 dina",
     "delay_1month": "1 sasi",
     "delay_1year": "1 taun"
+  },
+  "commands": {
+    "create": "Gawe notifikasi anyar",
+    "notifications": "Deleng notifikasi kang wis dijadwal",
+    "settings": "Setelan zona wektu lan basa"
   }
 }

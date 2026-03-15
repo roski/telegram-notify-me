@@ -101,5 +101,10 @@
     "delay_1day": "1 दिन",
     "delay_1month": "1 महीना",
     "delay_1year": "1 साल"
+  },
+  "commands": {
+    "create": "नई सूचना बनाएं",
+    "notifications": "निर्धारित सूचनाएं देखें",
+    "settings": "टाइमज़ोन और भाषा सेटिंग"
   }
 }

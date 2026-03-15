@@ -101,5 +101,10 @@
     "delay_1day": "1 dia",
     "delay_1month": "1 mês",
     "delay_1year": "1 ano"
+  },
+  "commands": {
+    "create": "Criar uma nova notificação",
+    "notifications": "Ver notificações agendadas",
+    "settings": "Configurações de fuso horário e idioma"
   }
 }

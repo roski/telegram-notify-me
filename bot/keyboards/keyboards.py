@@ -1,3 +1,6 @@
+import calendar as _cal
+from datetime import date
+
 from aiogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -27,6 +30,134 @@ def recurrence_keyboard(lang: str) -> InlineKeyboardMarkup:
         for r in recurrence_types
     ]
     rows.append([InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create")])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+# ---------------------------------------------------------------------------
+# Date calendar keyboard
+# ---------------------------------------------------------------------------
+
+def calendar_keyboard(year: int, month: int, lang: str) -> InlineKeyboardMarkup:
+    """Inline calendar for the given year/month.
+
+    Past days are shown as disabled dots; today is highlighted with brackets.
+    The bottom row always offers a manual-entry shortcut and a cancel button.
+    Users cannot navigate to months before the current month.
+    """
+    today = date.today()
+
+    # Navigation targets
+    prev_month = month - 1 if month > 1 else 12
+    prev_year = year if month > 1 else year - 1
+    next_month = month + 1 if month < 12 else 1
+    next_year = year if month < 12 else year + 1
+
+    # Disable "previous" button when already at the current month
+    at_min_month = (year, month) <= (today.year, today.month)
+    prev_cb = "cal_ignore" if at_min_month else f"cal_nav:{prev_year}-{prev_month:02d}"
+
+    month_names = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December",
+    ]
+    month_label = f"{month_names[month - 1]} {year}"
+
+    nav_row = [
+        InlineKeyboardButton(text="◀️" if not at_min_month else " ", callback_data=prev_cb),
+        InlineKeyboardButton(text=month_label, callback_data="cal_ignore"),
+        InlineKeyboardButton(text="▶️", callback_data=f"cal_nav:{next_year}-{next_month:02d}"),
+    ]
+
+    # Day-of-week headers (Mon … Sun)
+    dow_row = [
+        InlineKeyboardButton(text=d, callback_data="cal_ignore")
+        for d in ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+    ]
+
+    # Build day rows
+    day_rows = []
+    for week in _cal.monthcalendar(year, month):
+        row = []
+        for day in week:
+            if day == 0:
+                row.append(InlineKeyboardButton(text=" ", callback_data="cal_ignore"))
+            else:
+                d = date(year, month, day)
+                if d < today:
+                    # Past – shown as disabled
+                    row.append(InlineKeyboardButton(text=f"·{day}·", callback_data="cal_ignore"))
+                elif d == today:
+                    row.append(InlineKeyboardButton(text=f"[{day}]", callback_data=f"cal_day:{d.isoformat()}"))
+                else:
+                    row.append(InlineKeyboardButton(text=str(day), callback_data=f"cal_day:{d.isoformat()}"))
+        day_rows.append(row)
+
+    bottom_row = [
+        InlineKeyboardButton(text=get_text("create.enter_manually", lang), callback_data="cal_manual"),
+        InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create"),
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=[nav_row, dow_row] + day_rows + [bottom_row])
+
+
+# ---------------------------------------------------------------------------
+# Time-picker keyboards (12-hour and 24-hour)
+# ---------------------------------------------------------------------------
+
+def time_ampm_keyboard(lang: str) -> InlineKeyboardMarkup:
+    """First step for 12-hour format: choose AM or PM."""
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="🌅 AM", callback_data="tp_ampm:AM"),
+                InlineKeyboardButton(text="🌆 PM", callback_data="tp_ampm:PM"),
+            ],
+            [
+                InlineKeyboardButton(text=get_text("create.back", lang), callback_data="tp_back"),
+                InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create"),
+            ],
+        ]
+    )
+
+
+def time_hour_keyboard_12(lang: str) -> InlineKeyboardMarkup:
+    """Hour grid 1–12 for the 12-hour picker (4 columns)."""
+    hours = list(range(1, 13))
+    rows = [
+        [InlineKeyboardButton(text=str(h), callback_data=f"tp_hour:{h}") for h in hours[i: i + 4]]
+        for i in range(0, 12, 4)
+    ]
+    rows.append([
+        InlineKeyboardButton(text=get_text("create.back", lang), callback_data="tp_back"),
+        InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create"),
+    ])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def time_hour_keyboard_24(lang: str) -> InlineKeyboardMarkup:
+    """Hour grid 0–23 for the 24-hour picker (4 columns)."""
+    rows = [
+        [InlineKeyboardButton(text=str(h), callback_data=f"tp_hour:{h}") for h in range(i, min(i + 4, 24))]
+        for i in range(0, 24, 4)
+    ]
+    rows.append([
+        InlineKeyboardButton(text=get_text("create.back", lang), callback_data="tp_back"),
+        InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create"),
+    ])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def time_minute_keyboard(lang: str) -> InlineKeyboardMarkup:
+    """Minute grid 00, 05, …, 55 (4 columns)."""
+    minutes = [f"{m:02d}" for m in range(0, 60, 5)]
+    rows = [
+        [InlineKeyboardButton(text=m, callback_data=f"tp_min:{m}") for m in minutes[i: i + 4]]
+        for i in range(0, 12, 4)
+    ]
+    rows.append([
+        InlineKeyboardButton(text=get_text("create.back", lang), callback_data="tp_back"),
+        InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create"),
+    ])
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 

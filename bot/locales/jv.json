@@ -1,0 +1,82 @@
+{
+  "welcome": "👋 Sugeng rawuh, {name}!\n\nPilih opsi saka menu ing ngisor:",
+  "main_menu": {
+    "create_notification": "➕ Gawe Notifikasi",
+    "scheduled_notifications": "📅 Notifikasi Terjadwal",
+    "configuration": "⚙️ Konfigurasi"
+  },
+  "create": {
+    "start": "Ayo gawe notifikasi anyar!\n\nLangkah 1/5 — Ketik <b>judul</b> notifikasi:",
+    "description": "Langkah 2/5 — Ketik <b>katrangan</b> notifikasi:",
+    "date": "Langkah 3/5 — Ketik <b>tanggal</b> kanthi format <code>YYYY-MM-DD</code>\n(tuladha <code>2025-12-31</code>):",
+    "time": "Langkah 4/5 — Ketik <b>wektu</b> kanthi format <code>HH:MM</code>\n(tuladha <code>09:00</code>):",
+    "recurrence": "Langkah 5/5 — Pilih <b>pengulangan</b>:",
+    "confirm": "✅ <b>Notifikasi wis digawe!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Format tanggal ora valid. Gunakake <code>YYYY-MM-DD</code> (tuladha <code>2025-12-31</code>):",
+    "invalid_time": "❌ Format wektu ora valid. Gunakake <code>HH:MM</code> (tuladha <code>09:00</code>):",
+    "date_in_past": "❌ Tanggal lan wektu kudu ing mangsa ngarep. Cobo maneh:",
+    "cancelled": "❌ Pembuatan notifikasi dibatalake."
+  },
+  "recurrence": {
+    "once": "Sepisan",
+    "daily": "Saben dina",
+    "weekly": "Saben minggu",
+    "monthly": "Saben sasi",
+    "yearly": "Saben taun"
+  },
+  "scheduled": {
+    "title": "📅 <b>Notifikasi Terjadwal</b>",
+    "week": "📆 7 dina ngarep",
+    "month": "📆 30 dina ngarep",
+    "year": "📆 365 dina ngarep",
+    "empty": "Ora ana notifikasi kanggo wektu iki.",
+    "view_month": "🗓 Deleng Sasi",
+    "view_year": "📅 Deleng Taun",
+    "back": "⬅️ Bali"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Tanggal:</b> {date}\n⏰ <b>Wektu:</b> {time}\n🔁 <b>Pengulangan:</b> {recurrence}\n📊 <b>Wis dikirim:</b> {count} kali",
+    "edit": "✏️ Sunting",
+    "delete": "🗑 Busak",
+    "back": "⬅️ Bali",
+    "deleted": "🗑 Notifikasi wis dibusak.",
+    "edit_field": "Apa sing arep disunting?",
+    "edit_title": "Ketik <b>judul</b> anyar:",
+    "edit_description": "Ketik <b>katrangan</b> anyar:",
+    "edit_date": "Ketik <b>tanggal</b> anyar kanthi format <code>YYYY-MM-DD</code>:",
+    "edit_time": "Ketik <b>wektu</b> anyar kanthi format <code>HH:MM</code>:",
+    "edit_recurrence": "Pilih <b>pengulangan</b> anyar:",
+    "updated": "✅ Notifikasi wis dianyarake!",
+    "not_found": "❌ Notifikasi ora ditemokake."
+  },
+  "send": {
+    "message": "🔔 <b>Pengeling-eling!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Batal",
+  "config": {
+    "menu": "⚙️ <b>Konfigurasi</b>\n\nPilih opsi:",
+    "change_timezone": "🕐 Ganti Zona Wektu",
+    "change_language": "🌐 Ganti Basa",
+    "language_menu": "🌐 Pilih basamu:",
+    "language_set": "✅ Basa wis diganti dadi <b>{language}</b>.",
+    "back": "⬅️ Bali"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Kanggo ngirim notifikasi ing wektu sing bener, atur zona wektumu.\n\nPilih opsi:",
+    "share_location_button": "📍 Bagekake Lokasi",
+    "select_manually_button": "🗺 Pilih kanthi manual",
+    "detected": "✅ Zona wektumu wis disetel dadi <b>{timezone}</b>.",
+    "detection_failed": "❌ Ora bisa ndeteksi zona wektu saka lokasi. Pilih kanthi manual.",
+    "select_region": "🌍 Pilih wilayahmu:",
+    "select_city": "🏙 Pilih kotamu ing <b>{region}</b>:",
+    "saved": "✅ Zona wektu disetel dadi <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Bali menyang wilayah"
+  },
+  "edit_fields": {
+    "title": "📝 Judul",
+    "description": "📄 Katrangan",
+    "date": "🗓 Tanggal",
+    "time": "⏰ Wektu",
+    "recurrence": "🔁 Pengulangan"
+  }
+}

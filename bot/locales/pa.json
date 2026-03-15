@@ -1,0 +1,82 @@
+{
+  "welcome": "👋 ਜੀ ਆਇਆਂ ਨੂੰ, {name}!\n\nਹੇਠਾਂ ਦਿੱਤੇ ਮੀਨੂ ਵਿੱਚੋਂ ਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+  "main_menu": {
+    "create_notification": "➕ ਸੂਚਨਾ ਬਣਾਓ",
+    "scheduled_notifications": "📅 ਨਿਰਧਾਰਿਤ ਸੂਚਨਾਵਾਂ",
+    "configuration": "⚙️ ਸੰਰਚਨਾ"
+  },
+  "create": {
+    "start": "ਆਓ ਇੱਕ ਨਵੀਂ ਸੂਚਨਾ ਬਣਾਈਏ!\n\nਕਦਮ 1/5 — ਸੂਚਨਾ ਦਾ <b>ਸਿਰਲੇਖ</b> ਦਰਜ ਕਰੋ:",
+    "description": "ਕਦਮ 2/5 — ਸੂਚਨਾ ਦਾ <b>ਵੇਰਵਾ</b> ਦਰਜ ਕਰੋ:",
+    "date": "ਕਦਮ 3/5 — <code>YYYY-MM-DD</code> ਫਾਰਮੈਟ ਵਿੱਚ <b>ਤਾਰੀਖ਼</b> ਦਰਜ ਕਰੋ\n(ਉਦਾ. <code>2025-12-31</code>):",
+    "time": "ਕਦਮ 4/5 — <code>HH:MM</code> ਫਾਰਮੈਟ ਵਿੱਚ <b>ਸਮਾਂ</b> ਦਰਜ ਕਰੋ\n(ਉਦਾ. <code>09:00</code>):",
+    "recurrence": "ਕਦਮ 5/5 — <b>ਦੁਹਰਾਓ</b> ਚੁਣੋ:",
+    "confirm": "✅ <b>ਸੂਚਨਾ ਬਣਾਈ ਗਈ!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ ਤਾਰੀਖ਼ ਦਾ ਫਾਰਮੈਟ ਗਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ <code>YYYY-MM-DD</code> ਵਰਤੋ (ਉਦਾ. <code>2025-12-31</code>):",
+    "invalid_time": "❌ ਸਮੇਂ ਦਾ ਫਾਰਮੈਟ ਗਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ <code>HH:MM</code> ਵਰਤੋ (ਉਦਾ. <code>09:00</code>):",
+    "date_in_past": "❌ ਤਾਰੀਖ਼ ਅਤੇ ਸਮਾਂ ਭਵਿੱਖ ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ:",
+    "cancelled": "❌ ਸੂਚਨਾ ਬਣਾਉਣਾ ਰੱਦ ਕੀਤਾ ਗਿਆ।"
+  },
+  "recurrence": {
+    "once": "ਇੱਕ ਵਾਰ",
+    "daily": "ਰੋਜ਼ਾਨਾ",
+    "weekly": "ਹਫ਼ਤਾਵਾਰ",
+    "monthly": "ਮਹੀਨਾਵਾਰ",
+    "yearly": "ਸਾਲਾਨਾ"
+  },
+  "scheduled": {
+    "title": "📅 <b>ਨਿਰਧਾਰਿਤ ਸੂਚਨਾਵਾਂ</b>",
+    "week": "📆 ਅਗਲੇ 7 ਦਿਨ",
+    "month": "📆 ਅਗਲੇ 30 ਦਿਨ",
+    "year": "📆 ਅਗਲੇ 365 ਦਿਨ",
+    "empty": "ਇਸ ਸਮੇਂ ਲਈ ਕੋਈ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੀ।",
+    "view_month": "🗓 ਮਹੀਨਾ ਦੇਖੋ",
+    "view_year": "📅 ਸਾਲ ਦੇਖੋ",
+    "back": "⬅️ ਵਾਪਸ"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>ਤਾਰੀਖ਼:</b> {date}\n⏰ <b>ਸਮਾਂ:</b> {time}\n🔁 <b>ਦੁਹਰਾਓ:</b> {recurrence}\n📊 <b>ਭੇਜੀ ਗਈ:</b> {count} ਵਾਰ",
+    "edit": "✏️ ਸੰਪਾਦਿਤ ਕਰੋ",
+    "delete": "🗑 ਮਿਟਾਓ",
+    "back": "⬅️ ਵਾਪਸ",
+    "deleted": "🗑 ਸੂਚਨਾ ਮਿਟਾਈ ਗਈ।",
+    "edit_field": "ਤੁਸੀਂ ਕੀ ਸੰਪਾਦਿਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?",
+    "edit_title": "ਨਵਾਂ <b>ਸਿਰਲੇਖ</b> ਦਰਜ ਕਰੋ:",
+    "edit_description": "ਨਵਾਂ <b>ਵੇਰਵਾ</b> ਦਰਜ ਕਰੋ:",
+    "edit_date": "<code>YYYY-MM-DD</code> ਫਾਰਮੈਟ ਵਿੱਚ ਨਵੀਂ <b>ਤਾਰੀਖ਼</b> ਦਰਜ ਕਰੋ:",
+    "edit_time": "<code>HH:MM</code> ਫਾਰਮੈਟ ਵਿੱਚ ਨਵਾਂ <b>ਸਮਾਂ</b> ਦਰਜ ਕਰੋ:",
+    "edit_recurrence": "ਨਵਾਂ <b>ਦੁਹਰਾਓ</b> ਚੁਣੋ:",
+    "updated": "✅ ਸੂਚਨਾ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ!",
+    "not_found": "❌ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੀ।"
+  },
+  "send": {
+    "message": "🔔 <b>ਯਾਦ ਦਿਵਾਉਣਾ!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ ਰੱਦ ਕਰੋ",
+  "config": {
+    "menu": "⚙️ <b>ਸੰਰਚਨਾ</b>\n\nਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+    "change_timezone": "🕐 ਸਮਾਂ ਖੇਤਰ ਬਦਲੋ",
+    "change_language": "🌐 ਭਾਸ਼ਾ ਬਦਲੋ",
+    "language_menu": "🌐 ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ:",
+    "language_set": "✅ ਭਾਸ਼ਾ <b>{language}</b> ਵਿੱਚ ਬਦਲ ਦਿੱਤੀ ਗਈ।",
+    "back": "⬅️ ਵਾਪਸ"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 ਸਹੀ ਸਮੇਂ 'ਤੇ ਸੂਚਨਾਵਾਂ ਭੇਜਣ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਸਮਾਂ ਖੇਤਰ ਸੈੱਟ ਕਰੋ।\n\nਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+    "share_location_button": "📍 ਟਿਕਾਣਾ ਸਾਂਝਾ ਕਰੋ",
+    "select_manually_button": "🗺 ਹੱਥੀਂ ਚੁਣੋ",
+    "detected": "✅ ਤੁਹਾਡਾ ਸਮਾਂ ਖੇਤਰ <b>{timezone}</b> 'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਹੈ।",
+    "detection_failed": "❌ ਟਿਕਾਣੇ ਤੋਂ ਸਮਾਂ ਖੇਤਰ ਦਾ ਪਤਾ ਨਹੀਂ ਲਗਾਇਆ ਜਾ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਹੱਥੀਂ ਚੁਣੋ।",
+    "select_region": "🌍 ਆਪਣਾ ਖੇਤਰ ਚੁਣੋ:",
+    "select_city": "🏙 <b>{region}</b> ਵਿੱਚ ਆਪਣਾ ਸ਼ਹਿਰ ਚੁਣੋ:",
+    "saved": "✅ ਸਮਾਂ ਖੇਤਰ <b>{timezone}</b> 'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ।",
+    "back_to_regions": "⬅️ ਖੇਤਰਾਂ 'ਤੇ ਵਾਪਸ"
+  },
+  "edit_fields": {
+    "title": "📝 ਸਿਰਲੇਖ",
+    "description": "📄 ਵੇਰਵਾ",
+    "date": "🗓 ਤਾਰੀਖ਼",
+    "time": "⏰ ਸਮਾਂ",
+    "recurrence": "🔁 ਦੁਹਰਾਓ"
+  }
+}

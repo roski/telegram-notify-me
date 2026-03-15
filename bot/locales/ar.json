@@ -1,0 +1,82 @@
+{
+  "welcome": "👋 مرحباً، {name}!\n\nاختر خياراً من القائمة أدناه:",
+  "main_menu": {
+    "create_notification": "➕ إنشاء إشعار",
+    "scheduled_notifications": "📅 الإشعارات المجدولة",
+    "configuration": "⚙️ الإعدادات"
+  },
+  "create": {
+    "start": "لنقم بإنشاء إشعار جديد!\n\nالخطوة 1/5 — أدخل <b>عنوان</b> الإشعار:",
+    "description": "الخطوة 2/5 — أدخل <b>وصف</b> الإشعار:",
+    "date": "الخطوة 3/5 — أدخل <b>التاريخ</b> بصيغة <code>YYYY-MM-DD</code>\n(مثال: <code>2025-12-31</code>):",
+    "time": "الخطوة 4/5 — أدخل <b>الوقت</b> بصيغة <code>HH:MM</code>\n(مثال: <code>09:00</code>):",
+    "recurrence": "الخطوة 5/5 — اختر <b>التكرار</b>:",
+    "confirm": "✅ <b>تم إنشاء الإشعار!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ صيغة التاريخ غير صحيحة. استخدم <code>YYYY-MM-DD</code> (مثال: <code>2025-12-31</code>):",
+    "invalid_time": "❌ صيغة الوقت غير صحيحة. استخدم <code>HH:MM</code> (مثال: <code>09:00</code>):",
+    "date_in_past": "❌ يجب أن يكون التاريخ والوقت في المستقبل. يرجى المحاولة مجدداً:",
+    "cancelled": "❌ تم إلغاء إنشاء الإشعار."
+  },
+  "recurrence": {
+    "once": "مرة واحدة",
+    "daily": "يومياً",
+    "weekly": "أسبوعياً",
+    "monthly": "شهرياً",
+    "yearly": "سنوياً"
+  },
+  "scheduled": {
+    "title": "📅 <b>الإشعارات المجدولة</b>",
+    "week": "📆 الـ 7 أيام القادمة",
+    "month": "📆 الـ 30 يوماً القادمة",
+    "year": "📆 الـ 365 يوماً القادمة",
+    "empty": "لا توجد إشعارات لهذه الفترة.",
+    "view_month": "🗓 عرض الشهر",
+    "view_year": "📅 عرض السنة",
+    "back": "⬅️ رجوع"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>التاريخ:</b> {date}\n⏰ <b>الوقت:</b> {time}\n🔁 <b>التكرار:</b> {recurrence}\n📊 <b>أُرسل:</b> {count} مرة/مرات",
+    "edit": "✏️ تعديل",
+    "delete": "🗑 حذف",
+    "back": "⬅️ رجوع",
+    "deleted": "🗑 تم حذف الإشعار.",
+    "edit_field": "ماذا تريد أن تعدّل؟",
+    "edit_title": "أدخل <b>العنوان</b> الجديد:",
+    "edit_description": "أدخل <b>الوصف</b> الجديد:",
+    "edit_date": "أدخل <b>التاريخ</b> الجديد بصيغة <code>YYYY-MM-DD</code>:",
+    "edit_time": "أدخل <b>الوقت</b> الجديد بصيغة <code>HH:MM</code>:",
+    "edit_recurrence": "اختر <b>التكرار</b> الجديد:",
+    "updated": "✅ تم تحديث الإشعار!",
+    "not_found": "❌ الإشعار غير موجود."
+  },
+  "send": {
+    "message": "🔔 <b>تذكير!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ إلغاء",
+  "config": {
+    "menu": "⚙️ <b>الإعدادات</b>\n\nاختر خياراً:",
+    "change_timezone": "🕐 تغيير المنطقة الزمنية",
+    "change_language": "🌐 تغيير اللغة",
+    "language_menu": "🌐 اختر لغتك:",
+    "language_set": "✅ تم تغيير اللغة إلى <b>{language}</b>.",
+    "back": "⬅️ رجوع"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 لإرسال الإشعارات في الوقت المناسب، يرجى تحديد منطقتك الزمنية.\n\nاختر خياراً:",
+    "share_location_button": "📍 مشاركة الموقع",
+    "select_manually_button": "🗺 الاختيار يدوياً",
+    "detected": "✅ تم تعيين منطقتك الزمنية على <b>{timezone}</b>.",
+    "detection_failed": "❌ تعذّر الكشف عن المنطقة الزمنية من الموقع. يرجى الاختيار يدوياً.",
+    "select_region": "🌍 اختر منطقتك:",
+    "select_city": "🏙 اختر مدينتك في <b>{region}</b>:",
+    "saved": "✅ تم تعيين المنطقة الزمنية على <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ العودة إلى المناطق"
+  },
+  "edit_fields": {
+    "title": "📝 العنوان",
+    "description": "📄 الوصف",
+    "date": "🗓 التاريخ",
+    "time": "⏰ الوقت",
+    "recurrence": "🔁 التكرار"
+  }
+}

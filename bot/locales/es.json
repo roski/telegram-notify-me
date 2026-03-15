@@ -1,0 +1,82 @@
+{
+  "welcome": "👋 ¡Bienvenido, {name}!\n\nElige una opción del menú a continuación:",
+  "main_menu": {
+    "create_notification": "➕ Crear Notificación",
+    "scheduled_notifications": "📅 Notificaciones Programadas",
+    "configuration": "⚙️ Configuración"
+  },
+  "create": {
+    "start": "¡Vamos a crear una nueva notificación!\n\nPaso 1/5 — Ingresa el <b>título</b> de la notificación:",
+    "description": "Paso 2/5 — Ingresa la <b>descripción</b> de la notificación:",
+    "date": "Paso 3/5 — Ingresa la <b>fecha</b> en formato <code>YYYY-MM-DD</code>\n(p. ej. <code>2025-12-31</code>):",
+    "time": "Paso 4/5 — Ingresa la <b>hora</b> en formato <code>HH:MM</code>\n(p. ej. <code>09:00</code>):",
+    "recurrence": "Paso 5/5 — Elige la <b>recurrencia</b>:",
+    "confirm": "✅ <b>¡Notificación creada!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Formato de fecha no válido. Usa <code>YYYY-MM-DD</code> (p. ej. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Formato de hora no válido. Usa <code>HH:MM</code> (p. ej. <code>09:00</code>):",
+    "date_in_past": "❌ La fecha y hora deben ser en el futuro. Por favor, inténtalo de nuevo:",
+    "cancelled": "❌ Creación de notificación cancelada."
+  },
+  "recurrence": {
+    "once": "Una vez",
+    "daily": "Diariamente",
+    "weekly": "Semanalmente",
+    "monthly": "Mensualmente",
+    "yearly": "Anualmente"
+  },
+  "scheduled": {
+    "title": "📅 <b>Notificaciones Programadas</b>",
+    "week": "📆 Próximos 7 días",
+    "month": "📆 Próximos 30 días",
+    "year": "📆 Próximos 365 días",
+    "empty": "No se encontraron notificaciones para este período.",
+    "view_month": "🗓 Ver Mes",
+    "view_year": "📅 Ver Año",
+    "back": "⬅️ Atrás"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Fecha:</b> {date}\n⏰ <b>Hora:</b> {time}\n🔁 <b>Recurrencia:</b> {recurrence}\n📊 <b>Enviado:</b> {count} vez/veces",
+    "edit": "✏️ Editar",
+    "delete": "🗑 Eliminar",
+    "back": "⬅️ Atrás",
+    "deleted": "🗑 Notificación eliminada.",
+    "edit_field": "¿Qué deseas editar?",
+    "edit_title": "Ingresa el nuevo <b>título</b>:",
+    "edit_description": "Ingresa la nueva <b>descripción</b>:",
+    "edit_date": "Ingresa la nueva <b>fecha</b> en formato <code>YYYY-MM-DD</code>:",
+    "edit_time": "Ingresa la nueva <b>hora</b> en formato <code>HH:MM</code>:",
+    "edit_recurrence": "Elige la nueva <b>recurrencia</b>:",
+    "updated": "✅ ¡Notificación actualizada!",
+    "not_found": "❌ Notificación no encontrada."
+  },
+  "send": {
+    "message": "🔔 <b>¡Recordatorio!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Cancelar",
+  "config": {
+    "menu": "⚙️ <b>Configuración</b>\n\nElige una opción:",
+    "change_timezone": "🕐 Cambiar Zona Horaria",
+    "change_language": "🌐 Cambiar Idioma",
+    "language_menu": "🌐 Selecciona tu idioma:",
+    "language_set": "✅ Idioma cambiado a <b>{language}</b>.",
+    "back": "⬅️ Atrás"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Para enviar notificaciones a la hora correcta, configura tu zona horaria.\n\nElige una opción:",
+    "share_location_button": "📍 Compartir Ubicación",
+    "select_manually_button": "🗺 Seleccionar manualmente",
+    "detected": "✅ Tu zona horaria se ha establecido en <b>{timezone}</b>.",
+    "detection_failed": "❌ No se pudo detectar la zona horaria desde la ubicación. Por favor, selecciona manualmente.",
+    "select_region": "🌍 Selecciona tu región:",
+    "select_city": "🏙 Selecciona tu ciudad en <b>{region}</b>:",
+    "saved": "✅ Zona horaria establecida en <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Volver a regiones"
+  },
+  "edit_fields": {
+    "title": "📝 Título",
+    "description": "📄 Descripción",
+    "date": "🗓 Fecha",
+    "time": "⏰ Hora",
+    "recurrence": "🔁 Recurrencia"
+  }
+}

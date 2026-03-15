@@ -17,6 +17,7 @@ from bot.keyboards.keyboards import (
     notification_list_keyboard,
 )
 from bot.scheduler.scheduler import remove_notification_job, schedule_notification
+from bot.utils.timezone import user_to_utc, utc_to_user
 
 router = Router()
 
@@ -55,14 +56,14 @@ async def _get_notifications_for_period(
     return list(result.scalars().all())
 
 
-def _format_notification_list(notifications: list[Notification], lang: str, period: str) -> str:
+def _format_notification_list(notifications: list[Notification], lang: str, period: str, user_tz: str = "UTC") -> str:
     period_key = f"scheduled.{'week' if period == 'week' else ('month' if period == 'month' else 'year')}"
     header = get_text("scheduled.title", lang) + f"\n{get_text(period_key, lang)}\n\n"
     if not notifications:
         return header + get_text("scheduled.empty", lang)
     return header + "\n".join(
         f"{'🔁 ' if n.recurrence_type != RecurrenceType.once else ''}"
-        f"<b>{n.title}</b> — {n.next_run_at.strftime('%Y-%m-%d %H:%M')}"
+        f"<b>{n.title}</b> — {utc_to_user(n.next_run_at, user_tz).strftime('%Y-%m-%d %H:%M')}"
         for n in notifications
     )
 
@@ -84,8 +85,9 @@ async def _show_scheduled(callback: CallbackQuery, session: AsyncSession, period
         await callback.answer()
         return
     lang = user.language_code
+    user_tz = user.timezone or "UTC"
     notifications = await _get_notifications_for_period(session, user.id, period)
-    text = _format_notification_list(notifications, lang, period)
+    text = _format_notification_list(notifications, lang, period, user_tz)
     keyboard = notification_list_keyboard(notifications, lang, period)
     await callback.message.edit_text(text, reply_markup=keyboard, parse_mode="HTML")
     await callback.answer()
@@ -102,6 +104,7 @@ async def cb_notification_detail(callback: CallbackQuery, session: AsyncSession)
         await callback.answer()
         return
     lang = user.language_code
+    user_tz = user.timezone or "UTC"
 
     result = await session.execute(
         select(Notification).where(
@@ -113,12 +116,13 @@ async def cb_notification_detail(callback: CallbackQuery, session: AsyncSession)
         await callback.answer(get_text("notification.not_found", lang))
         return
 
+    local_dt = utc_to_user(notif.next_run_at, user_tz)
     recurrence_label = get_text(f"recurrence.{notif.recurrence_type.value}", lang)
     text = get_text("notification.details", lang).format(
         title=notif.title,
         description=notif.description,
-        date=notif.next_run_at.strftime("%Y-%m-%d"),
-        time=notif.next_run_at.strftime("%H:%M"),
+        date=local_dt.strftime("%Y-%m-%d"),
+        time=local_dt.strftime("%H:%M"),
         recurrence=recurrence_label,
         count=notif.execution_count,
     )
@@ -141,6 +145,7 @@ async def cb_notification_delete(callback: CallbackQuery, session: AsyncSession)
         await callback.answer()
         return
     lang = user.language_code
+    user_tz = user.timezone or "UTC"
 
     result = await session.execute(
         select(Notification).where(
@@ -158,7 +163,7 @@ async def cb_notification_delete(callback: CallbackQuery, session: AsyncSession)
 
     # Show updated notification list
     notifications = await _get_notifications_for_period(session, user.id, period)
-    text = _format_notification_list(notifications, lang, period)
+    text = _format_notification_list(notifications, lang, period, user_tz)
     keyboard = notification_list_keyboard(notifications, lang, period)
     await callback.message.edit_text(
         get_text("notification.deleted", lang) + "\n\n" + text,
@@ -287,6 +292,7 @@ async def edit_process_date(message: Message, state: FSMContext, session: AsyncS
         return
 
     user = await _get_user(session, message.from_user.id)
+    user_tz = user.timezone if user and user.timezone else "UTC"
     result = await session.execute(
         select(Notification).where(
             and_(Notification.id == notification_id, Notification.user_id == user.id)
@@ -298,8 +304,11 @@ async def edit_process_date(message: Message, state: FSMContext, session: AsyncS
         await state.clear()
         return
 
-    existing_time = notif.next_run_at.strftime("%H:%M") if notif.next_run_at else "00:00"
-    new_dt = datetime.strptime(f"{text} {existing_time}", "%Y-%m-%d %H:%M").replace(tzinfo=timezone.utc)
+    # Use existing time (in user's local timezone) from the stored UTC value
+    local_existing = utc_to_user(notif.next_run_at, user_tz) if notif.next_run_at else datetime.now(timezone.utc)
+    existing_time = local_existing.strftime("%H:%M")
+    naive_local = datetime.strptime(f"{text} {existing_time}", "%Y-%m-%d %H:%M")
+    new_dt = user_to_utc(naive_local, user_tz)
     if new_dt <= datetime.now(timezone.utc):
         await message.answer(get_text("create.date_in_past", lang), parse_mode="HTML")
         return
@@ -329,6 +338,7 @@ async def edit_process_time(message: Message, state: FSMContext, session: AsyncS
         return
 
     user = await _get_user(session, message.from_user.id)
+    user_tz = user.timezone if user and user.timezone else "UTC"
     result = await session.execute(
         select(Notification).where(
             and_(Notification.id == notification_id, Notification.user_id == user.id)
@@ -340,8 +350,10 @@ async def edit_process_time(message: Message, state: FSMContext, session: AsyncS
         await state.clear()
         return
 
-    existing_date = notif.next_run_at.strftime("%Y-%m-%d") if notif.next_run_at else datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    new_dt = datetime.strptime(f"{existing_date} {text}", "%Y-%m-%d %H:%M").replace(tzinfo=timezone.utc)
+    local_existing = utc_to_user(notif.next_run_at, user_tz) if notif.next_run_at else datetime.now(timezone.utc)
+    existing_date = local_existing.strftime("%Y-%m-%d")
+    naive_local = datetime.strptime(f"{existing_date} {text}", "%Y-%m-%d %H:%M")
+    new_dt = user_to_utc(naive_local, user_tz)
     if new_dt <= datetime.now(timezone.utc):
         await message.answer(get_text("create.date_in_past", lang), parse_mode="HTML")
         return
@@ -369,6 +381,7 @@ async def cb_edit_recurrence(callback: CallbackQuery, session: AsyncSession) -> 
         await callback.answer()
         return
     lang = user.language_code
+    user_tz = user.timezone or "UTC"
 
     result = await session.execute(
         select(Notification).where(
@@ -387,12 +400,13 @@ async def cb_edit_recurrence(callback: CallbackQuery, session: AsyncSession) -> 
     remove_notification_job(notification_id)
     await schedule_notification(notif, user.telegram_id)
 
+    local_dt = utc_to_user(notif.next_run_at, user_tz)
     recurrence_label = get_text(f"recurrence.{notif.recurrence_type.value}", lang)
     text = get_text("notification.details", lang).format(
         title=notif.title,
         description=notif.description,
-        date=notif.next_run_at.strftime("%Y-%m-%d"),
-        time=notif.next_run_at.strftime("%H:%M"),
+        date=local_dt.strftime("%Y-%m-%d"),
+        time=local_dt.strftime("%H:%M"),
         recurrence=recurrence_label,
         count=notif.execution_count,
     )

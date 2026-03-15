@@ -1,6 +1,13 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    KeyboardButton,
+    ReplyKeyboardMarkup,
+    ReplyKeyboardRemove,
+)
 
 from bot.i18n import get_text
+from bot.utils.timezone import REGION_ORDER, TIMEZONE_REGIONS, tz_display_name
 
 
 def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
@@ -84,3 +91,50 @@ def edit_recurrence_keyboard(notification_id: int, lang: str, period: str = "wee
     ]
     rows.append([InlineKeyboardButton(text=get_text("notification.back", lang), callback_data=f"notif_edit:{notification_id}:{period}")])
     return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+# ---------------------------------------------------------------------------
+# Timezone setup keyboards
+# ---------------------------------------------------------------------------
+
+def timezone_setup_keyboard(lang: str) -> ReplyKeyboardMarkup:
+    """Reply keyboard that offers to share location or select timezone manually."""
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [
+                KeyboardButton(
+                    text=get_text("timezone.share_location_button", lang),
+                    request_location=True,
+                )
+            ],
+            [KeyboardButton(text=get_text("timezone.select_manually_button", lang))],
+        ],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+    )
+
+
+def timezone_region_keyboard(lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard listing all supported regions."""
+    rows = [
+        [InlineKeyboardButton(text=region, callback_data=f"tz_region:{region}")]
+        for region in REGION_ORDER
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def timezone_city_keyboard(region: str, lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard listing cities for a given region."""
+    cities = TIMEZONE_REGIONS.get(region, [])
+    rows = [
+        [InlineKeyboardButton(text=tz_display_name(tz), callback_data=f"tz_city:{tz}")]
+        for tz in cities
+    ]
+    rows.append(
+        [InlineKeyboardButton(text=get_text("timezone.back_to_regions", lang), callback_data="tz_back_regions")]
+    )
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def remove_reply_keyboard() -> ReplyKeyboardRemove:
+    return ReplyKeyboardRemove()

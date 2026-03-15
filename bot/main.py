@@ -11,6 +11,7 @@ from bot.config import load_config
 from bot.database.database import get_session_factory, init_db
 from bot.database.models import Base
 from bot.handlers import create_notification, scheduled_notifications, start
+from bot.handlers import timezone as timezone_handler
 from bot.scheduler.scheduler import init_scheduler, load_pending_notifications
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -53,6 +54,7 @@ async def main() -> None:
 
     # Include routers
     dp.include_router(start.router)
+    dp.include_router(timezone_handler.router)
     dp.include_router(create_notification.router)
     dp.include_router(scheduled_notifications.router)
 

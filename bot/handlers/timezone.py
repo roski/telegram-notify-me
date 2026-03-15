@@ -140,6 +140,11 @@ async def handle_manual_text(message: Message, state: FSMContext) -> None:
     lang = data.get("lang", "en")
     await message.answer(
         get_text("timezone.select_region", lang),
+        reply_markup=remove_reply_keyboard(),
+        parse_mode="HTML",
+    )
+    await message.answer(
+        get_text("timezone.select_region", lang),
         reply_markup=timezone_region_keyboard(lang),
         parse_mode="HTML",
     )

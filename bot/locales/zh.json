@@ -93,6 +93,13 @@
     "1day": "⏰ 1天后提醒",
     "1month": "⏰ 1个月后提醒",
     "1year": "⏰ 1年后提醒",
-    "confirmed": "✅ 提醒已重新安排至 {time}。"
+    "confirmed": "✅ 提醒已重新安排至 {time}。",
+    "button": "🔔 提醒我",
+    "will_remind": "✅ 我们将在 {delay} 后提醒您此事件",
+    "delay_5min": "5分钟",
+    "delay_10min": "10分钟",
+    "delay_1day": "1天",
+    "delay_1month": "1个月",
+    "delay_1year": "1年"
   }
 }

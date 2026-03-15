@@ -93,6 +93,13 @@
     "1day": "⏰ Ingatake ing 1 dina",
     "1month": "⏰ Ingatake ing 1 sasi",
     "1year": "⏰ Ingatake ing 1 taun",
-    "confirmed": "✅ Pengeling-eling dijadwal maneh kanggo {time}."
+    "confirmed": "✅ Pengeling-eling dijadwal maneh kanggo {time}.",
+    "button": "🔔 Ingatake aku",
+    "will_remind": "✅ Kita bakal ngelingake kowe babagan acara iki ing {delay}",
+    "delay_5min": "5 menit",
+    "delay_10min": "10 menit",
+    "delay_1day": "1 dina",
+    "delay_1month": "1 sasi",
+    "delay_1year": "1 taun"
   }
 }

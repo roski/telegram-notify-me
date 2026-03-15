@@ -93,6 +93,13 @@
     "1day": "⏰ 1일 후 알림",
     "1month": "⏰ 1달 후 알림",
     "1year": "⏰ 1년 후 알림",
-    "confirmed": "✅ 알림이 {time}(으)로 재설정되었습니다."
+    "confirmed": "✅ 알림이 {time}(으)로 재설정되었습니다.",
+    "button": "🔔 알림 설정",
+    "will_remind": "✅ {delay} 후에 이 이벤트를 알려드리겠습니다",
+    "delay_5min": "5분",
+    "delay_10min": "10분",
+    "delay_1day": "1일",
+    "delay_1month": "1달",
+    "delay_1year": "1년"
   }
 }

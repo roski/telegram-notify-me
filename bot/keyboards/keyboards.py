@@ -407,7 +407,19 @@ def get_language_name(lang_code: str) -> str:
 
 
 def remind_me_later_keyboard(notification_id: int, lang: str) -> InlineKeyboardMarkup:
-    """Inline keyboard attached to sent notification messages for rescheduling."""
+    """Inline keyboard attached to sent notification messages — single 'Remind me' button."""
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(
+                text=get_text("remind_later.button", lang),
+                callback_data=f"remind_me:{notification_id}",
+            )]
+        ]
+    )
+
+
+def remind_me_options_keyboard(notification_id: int, lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard showing all 5 delay options after the user taps 'Remind me'."""
     delays = ["5min", "10min", "1day", "1month", "1year"]
     rows = [
         [InlineKeyboardButton(

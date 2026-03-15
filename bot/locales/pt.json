@@ -93,6 +93,13 @@
     "1day": "⏰ Lembrar em 1 dia",
     "1month": "⏰ Lembrar em 1 mês",
     "1year": "⏰ Lembrar em 1 ano",
-    "confirmed": "✅ Lembrete remarcado para {time}."
+    "confirmed": "✅ Lembrete remarcado para {time}.",
+    "button": "🔔 Lembre-me",
+    "will_remind": "✅ Iremos lembrá-lo sobre este evento em {delay}",
+    "delay_5min": "5 minutos",
+    "delay_10min": "10 minutos",
+    "delay_1day": "1 dia",
+    "delay_1month": "1 mês",
+    "delay_1year": "1 ano"
   }
 }

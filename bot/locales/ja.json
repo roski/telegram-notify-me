@@ -93,6 +93,13 @@
     "1day": "⏰ 1日後にリマインド",
     "1month": "⏰ 1ヶ月後にリマインド",
     "1year": "⏰ 1年後にリマインド",
-    "confirmed": "✅ リマインダーを {time} に変更しました。"
+    "confirmed": "✅ リマインダーを {time} に変更しました。",
+    "button": "🔔 リマインドする",
+    "will_remind": "✅ {delay}後にこのイベントをお知らせします",
+    "delay_5min": "5分",
+    "delay_10min": "10分",
+    "delay_1day": "1日",
+    "delay_1month": "1ヶ月",
+    "delay_1year": "1年"
   }
 }

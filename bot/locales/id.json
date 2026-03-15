@@ -93,6 +93,13 @@
     "1day": "⏰ Ingatkan dalam 1 hari",
     "1month": "⏰ Ingatkan dalam 1 bulan",
     "1year": "⏰ Ingatkan dalam 1 tahun",
-    "confirmed": "✅ Pengingat dijadwalkan ulang ke {time}."
+    "confirmed": "✅ Pengingat dijadwalkan ulang ke {time}.",
+    "button": "🔔 Ingatkan saya",
+    "will_remind": "✅ Kami akan mengingatkan Anda tentang acara ini dalam {delay}",
+    "delay_5min": "5 menit",
+    "delay_10min": "10 menit",
+    "delay_1day": "1 hari",
+    "delay_1month": "1 bulan",
+    "delay_1year": "1 tahun"
   }
 }

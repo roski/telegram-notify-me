@@ -93,6 +93,13 @@
     "1day": "⏰ Rappel dans 1 jour",
     "1month": "⏰ Rappel dans 1 mois",
     "1year": "⏰ Rappel dans 1 an",
-    "confirmed": "✅ Rappel reprogrammé pour {time}."
+    "confirmed": "✅ Rappel reprogrammé pour {time}.",
+    "button": "🔔 Me rappeler",
+    "will_remind": "✅ Nous vous rappellerons cet événement dans {delay}",
+    "delay_5min": "5 minutes",
+    "delay_10min": "10 minutes",
+    "delay_1day": "1 jour",
+    "delay_1month": "1 mois",
+    "delay_1year": "1 an"
   }
 }

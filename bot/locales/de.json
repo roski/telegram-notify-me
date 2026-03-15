@@ -93,6 +93,13 @@
     "1day": "⏰ In 1 Tag erinnern",
     "1month": "⏰ In 1 Monat erinnern",
     "1year": "⏰ In 1 Jahr erinnern",
-    "confirmed": "✅ Erinnerung auf {time} verschoben."
+    "confirmed": "✅ Erinnerung auf {time} verschoben.",
+    "button": "🔔 Erinnere mich",
+    "will_remind": "✅ Wir erinnern Sie in {delay} an dieses Ereignis",
+    "delay_5min": "5 Minuten",
+    "delay_10min": "10 Minuten",
+    "delay_1day": "1 Tag",
+    "delay_1month": "1 Monat",
+    "delay_1year": "1 Jahr"
   }
 }

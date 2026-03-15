@@ -9,6 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from bot.database.models import Notification, User
 from bot.i18n import get_text
+from bot.keyboards.keyboards import remind_me_options_keyboard
 from bot.scheduler.scheduler import remove_notification_job, schedule_notification
 from bot.utils.timezone import utc_to_user
 
@@ -44,6 +45,32 @@ def _apply_delay(base: datetime, delay: str) -> datetime:
             # Feb 29 edge case
             return base.replace(year=base.year + 1, day=28)
     raise ValueError(f"Unknown delay: {delay!r}")
+
+
+@router.callback_query(F.data.startswith("remind_me:"))
+async def cb_remind_me(callback: CallbackQuery, session: AsyncSession) -> None:
+    """Show the 5 delay options when the user taps the single 'Remind me' button."""
+    parts = callback.data.split(":")
+    if len(parts) != 2:
+        await callback.answer()
+        return
+
+    try:
+        notification_id = int(parts[1])
+    except ValueError:
+        await callback.answer()
+        return
+
+    user_result = await session.execute(
+        select(User).where(User.telegram_id == callback.from_user.id)
+    )
+    user = user_result.scalar_one_or_none()
+    lang = user.language_code if user else "en"
+
+    await callback.message.edit_reply_markup(
+        reply_markup=remind_me_options_keyboard(notification_id, lang)
+    )
+    await callback.answer()
 
 
 @router.callback_query(F.data.startswith("remind_later:"))
@@ -100,11 +127,14 @@ async def cb_remind_later(callback: CallbackQuery, session: AsyncSession) -> Non
     remove_notification_job(notification_id)
     await schedule_notification(notif, callback.from_user.id)
 
-    local_time = utc_to_user(new_run_at, user_tz)
-    time_str = local_time.strftime("%Y-%m-%d %H:%M")
-    confirmation = get_text("remind_later.confirmed", lang).format(time=time_str)
+    delay_label = get_text(f"remind_later.delay_{delay}", lang)
+    confirmation = get_text("remind_later.will_remind", lang).format(delay=delay_label)
 
-    await callback.answer(confirmation, show_alert=True)
+    # Remove all buttons from the notification message
+    await callback.message.edit_reply_markup(reply_markup=None)
+    # Send a separate confirmation message in the chat
+    await callback.message.answer(confirmation)
+    await callback.answer()
     logger.info(
         "Notification %d rescheduled by user %d (delay=%s, new_run_at=%s)",
         notification_id,

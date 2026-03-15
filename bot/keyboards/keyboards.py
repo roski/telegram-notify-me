@@ -34,6 +34,76 @@ def recurrence_keyboard(lang: str) -> InlineKeyboardMarkup:
 
 
 # ---------------------------------------------------------------------------
+# Locale-aware calendar labels
+# ---------------------------------------------------------------------------
+
+# Month names indexed 0–11 for each supported language.
+_MONTH_NAMES: dict[str, list[str]] = {
+    "en": ["January","February","March","April","May","June",
+           "July","August","September","October","November","December"],
+    "es": ["enero","febrero","marzo","abril","mayo","junio",
+           "julio","agosto","septiembre","octubre","noviembre","diciembre"],
+    "fr": ["janvier","février","mars","avril","mai","juin",
+           "juillet","août","septembre","octobre","novembre","décembre"],
+    "de": ["Januar","Februar","März","April","Mai","Juni",
+           "Juli","August","September","Oktober","November","Dezember"],
+    "zh": ["一月","二月","三月","四月","五月","六月",
+           "七月","八月","九月","十月","十一月","十二月"],
+    "ja": ["1月","2月","3月","4月","5月","6月",
+           "7月","8月","9月","10月","11月","12月"],
+    "ko": ["1월","2월","3월","4월","5월","6월",
+           "7월","8월","9월","10월","11월","12월"],
+    "ru": ["Январь","Февраль","Март","Апрель","Май","Июнь",
+           "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+    "uk": ["Січень","Лютий","Березень","Квітень","Травень","Червень",
+           "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"],
+    "pt": ["Janeiro","Fevereiro","Março","Abril","Maio","Junho",
+           "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+    "ar": ["يناير","فبراير","مارس","أبريل","مايو","يونيو",
+           "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"],
+    "bn": ["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন",
+           "জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"],
+    "hi": ["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून",
+           "जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"],
+    "id": ["Januari","Februari","Maret","April","Mei","Juni",
+           "Juli","Agustus","September","Oktober","November","Desember"],
+    "pa": ["ਜਨਵਰੀ","ਫ਼ਰਵਰੀ","ਮਾਰਚ","ਅਪ੍ਰੈਲ","ਮਈ","ਜੂਨ",
+           "ਜੁਲਾਈ","ਅਗਸਤ","ਸਤੰਬਰ","ਅਕਤੂਬਰ","ਨਵੰਬਰ","ਦਸੰਬਰ"],
+    "jv": ["Januari","Februari","Maret","April","Mei","Juni",
+           "Juli","Agustus","September","Oktober","November","Desember"],
+}
+
+# Weekday abbreviations Mon–Sun for each supported language.
+_DOW_LABELS: dict[str, list[str]] = {
+    "en": ["Mo","Tu","We","Th","Fr","Sa","Su"],
+    "es": ["Lu","Ma","Mi","Ju","Vi","Sá","Do"],
+    "fr": ["Lu","Ma","Me","Je","Ve","Sa","Di"],
+    "de": ["Mo","Di","Mi","Do","Fr","Sa","So"],
+    "zh": ["一","二","三","四","五","六","日"],
+    "ja": ["月","火","水","木","金","土","日"],
+    "ko": ["월","화","수","목","금","토","일"],
+    "ru": ["Пн","Вт","Ср","Чт","Пт","Сб","Вс"],
+    "uk": ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"],
+    "pt": ["Se","Te","Qu","Qu","Se","Sá","Do"],
+    "ar": ["إث","ثل","أر","خم","جم","سب","أح"],
+    "bn": ["সো","মঙ","বু","বৃ","শু","শ","র"],
+    "hi": ["सो","मं","बु","गु","शु","श","र"],
+    "id": ["Se","Se","Ra","Ka","Ju","Sa","Mi"],
+    "pa": ["ਸੋ","ਮੰ","ਬੁ","ਵੀ","ਸ਼ੁ","ਸ਼ਨ","ਐਤ"],
+    "jv": ["Se","Se","Ra","Ka","Ju","Sa","Mi"],
+}
+
+
+def _month_name(month: int, lang: str) -> str:
+    names = _MONTH_NAMES.get(lang, _MONTH_NAMES["en"])
+    return names[month - 1]
+
+
+def _dow_labels(lang: str) -> list[str]:
+    return _DOW_LABELS.get(lang, _DOW_LABELS["en"])
+
+
+# ---------------------------------------------------------------------------
 # Date calendar keyboard
 # ---------------------------------------------------------------------------
 
@@ -56,11 +126,7 @@ def calendar_keyboard(year: int, month: int, lang: str) -> InlineKeyboardMarkup:
     at_min_month = (year, month) <= (today.year, today.month)
     prev_cb = "cal_ignore" if at_min_month else f"cal_nav:{prev_year}-{prev_month:02d}"
 
-    month_names = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December",
-    ]
-    month_label = f"{month_names[month - 1]} {year}"
+    month_label = f"{_month_name(month, lang)} {year}"
 
     nav_row = [
         InlineKeyboardButton(text="◀️" if not at_min_month else " ", callback_data=prev_cb),
@@ -68,10 +134,10 @@ def calendar_keyboard(year: int, month: int, lang: str) -> InlineKeyboardMarkup:
         InlineKeyboardButton(text="▶️", callback_data=f"cal_nav:{next_year}-{next_month:02d}"),
     ]
 
-    # Day-of-week headers (Mon … Sun)
+    # Day-of-week headers in the user's language (Mon … Sun)
     dow_row = [
         InlineKeyboardButton(text=d, callback_data="cal_ignore")
-        for d in ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+        for d in _dow_labels(lang)
     ]
 
     # Build day rows

@@ -101,5 +101,10 @@
     "delay_1day": "1 ਦਿਨ",
     "delay_1month": "1 ਮਹੀਨਾ",
     "delay_1year": "1 ਸਾਲ"
+  },
+  "commands": {
+    "create": "ਨਵੀਂ ਸੂਚਨਾ ਬਣਾਓ",
+    "notifications": "ਨਿਯਤ ਸੂਚਨਾਵਾਂ ਦੇਖੋ",
+    "settings": "ਟਾਈਮਜ਼ੋਨ ਅਤੇ ਭਾਸ਼ਾ ਸੈਟਿੰਗਾਂ"
   }
 }

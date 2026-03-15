@@ -6,8 +6,9 @@ Flow:
   └── 🌐 Change Language  → shows 16-language picker → saves language → confirms
 """
 from aiogram import Router
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
-from aiogram.types import CallbackQuery
+from aiogram.types import CallbackQuery, Message
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -42,6 +43,18 @@ async def cb_config_menu(callback: CallbackQuery, session: AsyncSession) -> None
         parse_mode="HTML",
     )
     await callback.answer()
+
+
+@router.message(Command("settings"))
+async def cmd_settings(message: Message, session: AsyncSession) -> None:
+    user = await _get_user(session, message.from_user.id)
+    if not user:
+        return
+    await message.answer(
+        get_text("config.menu", user.language_code),
+        reply_markup=config_menu_keyboard(user.language_code),
+        parse_mode="HTML",
+    )
 
 
 # ---------------------------------------------------------------------------

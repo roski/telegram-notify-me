@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from aiogram import F, Router
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message
@@ -76,6 +77,24 @@ async def cb_create_notification(callback: CallbackQuery, state: FSMContext, ses
         parse_mode="HTML",
     )
     await callback.answer()
+
+
+@router.message(Command("create"))
+async def cmd_create(message: Message, state: FSMContext, session: AsyncSession) -> None:
+    lang = await _get_user_lang(session, message.from_user.id)
+    user = await _get_user(session, message.from_user.id)
+    if not user or not user.timezone:
+        from bot.handlers.timezone import prompt_timezone_setup
+        await prompt_timezone_setup(message, state, lang)
+        return
+    user_tz = user.timezone
+    await state.set_state(CreateNotificationStates.waiting_title)
+    await state.update_data(lang=lang, user_tz=user_tz)
+    await message.answer(
+        get_text("create.start", lang),
+        reply_markup=cancel_keyboard(lang),
+        parse_mode="HTML",
+    )
 
 
 # ---------------------------------------------------------------------------

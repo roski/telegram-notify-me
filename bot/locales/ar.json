@@ -101,5 +101,10 @@
     "delay_1day": "يوم",
     "delay_1month": "شهر",
     "delay_1year": "سنة"
+  },
+  "commands": {
+    "create": "إنشاء إشعار جديد",
+    "notifications": "عرض الإشعارات المجدولة",
+    "settings": "إعدادات المنطقة الزمنية واللغة"
   }
 }

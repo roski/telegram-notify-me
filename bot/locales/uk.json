@@ -1,0 +1,62 @@
+{
+  "welcome": "👋 Ласкаво просимо, {name}!\n\nОберіть опцію з меню нижче:",
+  "main_menu": {
+    "create_notification": "➕ Створити сповіщення",
+    "scheduled_notifications": "📅 Заплановані сповіщення"
+  },
+  "create": {
+    "start": "Давайте створимо нове сповіщення!\n\nКрок 1/5 — Введіть <b>назву</b> сповіщення:",
+    "description": "Крок 2/5 — Введіть <b>опис</b> сповіщення:",
+    "date": "Крок 3/5 — Введіть <b>дату</b> у форматі <code>YYYY-MM-DD</code>\n(наприклад, <code>2025-12-31</code>):",
+    "time": "Крок 4/5 — Введіть <b>час</b> у форматі <code>HH:MM</code>\n(наприклад, <code>09:00</code>):",
+    "recurrence": "Крок 5/5 — Оберіть <b>повторення</b>:",
+    "confirm": "✅ <b>Сповіщення створено!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Невірний формат дати. Використовуйте <code>YYYY-MM-DD</code> (наприклад, <code>2025-12-31</code>):",
+    "invalid_time": "❌ Невірний формат часу. Використовуйте <code>HH:MM</code> (наприклад, <code>09:00</code>):",
+    "date_in_past": "❌ Дата та час мають бути в майбутньому. Спробуйте ще раз:",
+    "cancelled": "❌ Створення сповіщення скасовано."
+  },
+  "recurrence": {
+    "once": "Одноразово",
+    "daily": "Щодня",
+    "weekly": "Щотижня",
+    "monthly": "Щомісяця",
+    "yearly": "Щороку"
+  },
+  "scheduled": {
+    "title": "📅 <b>Заплановані сповіщення</b>",
+    "week": "📆 Наступні 7 днів",
+    "month": "📆 Наступні 30 днів",
+    "year": "📆 Наступні 365 днів",
+    "empty": "Сповіщень за цей період не знайдено.",
+    "view_month": "🗓 Переглянути місяць",
+    "view_year": "📅 Переглянути рік",
+    "back": "⬅️ Назад"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Дата:</b> {date}\n⏰ <b>Час:</b> {time}\n🔁 <b>Повторення:</b> {recurrence}\n📊 <b>Надіслано:</b> {count} раз(и)",
+    "edit": "✏️ Редагувати",
+    "delete": "🗑 Видалити",
+    "back": "⬅️ Назад",
+    "deleted": "🗑 Сповіщення видалено.",
+    "edit_field": "Що ви бажаєте редагувати?",
+    "edit_title": "Введіть нову <b>назву</b>:",
+    "edit_description": "Введіть новий <b>опис</b>:",
+    "edit_date": "Введіть нову <b>дату</b> у форматі <code>YYYY-MM-DD</code>:",
+    "edit_time": "Введіть новий <b>час</b> у форматі <code>HH:MM</code>:",
+    "edit_recurrence": "Оберіть нове <b>повторення</b>:",
+    "updated": "✅ Сповіщення оновлено!",
+    "not_found": "❌ Сповіщення не знайдено."
+  },
+  "send": {
+    "message": "🔔 <b>Нагадування!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Скасувати",
+  "edit_fields": {
+    "title": "📝 Назва",
+    "description": "📄 Опис",
+    "date": "🗓 Дата",
+    "time": "⏰ Час",
+    "recurrence": "🔁 Повторення"
+  }
+}

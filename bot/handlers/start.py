@@ -6,7 +6,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from bot.database.models import User
-from bot.i18n import get_text
+from bot.i18n import get_text, normalize_language_code
 from bot.keyboards.keyboards import main_menu_keyboard
 
 router = Router()
@@ -22,7 +22,7 @@ async def _get_or_create_user(session: AsyncSession, message: Message) -> User:
             username=tg_user.username,
             first_name=tg_user.first_name,
             last_name=tg_user.last_name,
-            language_code=tg_user.language_code or "en",
+            language_code=normalize_language_code(tg_user.language_code),
         )
         session.add(user)
         await session.commit()

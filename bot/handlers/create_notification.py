@@ -11,6 +11,7 @@ from bot.database.models import Notification, RecurrenceType, User
 from bot.i18n import get_text
 from bot.keyboards.keyboards import (
     calendar_keyboard,
+    cancel_keyboard,
     main_menu_keyboard,
     recurrence_keyboard,
     time_ampm_keyboard,
@@ -71,6 +72,7 @@ async def cb_create_notification(callback: CallbackQuery, state: FSMContext, ses
     await state.update_data(lang=lang, user_tz=user_tz)
     await callback.message.edit_text(
         get_text("create.start", lang),
+        reply_markup=cancel_keyboard(lang),
         parse_mode="HTML",
     )
     await callback.answer()
@@ -86,7 +88,7 @@ async def process_title(message: Message, state: FSMContext) -> None:
     lang = data.get("lang", "en")
     await state.update_data(title=message.text.strip())
     await state.set_state(CreateNotificationStates.waiting_description)
-    await message.answer(get_text("create.description", lang), parse_mode="HTML")
+    await message.answer(get_text("create.description", lang), reply_markup=cancel_keyboard(lang), parse_mode="HTML")
 
 
 # ---------------------------------------------------------------------------
@@ -162,7 +164,11 @@ async def cb_cal_manual(callback: CallbackQuery, state: FSMContext) -> None:
     """Switch to manual date entry."""
     data = await state.get_data()
     lang = data.get("lang", "en")
-    await callback.message.edit_text(get_text("create.date_manual_prompt", lang), parse_mode="HTML")
+    await callback.message.edit_text(
+        get_text("create.date_manual_prompt", lang),
+        reply_markup=cancel_keyboard(lang),
+        parse_mode="HTML",
+    )
     await callback.answer()
 
 

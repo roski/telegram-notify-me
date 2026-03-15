@@ -2,7 +2,8 @@
   "welcome": "👋 Welcome, {name}!\n\nChoose an option from the menu below:",
   "main_menu": {
     "create_notification": "➕ Create Notification",
-    "scheduled_notifications": "📅 Scheduled Notifications"
+    "scheduled_notifications": "📅 Scheduled Notifications",
+    "configuration": "⚙️ Configuration"
   },
   "create": {
     "start": "Let's create a new notification!\n\nStep 1/5 — Enter the notification <b>title</b>:",
@@ -52,6 +53,14 @@
     "message": "🔔 <b>Reminder!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
   },
   "cancel": "❌ Cancel",
+  "config": {
+    "menu": "⚙️ <b>Configuration</b>\n\nChoose an option:",
+    "change_timezone": "🕐 Change Timezone",
+    "change_language": "🌐 Change Language",
+    "language_menu": "🌐 Select your language:",
+    "language_set": "✅ Language changed to <b>{language}</b>.",
+    "back": "⬅️ Back"
+  },
   "timezone": {
     "setup_prompt": "🌍 To send notifications at the right time, please set your timezone.\n\nChoose an option:",
     "share_location_button": "📍 Share Location",

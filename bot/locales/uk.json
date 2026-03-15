@@ -2,7 +2,8 @@
   "welcome": "👋 Ласкаво просимо, {name}!\n\nОберіть опцію з меню нижче:",
   "main_menu": {
     "create_notification": "➕ Створити сповіщення",
-    "scheduled_notifications": "📅 Заплановані сповіщення"
+    "scheduled_notifications": "📅 Заплановані сповіщення",
+    "configuration": "⚙️ Налаштування"
   },
   "create": {
     "start": "Давайте створимо нове сповіщення!\n\nКрок 1/5 — Введіть <b>назву</b> сповіщення:",
@@ -52,6 +53,14 @@
     "message": "🔔 <b>Нагадування!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
   },
   "cancel": "❌ Скасувати",
+  "config": {
+    "menu": "⚙️ <b>Налаштування</b>\n\nОберіть опцію:",
+    "change_timezone": "🕐 Змінити часовий пояс",
+    "change_language": "🌐 Змінити мову",
+    "language_menu": "🌐 Оберіть мову:",
+    "language_set": "✅ Мову змінено на <b>{language}</b>.",
+    "back": "⬅️ Назад"
+  },
   "timezone": {
     "setup_prompt": "🌍 Щоб надсилати сповіщення у правильний час, будь ласка, вкажіть свій часовий пояс.\n\nОберіть варіант:",
     "share_location_button": "📍 Поділитися локацією",

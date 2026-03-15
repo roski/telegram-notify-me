@@ -15,6 +15,7 @@ def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
         inline_keyboard=[
             [InlineKeyboardButton(text=get_text("main_menu.create_notification", lang), callback_data="create_notification")],
             [InlineKeyboardButton(text=get_text("main_menu.scheduled_notifications", lang), callback_data="scheduled_notifications")],
+            [InlineKeyboardButton(text=get_text("main_menu.configuration", lang), callback_data="configuration")],
         ]
     )
 
@@ -138,3 +139,62 @@ def timezone_city_keyboard(region: str, lang: str) -> InlineKeyboardMarkup:
 
 def remove_reply_keyboard() -> ReplyKeyboardRemove:
     return ReplyKeyboardRemove()
+
+
+# ---------------------------------------------------------------------------
+# Configuration menu keyboards
+# ---------------------------------------------------------------------------
+
+def config_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard for the Configuration menu."""
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text=get_text("config.change_timezone", lang), callback_data="config_change_timezone")],
+            [InlineKeyboardButton(text=get_text("config.change_language", lang), callback_data="config_change_language")],
+            [InlineKeyboardButton(text=get_text("config.back", lang), callback_data="main_menu")],
+        ]
+    )
+
+
+# Human-readable names for all 16 supported languages displayed in the language picker.
+_LANGUAGE_NAMES: dict[str, str] = {
+    "en": "🇬🇧 English",
+    "zh": "🇨🇳 中文 (Chinese)",
+    "hi": "🇮🇳 हिन्दी (Hindi)",
+    "es": "🇪🇸 Español (Spanish)",
+    "fr": "🇫🇷 Français (French)",
+    "ar": "🇸🇦 العربية (Arabic)",
+    "bn": "🇧🇩 বাংলা (Bengali)",
+    "ru": "🇷🇺 Русский (Russian)",
+    "pt": "🇧🇷 Português (Portuguese)",
+    "id": "🇮🇩 Bahasa Indonesia",
+    "de": "🇩🇪 Deutsch (German)",
+    "ja": "🇯🇵 日本語 (Japanese)",
+    "pa": "🇮🇳 ਪੰਜਾਬੀ (Punjabi)",
+    "jv": "🇮🇩 Basa Jawa (Javanese)",
+    "ko": "🇰🇷 한국어 (Korean)",
+    "uk": "🇺🇦 Українська (Ukrainian)",
+}
+
+_LANGUAGE_ORDER = ["en", "zh", "hi", "es", "fr", "ar", "bn", "ru", "pt", "id", "de", "ja", "pa", "jv", "ko", "uk"]
+
+
+def language_select_keyboard(current_lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard listing all 16 supported languages (2 per row)."""
+    rows = []
+    langs = _LANGUAGE_ORDER
+    for i in range(0, len(langs), 2):
+        row = []
+        for code in langs[i : i + 2]:
+            label = _LANGUAGE_NAMES.get(code, code)
+            if code == current_lang:
+                label = "✅ " + label
+            row.append(InlineKeyboardButton(text=label, callback_data=f"set_language:{code}"))
+        rows.append(row)
+    rows.append([InlineKeyboardButton(text=get_text("config.back", current_lang), callback_data="configuration")])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def get_language_name(lang_code: str) -> str:
+    """Return the human-readable name for a language code."""
+    return _LANGUAGE_NAMES.get(lang_code, lang_code)

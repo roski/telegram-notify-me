@@ -23,6 +23,15 @@ def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
     )
 
 
+def cancel_keyboard(lang: str) -> InlineKeyboardMarkup:
+    """Inline keyboard containing only a Cancel button for text-input steps."""
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text=get_text("cancel", lang), callback_data="cancel_create")]
+        ]
+    )
+
+
 def recurrence_keyboard(lang: str) -> InlineKeyboardMarkup:
     recurrence_types = ["once", "daily", "weekly", "monthly", "yearly"]
     rows = [

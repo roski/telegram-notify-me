@@ -35,7 +35,7 @@ def load_config() -> Config:
         telegram_bot_token=os.environ["TELEGRAM_BOT_TOKEN"],
         postgres_user=os.environ.get("POSTGRES_USER", "postgres"),
         postgres_password=os.environ.get("POSTGRES_PASSWORD", "postgres"),
-        postgres_db=os.environ.get("POSTGRES_DB", "telegram_notify"),
+        postgres_db=os.environ.get("POSTGRES_DB", "notifications"),
         postgres_host=os.environ.get("POSTGRES_HOST", "localhost"),
         postgres_port=int(os.environ.get("POSTGRES_PORT", "5432")),
     )

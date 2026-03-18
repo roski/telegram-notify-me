@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ إنشاء إشعار",
     "scheduled_notifications": "📅 الإشعارات المجدولة",
-    "configuration": "⚙️ الإعدادات"
+    "configuration": "⚙️ الإعدادات",
+    "open_webapp": "🌐 فتح تطبيق الويب"
   },
   "create": {
     "start": "لنقم بإنشاء إشعار جديد!\n\nالخطوة 1/5 — أدخل <b>عنوان</b> الإشعار:",

@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ Créer une notification",
     "scheduled_notifications": "📅 Notifications planifiées",
-    "configuration": "⚙️ Configuration"
+    "configuration": "⚙️ Configuration",
+    "open_webapp": "🌐 Ouvrir l'application web"
   },
   "create": {
     "start": "Créons une nouvelle notification !\n\nÉtape 1/5 — Entrez le <b>titre</b> de la notification :",

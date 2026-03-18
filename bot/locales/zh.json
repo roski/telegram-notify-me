@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ 创建通知",
     "scheduled_notifications": "📅 已计划的通知",
-    "configuration": "⚙️ 配置"
+    "configuration": "⚙️ 配置",
+    "open_webapp": "🌐 打开网页应用"
   },
   "create": {
     "start": "让我们创建一个新通知！\n\n第 1/5 步 — 输入通知<b>标题</b>：",

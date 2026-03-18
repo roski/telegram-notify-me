@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ Створити сповіщення",
     "scheduled_notifications": "📅 Заплановані сповіщення",
-    "configuration": "⚙️ Налаштування"
+    "configuration": "⚙️ Налаштування",
+    "open_webapp": "🌐 Відкрити веб-додаток"
   },
   "create": {
     "start": "Давайте створимо нове сповіщення!\n\nКрок 1/5 — Введіть <b>назву</b> сповіщення:",

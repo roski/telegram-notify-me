@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ 알림 만들기",
     "scheduled_notifications": "📅 예약된 알림",
-    "configuration": "⚙️ 설정"
+    "configuration": "⚙️ 설정",
+    "open_webapp": "🌐 웹 앱 열기"
   },
   "create": {
     "start": "새 알림을 만들어 봅시다!\n\n1/5단계 — 알림 <b>제목</b>을 입력하세요:",

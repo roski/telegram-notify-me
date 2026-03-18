@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ ਸੂਚਨਾ ਬਣਾਓ",
     "scheduled_notifications": "📅 ਨਿਰਧਾਰਿਤ ਸੂਚਨਾਵਾਂ",
-    "configuration": "⚙️ ਸੰਰਚਨਾ"
+    "configuration": "⚙️ ਸੰਰਚਨਾ",
+    "open_webapp": "🌐 ਵੈੱਬ ਐਪ ਖੋਲੋ"
   },
   "create": {
     "start": "ਆਓ ਇੱਕ ਨਵੀਂ ਸੂਚਨਾ ਬਣਾਈਏ!\n\nਕਦਮ 1/5 — ਸੂਚਨਾ ਦਾ <b>ਸਿਰਲੇਖ</b> ਦਰਜ ਕਰੋ:",

@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ Создать уведомление",
     "scheduled_notifications": "📅 Запланированные уведомления",
-    "configuration": "⚙️ Настройки"
+    "configuration": "⚙️ Настройки",
+    "open_webapp": "🌐 Открыть веб-приложение"
   },
   "create": {
     "start": "Давайте создадим новое уведомление!\n\nШаг 1/5 — Введите <b>название</b> уведомления:",

@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ सूचना बनाएं",
     "scheduled_notifications": "📅 निर्धारित सूचनाएं",
-    "configuration": "⚙️ कॉन्फ़िगरेशन"
+    "configuration": "⚙️ कॉन्फ़िगरेशन",
+    "open_webapp": "🌐 वेब ऐप खोलें"
   },
   "create": {
     "start": "चलिए एक नई सूचना बनाते हैं!\n\nचरण 1/5 — सूचना का <b>शीर्षक</b> दर्ज करें:",

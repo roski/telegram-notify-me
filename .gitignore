@@ -33,3 +33,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Node / webapp
+webapp/node_modules/
+webapp/dist/

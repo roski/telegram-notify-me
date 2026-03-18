@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ Buat Notifikasi",
     "scheduled_notifications": "📅 Notifikasi Terjadwal",
-    "configuration": "⚙️ Konfigurasi"
+    "configuration": "⚙️ Konfigurasi",
+    "open_webapp": "🌐 Buka Aplikasi Web"
   },
   "create": {
     "start": "Mari buat notifikasi baru!\n\nLangkah 1/5 — Masukkan <b>judul</b> notifikasi:",

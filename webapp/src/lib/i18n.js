@@ -22,7 +22,10 @@ i18n
     ns: ['translation'],
     defaultNS: 'translation',
     backend: {
-      loadPath: '/api/i18n/{{lng}}',
+      // Use single-brace syntax to match the custom interpolation prefix/suffix
+      // configured below.  The HTTP backend processes this path through the same
+      // i18next interpolator, so {lng} (not {{lng}}) is correctly substituted.
+      loadPath: '/api/i18n/{lng}',
     },
     interpolation: {
       // Match the {variable} syntax used in the bot translation files.

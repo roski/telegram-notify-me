@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ 通知を作成",
     "scheduled_notifications": "📅 スケジュール済み通知",
-    "configuration": "⚙️ 設定"
+    "configuration": "⚙️ 設定",
+    "open_webapp": "🌐 ウェブアプリを開く"
   },
   "create": {
     "start": "新しい通知を作成しましょう！\n\nステップ 1/5 — 通知の<b>タイトル</b>を入力してください：",

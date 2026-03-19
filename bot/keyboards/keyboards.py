@@ -1,4 +1,5 @@
 import calendar as _cal
+import os
 from datetime import date
 
 from aiogram.types import (
@@ -7,6 +8,7 @@ from aiogram.types import (
     KeyboardButton,
     ReplyKeyboardMarkup,
     ReplyKeyboardRemove,
+    WebAppInfo,
 )
 
 from bot.i18n import get_text
@@ -14,13 +16,20 @@ from bot.utils.timezone import REGION_ORDER, TIMEZONE_REGIONS, tz_display_name
 
 
 def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
-    return InlineKeyboardMarkup(
-        inline_keyboard=[
-            [InlineKeyboardButton(text=get_text("main_menu.create_notification", lang), callback_data="create_notification")],
-            [InlineKeyboardButton(text=get_text("main_menu.scheduled_notifications", lang), callback_data="scheduled_notifications")],
-            [InlineKeyboardButton(text=get_text("main_menu.configuration", lang), callback_data="configuration")],
-        ]
-    )
+    rows = [
+        [InlineKeyboardButton(text=get_text("main_menu.create_notification", lang), callback_data="create_notification")],
+        [InlineKeyboardButton(text=get_text("main_menu.scheduled_notifications", lang), callback_data="scheduled_notifications")],
+        [InlineKeyboardButton(text=get_text("main_menu.configuration", lang), callback_data="configuration")],
+    ]
+    webapp_url = os.environ.get("WEBAPP_URL", "").strip()
+    if webapp_url:
+        rows.insert(0, [
+            InlineKeyboardButton(
+                text=get_text("main_menu.open_webapp", lang),
+                web_app=WebAppInfo(url=webapp_url),
+            )
+        ])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
 
 
 def cancel_keyboard(lang: str) -> InlineKeyboardMarkup:

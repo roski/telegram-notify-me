@@ -3,7 +3,8 @@
   "main_menu": {
     "create_notification": "➕ বিজ্ঞপ্তি তৈরি করুন",
     "scheduled_notifications": "📅 নির্ধারিত বিজ্ঞপ্তি",
-    "configuration": "⚙️ কনফিগারেশন"
+    "configuration": "⚙️ কনফিগারেশন",
+    "open_webapp": "🌐 ওয়েব অ্যাপ খুলুন"
   },
   "create": {
     "start": "চলুন একটি নতুন বিজ্ঞপ্তি তৈরি করি!\n\nধাপ 1/5 — বিজ্ঞপ্তির <b>শিরোনাম</b> লিখুন:",

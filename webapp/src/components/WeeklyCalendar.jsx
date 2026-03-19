@@ -42,7 +42,7 @@ export function WeeklyCalendar({ selectedDate, onSelectDate }) {
                 !selected && !today && 'text-gray-800'
               )}
             >
-              {format(day, 'd', { locale })}
+              {format(day, 'd')}
             </span>
             {today && (
               <span

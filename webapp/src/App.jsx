@@ -33,9 +33,11 @@ function App() {
     // Load the user's saved language and apply it to the UI.
     api
       .getUser()
-      .then((user) => {
+      .then(async (user) => {
         if (user?.language_code) {
-          i18n.changeLanguage(user.language_code)
+          // Load translations for the user's language before changing.
+          await i18n.loadNamespaces(['translation'], { lng: user.language_code })
+          await i18n.changeLanguage(user.language_code)
         }
       })
       .catch(() => {

@@ -46,6 +46,8 @@ export function SettingsPage() {
     try {
       const updated = await api.updateLanguage(code)
       setUser((prev) => ({ ...prev, language_code: updated.language_code }))
+      // Load translations for the new language before changing.
+      await i18n.loadNamespaces(['translation'], { lng: updated.language_code })
       // Apply the new language to the UI immediately.
       await i18n.changeLanguage(updated.language_code)
       setMessage(t('web.settings.language_updated'))

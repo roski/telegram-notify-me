@@ -7,6 +7,7 @@ import { WeeklyCalendar } from '@/components/WeeklyCalendar'
 import { Timeline } from '@/components/Timeline'
 import { BottomNav } from '@/components/BottomNav'
 import { api } from '@/lib/api'
+import { getDateFnsLocale } from '@/lib/locale'
 
 export function TimelinePage() {
   const [selectedDate, setSelectedDate] = useState(new Date())
@@ -14,7 +15,7 @@ export function TimelinePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const navigate = useNavigate()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const fetchNotifications = useCallback(async (date) => {
     setLoading(true)
@@ -47,8 +48,9 @@ export function TimelinePage() {
     }
   }
 
-  const dateLabel = isToday(selectedDate) ? t('web.timeline.today') : format(selectedDate, 'EEEE')
-  const formattedDate = format(selectedDate, 'MMMM d, yyyy')
+  const locale = getDateFnsLocale(i18n.language)
+  const dateLabel = isToday(selectedDate) ? t('web.timeline.today') : format(selectedDate, 'EEEE', { locale })
+  const formattedDate = format(selectedDate, 'MMMM d, yyyy', { locale })
 
   return (
     <div className="flex flex-col h-full bg-gray-50">

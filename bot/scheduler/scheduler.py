@@ -6,7 +6,7 @@ from apscheduler.triggers.date import DateTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 from sqlalchemy import select
 
-from bot.database.models import DeliveryStatus, Notification, NotificationHistory, RecurrenceType
+from bot.database.models import DeliveryStatus, Notification, NotificationHistory, RecurrenceType, User
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +73,6 @@ async def _send_notification(notification_id: int, telegram_id: int) -> None:
             return
 
         # Determine user language
-        from bot.database.models import User
         user_result = await session.execute(select(User).where(User.telegram_id == telegram_id))
         user = user_result.scalar_one_or_none()
         lang = user.language_code if user else "en"
@@ -160,8 +159,6 @@ def remove_notification_job(notification_id: int) -> None:
 
 async def load_pending_notifications(session_factory) -> None:
     """Load all pending active notifications from DB and schedule them on startup."""
-    from bot.database.models import User
-
     async with session_factory() as session:
         result = await session.execute(
             select(Notification, User.telegram_id)
@@ -188,8 +185,6 @@ async def _check_unscheduled_notifications() -> None:
         return
     
     try:
-        from bot.database.models import User
-        
         # Get all currently scheduled notification IDs
         scheduled_ids = set()
         for job in _scheduler.get_jobs():

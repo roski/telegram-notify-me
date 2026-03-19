@@ -187,35 +187,38 @@ async def _check_unscheduled_notifications() -> None:
     if not _scheduler or not _session_factory:
         return
     
-    from bot.database.models import User
-    
-    # Get all currently scheduled notification IDs
-    scheduled_ids = set()
-    for job in _scheduler.get_jobs():
-        if job.id.startswith("notif_"):
-            try:
-                notif_id = int(job.id.split("_")[1])
-                scheduled_ids.add(notif_id)
-            except (ValueError, IndexError):
-                continue
-    
-    # Find active notifications with future next_run_at that aren't scheduled
-    async with _session_factory() as session:
-        result = await session.execute(
-            select(Notification, User.telegram_id)
-            .join(User, User.id == Notification.user_id)
-            .where(
-                Notification.is_active,
-                Notification.next_run_at > datetime.now(timezone.utc),
+    try:
+        from bot.database.models import User
+        
+        # Get all currently scheduled notification IDs
+        scheduled_ids = set()
+        for job in _scheduler.get_jobs():
+            if job.id.startswith("notif_"):
+                try:
+                    notif_id = int(job.id.split("_")[1])
+                    scheduled_ids.add(notif_id)
+                except (ValueError, IndexError):
+                    continue
+        
+        # Find active notifications with future next_run_at that aren't scheduled
+        async with _session_factory() as session:
+            result = await session.execute(
+                select(Notification, User.telegram_id)
+                .join(User, User.id == Notification.user_id)
+                .where(
+                    Notification.is_active,
+                    Notification.next_run_at > datetime.now(timezone.utc),
+                )
             )
-        )
-        rows = result.all()
-    
-    newly_scheduled = 0
-    for notif, telegram_id in rows:
-        if notif.id not in scheduled_ids:
-            await schedule_notification(notif, telegram_id)
-            newly_scheduled += 1
-    
-    if newly_scheduled > 0:
-        logger.info("Scheduled %d previously unscheduled notification(s)", newly_scheduled)
+            rows = result.all()
+        
+        newly_scheduled = 0
+        for notif, telegram_id in rows:
+            if notif.id not in scheduled_ids:
+                await schedule_notification(notif, telegram_id)
+                newly_scheduled += 1
+        
+        if newly_scheduled > 0:
+            logger.info("Scheduled %d previously unscheduled notification(s)", newly_scheduled)
+    except Exception as e:
+        logger.error("Error in periodic unscheduled notification check: %s", e, exc_info=True)

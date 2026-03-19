@@ -28,8 +28,6 @@ env/
 .DS_Store
 Thumbs.db
 
-# Docker
-.dockerignore
 
 # Logs
 *.log

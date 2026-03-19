@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, timezone
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.date import DateTrigger
+from apscheduler.triggers.interval import IntervalTrigger
 from sqlalchemy import select
 
 from bot.database.models import DeliveryStatus, Notification, NotificationHistory, RecurrenceType
@@ -20,6 +21,15 @@ def init_scheduler(bot, session_factory) -> AsyncIOScheduler:
     _session_factory = session_factory
     _scheduler = AsyncIOScheduler(timezone="UTC")
     _scheduler.start()
+    
+    # Add periodic task to check for unscheduled notifications (e.g., created via Web App)
+    _scheduler.add_job(
+        _check_unscheduled_notifications,
+        trigger=IntervalTrigger(seconds=30),
+        id="check_unscheduled",
+        replace_existing=True,
+    )
+    logger.info("Scheduler initialized with periodic unscheduled notification check")
     return _scheduler
 
 
@@ -166,3 +176,46 @@ async def load_pending_notifications(session_factory) -> None:
     for notif, telegram_id in rows:
         await schedule_notification(notif, telegram_id)
     logger.info("Loaded %d pending notification(s) from database", len(rows))
+
+
+async def _check_unscheduled_notifications() -> None:
+    """Periodic task to check for active notifications not yet scheduled in APScheduler.
+    
+    This handles notifications created via the Web App API, which don't trigger
+    scheduling immediately since the API runs in a separate process from the bot.
+    """
+    if not _scheduler or not _session_factory:
+        return
+    
+    from bot.database.models import User
+    
+    # Get all currently scheduled notification IDs
+    scheduled_ids = set()
+    for job in _scheduler.get_jobs():
+        if job.id.startswith("notif_"):
+            try:
+                notif_id = int(job.id.split("_")[1])
+                scheduled_ids.add(notif_id)
+            except (ValueError, IndexError):
+                continue
+    
+    # Find active notifications with future next_run_at that aren't scheduled
+    async with _session_factory() as session:
+        result = await session.execute(
+            select(Notification, User.telegram_id)
+            .join(User, User.id == Notification.user_id)
+            .where(
+                Notification.is_active,
+                Notification.next_run_at > datetime.now(timezone.utc),
+            )
+        )
+        rows = result.all()
+    
+    newly_scheduled = 0
+    for notif, telegram_id in rows:
+        if notif.id not in scheduled_ids:
+            await schedule_notification(notif, telegram_id)
+            newly_scheduled += 1
+    
+    if newly_scheduled > 0:
+        logger.info("Scheduled %d previously unscheduled notification(s)", newly_scheduled)

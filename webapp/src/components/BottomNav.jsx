@@ -1,5 +1,6 @@
 import { Clock, User } from 'lucide-react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 
 /**
@@ -8,10 +9,11 @@ import { cn } from '@/lib/utils'
 export function BottomNav() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  const { t } = useTranslation()
 
   const tabs = [
-    { path: '/', icon: Clock, label: 'Timeline' },
-    { path: '/settings', icon: User, label: 'Settings' },
+    { path: '/', icon: Clock, label: t('web.nav.timeline') },
+    { path: '/settings', icon: User, label: t('web.nav.settings') },
   ]
 
   return (

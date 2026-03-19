@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Bem-vindo(a), {name}!\n\nEscolha uma opção no menu abaixo:",
+  "main_menu": {
+    "create_notification": "➕ Criar Notificação",
+    "scheduled_notifications": "📅 Notificações Agendadas",
+    "configuration": "⚙️ Configurações",
+    "open_webapp": "🌐 Abrir aplicativo web"
+  },
+  "create": {
+    "start": "Vamos criar uma nova notificação!\n\nPasso 1/5 — Insira o <b>título</b> da notificação:",
+    "description": "Passo 2/5 — Insira a <b>descrição</b> da notificação:",
+    "date": "Passo 3/5 — Insira a <b>data</b> no formato <code>YYYY-MM-DD</code>\n(ex. <code>2025-12-31</code>):",
+    "date_calendar": "Passo 3/5 — Selecione a <b>data</b>:\n\n📅 Use o calendário ou toque em ✏️ para inserir manualmente.",
+    "date_manual_prompt": "✏️ Insira a data no formato <code>YYYY-MM-DD</code>\n(ex. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Inserir manualmente",
+    "time": "Passo 4/5 — Insira o <b>horário</b> no formato <code>HH:MM</code>\n(ex. <code>09:00</code>):",
+    "time_format_12": "Passo 4/5 — Selecione o <b>horário</b>:\n\nEscolha AM ou PM:",
+    "time_format_24": "Passo 4/5 — Selecione o <b>horário</b>:\n\nEscolha a <b>hora</b>:",
+    "time_select_hour": "Agora escolha a <b>hora</b>:",
+    "time_select_minute": "Agora escolha o <b>minuto</b>:",
+    "back": "⬅️ Voltar",
+    "recurrence": "Passo 5/5 — Escolha a <b>recorrência</b>:",
+    "confirm": "✅ <b>Notificação criada!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Formato de data inválido. Use <code>YYYY-MM-DD</code> (ex. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Formato de horário inválido. Use <code>HH:MM</code> (ex. <code>09:00</code>):",
+    "date_in_past": "❌ A data e o horário devem ser no futuro. Por favor, tente novamente:",
+    "cancelled": "❌ Criação de notificação cancelada."
+  },
+  "recurrence": {
+    "once": "Uma vez",
+    "daily": "Diariamente",
+    "weekly": "Semanalmente",
+    "monthly": "Mensalmente",
+    "yearly": "Anualmente"
+  },
+  "scheduled": {
+    "title": "📅 <b>Notificações Agendadas</b>",
+    "week": "📆 Próximos 7 dias",
+    "month": "📆 Próximos 30 dias",
+    "year": "📆 Próximos 365 dias",
+    "empty": "Nenhuma notificação encontrada para este período.",
+    "view_month": "🗓 Ver Mês",
+    "view_year": "📅 Ver Ano",
+    "back": "⬅️ Voltar"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Data:</b> {date}\n⏰ <b>Horário:</b> {time}\n🔁 <b>Recorrência:</b> {recurrence}\n📊 <b>Enviado:</b> {count} vez/vezes",
+    "edit": "✏️ Editar",
+    "delete": "🗑 Excluir",
+    "back": "⬅️ Voltar",
+    "deleted": "🗑 Notificação excluída.",
+    "edit_field": "O que você gostaria de editar?",
+    "edit_title": "Insira o novo <b>título</b>:",
+    "edit_description": "Insira a nova <b>descrição</b>:",
+    "edit_date": "Insira a nova <b>data</b> no formato <code>YYYY-MM-DD</code>:",
+    "edit_time": "Insira o novo <b>horário</b> no formato <code>HH:MM</code>:",
+    "edit_recurrence": "Escolha a nova <b>recorrência</b>:",
+    "updated": "✅ Notificação atualizada!",
+    "not_found": "❌ Notificação não encontrada."
+  },
+  "send": {
+    "message": "🔔 <b>Lembrete!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Cancelar",
+  "config": {
+    "menu": "⚙️ <b>Configurações</b>\n\nEscolha uma opção:",
+    "change_timezone": "🕐 Alterar Fuso Horário",
+    "change_language": "🌐 Alterar Idioma",
+    "language_menu": "🌐 Selecione seu idioma:",
+    "language_set": "✅ Idioma alterado para <b>{language}</b>.",
+    "back": "⬅️ Voltar"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Para enviar notificações no horário correto, configure seu fuso horário.\n\nEscolha uma opção:",
+    "share_location_button": "📍 Compartilhar Localização",
+    "select_manually_button": "🗺 Selecionar manualmente",
+    "detected": "✅ Seu fuso horário foi definido como <b>{timezone}</b>.",
+    "detection_failed": "❌ Não foi possível detectar o fuso horário pela localização. Por favor, selecione manualmente.",
+    "select_region": "🌍 Selecione sua região:",
+    "select_city": "🏙 Selecione sua cidade em <b>{region}</b>:",
+    "saved": "✅ Fuso horário definido como <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Voltar às regiões"
+  },
+  "edit_fields": {
+    "title": "📝 Título",
+    "description": "📄 Descrição",
+    "date": "🗓 Data",
+    "time": "⏰ Horário",
+    "recurrence": "🔁 Recorrência"
+  },
+  "remind_later": {
+    "5min": "⏰ Lembrar em 5 minutos",
+    "10min": "⏰ Lembrar em 10 minutos",
+    "1day": "⏰ Lembrar em 1 dia",
+    "1month": "⏰ Lembrar em 1 mês",
+    "1year": "⏰ Lembrar em 1 ano",
+    "confirmed": "✅ Lembrete remarcado para {time}.",
+    "button": "🔔 Lembre-me",
+    "will_remind": "✅ Iremos lembrá-lo sobre este evento em {delay}",
+    "delay_5min": "5 minutos",
+    "delay_10min": "10 minutos",
+    "delay_1day": "1 dia",
+    "delay_1month": "1 mês",
+    "delay_1year": "1 ano"
+  },
+  "commands": {
+    "create": "Criar uma nova notificação",
+    "notifications": "Ver notificações agendadas",
+    "settings": "Configurações de fuso horário e idioma"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Linha do tempo",
+      "settings": "Configurações"
+    },
+    "timeline": {
+      "today": "Hoje",
+      "no_notifications": "Sem notificações",
+      "tap_to_add": "Toque em + para adicionar",
+      "retry": "Tentar novamente",
+      "delete_notification": "Excluir notificação"
+    },
+    "create": {
+      "page_title": "Nova notificação",
+      "title_label": "Título",
+      "title_required": "* obrigatório",
+      "title_placeholder": "ex. Treino matinal",
+      "description_label": "Descrição (opcional)",
+      "description_placeholder": "Adicione uma descrição curta…",
+      "datetime_label": "Data e hora",
+      "repeat_label": "Repetir",
+      "submit": "Adicionar notificação",
+      "submitting": "Salvando…",
+      "back": "Voltar",
+      "error_title_required": "O título é obrigatório.",
+      "error_datetime_required": "A data e hora são obrigatórias.",
+      "error_invalid_datetime": "Data / hora inválida.",
+      "error_future_required": "O horário da notificação deve ser no futuro."
+    },
+    "settings": {
+      "page_title": "Configurações",
+      "greeting": "Olá, {name}!",
+      "language_section": "Idioma",
+      "timezone_section": "Fuso horário",
+      "timezone_hint": "O fuso horário é definido pelo bot do Telegram. Use /settings para alterá-lo.",
+      "language_updated": "Idioma atualizado ✓",
+      "language_update_failed": "Falha ao atualizar o idioma"
+    }
+  }
+}

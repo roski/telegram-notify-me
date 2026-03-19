@@ -1,4 +1,5 @@
 import { Trash2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 
 /**
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils'
  * @param {{ notification: object, onDelete: (id: number) => void }} props
  */
 function NotificationCard({ notification, onDelete }) {
+  const { t } = useTranslation()
   const isPast = new Date(notification.scheduled_at) < new Date()
 
   return (
@@ -25,7 +27,7 @@ function NotificationCard({ notification, onDelete }) {
           <button
             onClick={() => onDelete(notification.id)}
             className="text-gray-300 hover:text-red-400 transition-colors"
-            aria-label="Delete notification"
+            aria-label={t('web.timeline.delete_notification')}
           >
             <Trash2 size={14} />
           </button>
@@ -36,7 +38,7 @@ function NotificationCard({ notification, onDelete }) {
       )}
       {notification.recurrence_type && notification.recurrence_type !== 'once' && (
         <span className="mt-2 inline-block text-xs text-blue-400 bg-blue-50 px-2 py-0.5 rounded-full capitalize">
-          🔁 {notification.recurrence_type}
+          🔁 {t(`recurrence.${notification.recurrence_type}`)}
         </span>
       )}
     </div>
@@ -49,6 +51,8 @@ function NotificationCard({ notification, onDelete }) {
  * @param {{ notifications: object[], onDelete: (id: number) => void, loading: boolean }} props
  */
 export function Timeline({ notifications, onDelete, loading }) {
+  const { t } = useTranslation()
+
   if (loading) {
     return (
       <div className="flex flex-col gap-3 px-4 py-4">
@@ -69,8 +73,8 @@ export function Timeline({ notifications, onDelete, loading }) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-gray-400">
         <span className="text-4xl mb-3">🔔</span>
-        <p className="text-base font-medium">No notifications</p>
-        <p className="text-sm mt-1">Tap + to add one</p>
+        <p className="text-base font-medium">{t('web.timeline.no_notifications')}</p>
+        <p className="text-sm mt-1">{t('web.timeline.tap_to_add')}</p>
       </div>
     )
   }

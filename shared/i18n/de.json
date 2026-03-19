@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Willkommen, {name}!\n\nWähle eine Option aus dem Menü unten:",
+  "main_menu": {
+    "create_notification": "➕ Benachrichtigung erstellen",
+    "scheduled_notifications": "📅 Geplante Benachrichtigungen",
+    "configuration": "⚙️ Konfiguration",
+    "open_webapp": "🌐 Web-App öffnen"
+  },
+  "create": {
+    "start": "Lass uns eine neue Benachrichtigung erstellen!\n\nSchritt 1/5 — Gib den <b>Titel</b> der Benachrichtigung ein:",
+    "description": "Schritt 2/5 — Gib die <b>Beschreibung</b> der Benachrichtigung ein:",
+    "date": "Schritt 3/5 — Gib das <b>Datum</b> im Format <code>YYYY-MM-DD</code> ein\n(z. B. <code>2025-12-31</code>):",
+    "date_calendar": "Schritt 3/5 — Wähle das <b>Datum</b>:\n\n📅 Nutze den Kalender oder tippe ✏️ für manuelle Eingabe.",
+    "date_manual_prompt": "✏️ Datum im Format <code>YYYY-MM-DD</code> eingeben\n(z. B. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Manuell eingeben",
+    "time": "Schritt 4/5 — Gib die <b>Uhrzeit</b> im Format <code>HH:MM</code> ein\n(z. B. <code>09:00</code>):",
+    "time_format_12": "Schritt 4/5 — Wähle die <b>Uhrzeit</b>:\n\nWähle AM oder PM:",
+    "time_format_24": "Schritt 4/5 — Wähle die <b>Uhrzeit</b>:\n\nWähle die <b>Stunde</b>:",
+    "time_select_hour": "Jetzt die <b>Stunde</b> wählen:",
+    "time_select_minute": "Jetzt die <b>Minuten</b> wählen:",
+    "back": "⬅️ Zurück",
+    "recurrence": "Schritt 5/5 — Wähle die <b>Wiederholung</b>:",
+    "confirm": "✅ <b>Benachrichtigung erstellt!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Ungültiges Datumsformat. Bitte verwende <code>YYYY-MM-DD</code> (z. B. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Ungültiges Zeitformat. Bitte verwende <code>HH:MM</code> (z. B. <code>09:00</code>):",
+    "date_in_past": "❌ Datum und Uhrzeit müssen in der Zukunft liegen. Bitte versuche es erneut:",
+    "cancelled": "❌ Erstellung der Benachrichtigung abgebrochen."
+  },
+  "recurrence": {
+    "once": "Einmalig",
+    "daily": "Täglich",
+    "weekly": "Wöchentlich",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich"
+  },
+  "scheduled": {
+    "title": "📅 <b>Geplante Benachrichtigungen</b>",
+    "week": "📆 Nächste 7 Tage",
+    "month": "📆 Nächste 30 Tage",
+    "year": "📆 Nächste 365 Tage",
+    "empty": "Keine Benachrichtigungen für diesen Zeitraum gefunden.",
+    "view_month": "🗓 Monat anzeigen",
+    "view_year": "📅 Jahr anzeigen",
+    "back": "⬅️ Zurück"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Datum:</b> {date}\n⏰ <b>Uhrzeit:</b> {time}\n🔁 <b>Wiederholung:</b> {recurrence}\n📊 <b>Gesendet:</b> {count} Mal",
+    "edit": "✏️ Bearbeiten",
+    "delete": "🗑 Löschen",
+    "back": "⬅️ Zurück",
+    "deleted": "🗑 Benachrichtigung gelöscht.",
+    "edit_field": "Was möchtest du bearbeiten?",
+    "edit_title": "Neuen <b>Titel</b> eingeben:",
+    "edit_description": "Neue <b>Beschreibung</b> eingeben:",
+    "edit_date": "Neues <b>Datum</b> im Format <code>YYYY-MM-DD</code> eingeben:",
+    "edit_time": "Neue <b>Uhrzeit</b> im Format <code>HH:MM</code> eingeben:",
+    "edit_recurrence": "Neue <b>Wiederholung</b> wählen:",
+    "updated": "✅ Benachrichtigung aktualisiert!",
+    "not_found": "❌ Benachrichtigung nicht gefunden."
+  },
+  "send": {
+    "message": "🔔 <b>Erinnerung!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Abbrechen",
+  "config": {
+    "menu": "⚙️ <b>Konfiguration</b>\n\nWähle eine Option:",
+    "change_timezone": "🕐 Zeitzone ändern",
+    "change_language": "🌐 Sprache ändern",
+    "language_menu": "🌐 Sprache auswählen:",
+    "language_set": "✅ Sprache auf <b>{language}</b> geändert.",
+    "back": "⬅️ Zurück"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Um Benachrichtigungen zur richtigen Zeit zu senden, bitte stelle deine Zeitzone ein.\n\nWähle eine Option:",
+    "share_location_button": "📍 Standort teilen",
+    "select_manually_button": "🗺 Manuell auswählen",
+    "detected": "✅ Deine Zeitzone wurde auf <b>{timezone}</b> festgelegt.",
+    "detection_failed": "❌ Zeitzone konnte nicht vom Standort erkannt werden. Bitte manuell auswählen.",
+    "select_region": "🌍 Region auswählen:",
+    "select_city": "🏙 Stadt in <b>{region}</b> auswählen:",
+    "saved": "✅ Zeitzone auf <b>{timezone}</b> festgelegt.",
+    "back_to_regions": "⬅️ Zurück zu Regionen"
+  },
+  "edit_fields": {
+    "title": "📝 Titel",
+    "description": "📄 Beschreibung",
+    "date": "🗓 Datum",
+    "time": "⏰ Uhrzeit",
+    "recurrence": "🔁 Wiederholung"
+  },
+  "remind_later": {
+    "5min": "⏰ In 5 Minuten erinnern",
+    "10min": "⏰ In 10 Minuten erinnern",
+    "1day": "⏰ In 1 Tag erinnern",
+    "1month": "⏰ In 1 Monat erinnern",
+    "1year": "⏰ In 1 Jahr erinnern",
+    "confirmed": "✅ Erinnerung auf {time} verschoben.",
+    "button": "🔔 Erinnere mich",
+    "will_remind": "✅ Wir erinnern Sie in {delay} an dieses Ereignis",
+    "delay_5min": "5 Minuten",
+    "delay_10min": "10 Minuten",
+    "delay_1day": "1 Tag",
+    "delay_1month": "1 Monat",
+    "delay_1year": "1 Jahr"
+  },
+  "commands": {
+    "create": "Neue Benachrichtigung erstellen",
+    "notifications": "Geplante Benachrichtigungen anzeigen",
+    "settings": "Zeitzone und Spracheinstellungen"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Zeitleiste",
+      "settings": "Einstellungen"
+    },
+    "timeline": {
+      "today": "Heute",
+      "no_notifications": "Keine Benachrichtigungen",
+      "tap_to_add": "Tippe + um eine hinzuzufügen",
+      "retry": "Erneut versuchen",
+      "delete_notification": "Benachrichtigung löschen"
+    },
+    "create": {
+      "page_title": "Neue Benachrichtigung",
+      "title_label": "Titel",
+      "title_required": "* erforderlich",
+      "title_placeholder": "z. B. Morgensport",
+      "description_label": "Beschreibung (optional)",
+      "description_placeholder": "Füge eine kurze Beschreibung hinzu…",
+      "datetime_label": "Datum & Uhrzeit",
+      "repeat_label": "Wiederholen",
+      "submit": "Benachrichtigung hinzufügen",
+      "submitting": "Speichern…",
+      "back": "Zurück",
+      "error_title_required": "Titel ist erforderlich.",
+      "error_datetime_required": "Datum und Uhrzeit sind erforderlich.",
+      "error_invalid_datetime": "Ungültiges Datum / Uhrzeit.",
+      "error_future_required": "Die Benachrichtigungszeit muss in der Zukunft liegen."
+    },
+    "settings": {
+      "page_title": "Einstellungen",
+      "greeting": "Hallo, {name}!",
+      "language_section": "Sprache",
+      "timezone_section": "Zeitzone",
+      "timezone_hint": "Die Zeitzone wird über den Telegram-Bot festgelegt. Verwende /settings, um sie zu ändern.",
+      "language_updated": "Sprache aktualisiert ✓",
+      "language_update_failed": "Sprache konnte nicht aktualisiert werden"
+    }
+  }
+}

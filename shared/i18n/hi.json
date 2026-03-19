@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 स्वागत है, {name}!\n\nनीचे मेनू से एक विकल्प चुनें:",
+  "main_menu": {
+    "create_notification": "➕ सूचना बनाएं",
+    "scheduled_notifications": "📅 निर्धारित सूचनाएं",
+    "configuration": "⚙️ कॉन्फ़िगरेशन",
+    "open_webapp": "🌐 वेब ऐप खोलें"
+  },
+  "create": {
+    "start": "चलिए एक नई सूचना बनाते हैं!\n\nचरण 1/5 — सूचना का <b>शीर्षक</b> दर्ज करें:",
+    "description": "चरण 2/5 — सूचना का <b>विवरण</b> दर्ज करें:",
+    "date": "चरण 3/5 — <code>YYYY-MM-DD</code> प्रारूप में <b>तारीख</b> दर्ज करें\n(उदा. <code>2025-12-31</code>):",
+    "date_calendar": "चरण 3/5 — <b>तारीख</b> चुनें:\n\n📅 कैलेंडर का उपयोग करें या ✏️ दबाएं।",
+    "date_manual_prompt": "✏️ तारीख <code>YYYY-MM-DD</code> प्रारूप में दर्ज करें\n(उदा. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ मैन्युअल रूप से दर्ज करें",
+    "time": "चरण 4/5 — <code>HH:MM</code> प्रारूप में <b>समय</b> दर्ज करें\n(उदा. <code>09:00</code>):",
+    "time_format_12": "चरण 4/5 — <b>समय</b> चुनें:\n\nAM या PM चुनें:",
+    "time_format_24": "चरण 4/5 — <b>समय</b> चुनें:\n\n<b>घंटा</b> चुनें:",
+    "time_select_hour": "अब <b>घंटा</b> चुनें:",
+    "time_select_minute": "अब <b>मिनट</b> चुनें:",
+    "back": "⬅️ वापस",
+    "recurrence": "चरण 5/5 — <b>पुनरावृत्ति</b> चुनें:",
+    "confirm": "✅ <b>सूचना बनाई गई!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ अमान्य तारीख प्रारूप। कृपया <code>YYYY-MM-DD</code> का उपयोग करें (उदा. <code>2025-12-31</code>):",
+    "invalid_time": "❌ अमान्य समय प्रारूप। कृपया <code>HH:MM</code> का उपयोग करें (उदा. <code>09:00</code>):",
+    "date_in_past": "❌ तारीख और समय भविष्य में होना चाहिए। कृपया पुनः प्रयास करें:",
+    "cancelled": "❌ सूचना निर्माण रद्द किया गया।"
+  },
+  "recurrence": {
+    "once": "एक बार",
+    "daily": "दैनिक",
+    "weekly": "साप्ताहिक",
+    "monthly": "मासिक",
+    "yearly": "वार्षिक"
+  },
+  "scheduled": {
+    "title": "📅 <b>निर्धारित सूचनाएं</b>",
+    "week": "📆 अगले 7 दिन",
+    "month": "📆 अगले 30 दिन",
+    "year": "📆 अगले 365 दिन",
+    "empty": "इस अवधि के लिए कोई सूचना नहीं मिली।",
+    "view_month": "🗓 महीना देखें",
+    "view_year": "📅 वर्ष देखें",
+    "back": "⬅️ वापस"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>तारीख:</b> {date}\n⏰ <b>समय:</b> {time}\n🔁 <b>पुनरावृत्ति:</b> {recurrence}\n📊 <b>भेजा गया:</b> {count} बार",
+    "edit": "✏️ संपादित करें",
+    "delete": "🗑 हटाएं",
+    "back": "⬅️ वापस",
+    "deleted": "🗑 सूचना हटाई गई।",
+    "edit_field": "आप क्या संपादित करना चाहते हैं?",
+    "edit_title": "नया <b>शीर्षक</b> दर्ज करें:",
+    "edit_description": "नया <b>विवरण</b> दर्ज करें:",
+    "edit_date": "<code>YYYY-MM-DD</code> प्रारूप में नई <b>तारीख</b> दर्ज करें:",
+    "edit_time": "<code>HH:MM</code> प्रारूप में नया <b>समय</b> दर्ज करें:",
+    "edit_recurrence": "नई <b>पुनरावृत्ति</b> चुनें:",
+    "updated": "✅ सूचना अपडेट की गई!",
+    "not_found": "❌ सूचना नहीं मिली।"
+  },
+  "send": {
+    "message": "🔔 <b>अनुस्मारक!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ रद्द करें",
+  "config": {
+    "menu": "⚙️ <b>कॉन्फ़िगरेशन</b>\n\nएक विकल्प चुनें:",
+    "change_timezone": "🕐 समयक्षेत्र बदलें",
+    "change_language": "🌐 भाषा बदलें",
+    "language_menu": "🌐 अपनी भाषा चुनें:",
+    "language_set": "✅ भाषा <b>{language}</b> में बदल दी गई।",
+    "back": "⬅️ वापस"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 सही समय पर सूचनाएं भेजने के लिए, कृपया अपना समयक्षेत्र सेट करें।\n\nएक विकल्प चुनें:",
+    "share_location_button": "📍 स्थान साझा करें",
+    "select_manually_button": "🗺 मैन्युअल रूप से चुनें",
+    "detected": "✅ आपका समयक्षेत्र <b>{timezone}</b> पर सेट किया गया है।",
+    "detection_failed": "❌ स्थान से समयक्षेत्र का पता नहीं लगाया जा सका। कृपया मैन्युअल रूप से चुनें।",
+    "select_region": "🌍 अपना क्षेत्र चुनें:",
+    "select_city": "🏙 <b>{region}</b> में अपना शहर चुनें:",
+    "saved": "✅ समयक्षेत्र <b>{timezone}</b> पर सेट किया गया।",
+    "back_to_regions": "⬅️ क्षेत्रों पर वापस"
+  },
+  "edit_fields": {
+    "title": "📝 शीर्षक",
+    "description": "📄 विवरण",
+    "date": "🗓 तारीख",
+    "time": "⏰ समय",
+    "recurrence": "🔁 पुनरावृत्ति"
+  },
+  "remind_later": {
+    "5min": "⏰ 5 मिनट में याद दिलाएं",
+    "10min": "⏰ 10 मिनट में याद दिलाएं",
+    "1day": "⏰ 1 दिन में याद दिलाएं",
+    "1month": "⏰ 1 महीने में याद दिलाएं",
+    "1year": "⏰ 1 साल में याद दिलाएं",
+    "confirmed": "✅ अनुस्मारक {time} के लिए पुनर्निर्धारित किया गया।",
+    "button": "🔔 मुझे याद दिलाओ",
+    "will_remind": "✅ हम {delay} में इस इवेंट की याद दिलाएंगे",
+    "delay_5min": "5 मिनट",
+    "delay_10min": "10 मिनट",
+    "delay_1day": "1 दिन",
+    "delay_1month": "1 महीना",
+    "delay_1year": "1 साल"
+  },
+  "commands": {
+    "create": "नई सूचना बनाएं",
+    "notifications": "निर्धारित सूचनाएं देखें",
+    "settings": "टाइमज़ोन और भाषा सेटिंग"
+  },
+  "web": {
+    "nav": {
+      "timeline": "टाइमलाइन",
+      "settings": "सेटिंग्स"
+    },
+    "timeline": {
+      "today": "आज",
+      "no_notifications": "कोई सूचना नहीं",
+      "tap_to_add": "एक जोड़ने के लिए + दबाएँ",
+      "retry": "पुनः प्रयास करें",
+      "delete_notification": "सूचना हटाएँ"
+    },
+    "create": {
+      "page_title": "नई सूचना",
+      "title_label": "शीर्षक",
+      "title_required": "* आवश्यक",
+      "title_placeholder": "जैसे: सुबह का व्यायाम",
+      "description_label": "विवरण (वैकल्पिक)",
+      "description_placeholder": "एक संक्षिप्त विवरण जोड़ें…",
+      "datetime_label": "दिनांक और समय",
+      "repeat_label": "दोहराएँ",
+      "submit": "सूचना जोड़ें",
+      "submitting": "सहेजा जा रहा है…",
+      "back": "वापस",
+      "error_title_required": "शीर्षक आवश्यक है।",
+      "error_datetime_required": "दिनांक और समय आवश्यक हैं।",
+      "error_invalid_datetime": "अमान्य दिनांक / समय।",
+      "error_future_required": "सूचना का समय भविष्य में होना चाहिए।"
+    },
+    "settings": {
+      "page_title": "सेटिंग्स",
+      "greeting": "नमस्ते, {name}!",
+      "language_section": "भाषा",
+      "timezone_section": "समय क्षेत्र",
+      "timezone_hint": "समय क्षेत्र Telegram बोट के माध्यम से सेट किया जाता है। इसे बदलने के लिए /settings का उपयोग करें।",
+      "language_updated": "भाषा अपडेट हुई ✓",
+      "language_update_failed": "भाषा अपडेट करने में विफल"
+    }
+  }
+}

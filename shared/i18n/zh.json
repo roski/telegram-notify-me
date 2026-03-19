@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 欢迎，{name}！\n\n请从下方菜单选择一个选项：",
+  "main_menu": {
+    "create_notification": "➕ 创建通知",
+    "scheduled_notifications": "📅 已计划的通知",
+    "configuration": "⚙️ 配置",
+    "open_webapp": "🌐 打开网页应用"
+  },
+  "create": {
+    "start": "让我们创建一个新通知！\n\n第 1/5 步 — 输入通知<b>标题</b>：",
+    "description": "第 2/5 步 — 输入通知<b>描述</b>：",
+    "date": "第 3/5 步 — 以 <code>YYYY-MM-DD</code> 格式输入<b>日期</b>\n（例如 <code>2025-12-31</code>）：",
+    "date_calendar": "第 3/5 步 — 选择<b>日期</b>：\n\n📅 使用日历，或点击 ✏️ 手动输入日期。",
+    "date_manual_prompt": "✏️ 请输入日期，格式为 <code>YYYY-MM-DD</code>\n（例如 <code>2025-12-31</code>）：",
+    "enter_manually": "✏️ 手动输入",
+    "time": "第 4/5 步 — 以 <code>HH:MM</code> 格式输入<b>时间</b>\n（例如 <code>09:00</code>）：",
+    "time_format_12": "第 4/5 步 — 选择<b>时间</b>：\n\n选择上午或下午：",
+    "time_format_24": "第 4/5 步 — 选择<b>时间</b>：\n\n选择<b>小时</b>：",
+    "time_select_hour": "现在选择<b>小时</b>：",
+    "time_select_minute": "现在选择<b>分钟</b>：",
+    "back": "⬅️ 返回",
+    "recurrence": "第 5/5 步 — 选择<b>重复方式</b>：",
+    "confirm": "✅ <b>通知已创建！</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ 日期格式无效。请使用 <code>YYYY-MM-DD</code> 格式（例如 <code>2025-12-31</code>）：",
+    "invalid_time": "❌ 时间格式无效。请使用 <code>HH:MM</code> 格式（例如 <code>09:00</code>）：",
+    "date_in_past": "❌ 日期和时间必须在未来。请重试：",
+    "cancelled": "❌ 通知创建已取消。"
+  },
+  "recurrence": {
+    "once": "一次",
+    "daily": "每天",
+    "weekly": "每周",
+    "monthly": "每月",
+    "yearly": "每年"
+  },
+  "scheduled": {
+    "title": "📅 <b>已计划的通知</b>",
+    "week": "📆 未来 7 天",
+    "month": "📆 未来 30 天",
+    "year": "📆 未来 365 天",
+    "empty": "此时间段内未找到通知。",
+    "view_month": "🗓 查看月份",
+    "view_year": "📅 查看年份",
+    "back": "⬅️ 返回"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>日期：</b> {date}\n⏰ <b>时间：</b> {time}\n🔁 <b>重复：</b> {recurrence}\n📊 <b>已发送：</b> {count} 次",
+    "edit": "✏️ 编辑",
+    "delete": "🗑 删除",
+    "back": "⬅️ 返回",
+    "deleted": "🗑 通知已删除。",
+    "edit_field": "您想编辑什么？",
+    "edit_title": "输入新的<b>标题</b>：",
+    "edit_description": "输入新的<b>描述</b>：",
+    "edit_date": "以 <code>YYYY-MM-DD</code> 格式输入新的<b>日期</b>：",
+    "edit_time": "以 <code>HH:MM</code> 格式输入新的<b>时间</b>：",
+    "edit_recurrence": "选择新的<b>重复方式</b>：",
+    "updated": "✅ 通知已更新！",
+    "not_found": "❌ 未找到通知。"
+  },
+  "send": {
+    "message": "🔔 <b>提醒！</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ 取消",
+  "config": {
+    "menu": "⚙️ <b>配置</b>\n\n选择一个选项：",
+    "change_timezone": "🕐 更改时区",
+    "change_language": "🌐 更改语言",
+    "language_menu": "🌐 选择您的语言：",
+    "language_set": "✅ 语言已更改为 <b>{language}</b>。",
+    "back": "⬅️ 返回"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 为了在正确的时间发送通知，请设置您的时区。\n\n选择一个选项：",
+    "share_location_button": "📍 分享位置",
+    "select_manually_button": "🗺 手动选择",
+    "detected": "✅ 您的时区已设置为 <b>{timezone}</b>。",
+    "detection_failed": "❌ 无法从位置检测时区。请手动选择。",
+    "select_region": "🌍 选择您的地区：",
+    "select_city": "🏙 在 <b>{region}</b> 中选择您的城市：",
+    "saved": "✅ 时区已设置为 <b>{timezone}</b>。",
+    "back_to_regions": "⬅️ 返回地区"
+  },
+  "edit_fields": {
+    "title": "📝 标题",
+    "description": "📄 描述",
+    "date": "🗓 日期",
+    "time": "⏰ 时间",
+    "recurrence": "🔁 重复"
+  },
+  "remind_later": {
+    "5min": "⏰ 5分钟后提醒",
+    "10min": "⏰ 10分钟后提醒",
+    "1day": "⏰ 1天后提醒",
+    "1month": "⏰ 1个月后提醒",
+    "1year": "⏰ 1年后提醒",
+    "confirmed": "✅ 提醒已重新安排至 {time}。",
+    "button": "🔔 提醒我",
+    "will_remind": "✅ 我们将在 {delay} 后提醒您此事件",
+    "delay_5min": "5分钟",
+    "delay_10min": "10分钟",
+    "delay_1day": "1天",
+    "delay_1month": "1个月",
+    "delay_1year": "1年"
+  },
+  "commands": {
+    "create": "创建新通知",
+    "notifications": "查看已计划的通知",
+    "settings": "时区和语言设置"
+  },
+  "web": {
+    "nav": {
+      "timeline": "时间轴",
+      "settings": "设置"
+    },
+    "timeline": {
+      "today": "今天",
+      "no_notifications": "没有通知",
+      "tap_to_add": "点击 + 添加一个",
+      "retry": "重试",
+      "delete_notification": "删除通知"
+    },
+    "create": {
+      "page_title": "新建通知",
+      "title_label": "标题",
+      "title_required": "* 必填",
+      "title_placeholder": "例如：早晨锻炼",
+      "description_label": "描述（可选）",
+      "description_placeholder": "添加简短描述…",
+      "datetime_label": "日期和时间",
+      "repeat_label": "重复",
+      "submit": "添加通知",
+      "submitting": "保存中…",
+      "back": "返回",
+      "error_title_required": "标题不能为空。",
+      "error_datetime_required": "日期和时间不能为空。",
+      "error_invalid_datetime": "日期 / 时间无效。",
+      "error_future_required": "通知时间必须在未来。"
+    },
+    "settings": {
+      "page_title": "设置",
+      "greeting": "你好，{name}！",
+      "language_section": "语言",
+      "timezone_section": "时区",
+      "timezone_hint": "时区通过 Telegram 机器人设置。使用 /settings 来更改。",
+      "language_updated": "语言已更新 ✓",
+      "language_update_failed": "更新语言失败"
+    }
+  }
+}

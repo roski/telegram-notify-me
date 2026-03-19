@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Добро пожаловать, {name}!\n\nВыберите опцию из меню ниже:",
+  "main_menu": {
+    "create_notification": "➕ Создать уведомление",
+    "scheduled_notifications": "📅 Запланированные уведомления",
+    "configuration": "⚙️ Настройки",
+    "open_webapp": "🌐 Открыть веб-приложение"
+  },
+  "create": {
+    "start": "Давайте создадим новое уведомление!\n\nШаг 1/5 — Введите <b>название</b> уведомления:",
+    "description": "Шаг 2/5 — Введите <b>описание</b> уведомления:",
+    "date": "Шаг 3/5 — Введите <b>дату</b> в формате <code>YYYY-MM-DD</code>\n(например, <code>2025-12-31</code>):",
+    "date_calendar": "Шаг 3/5 — Выберите <b>дату</b>:\n\n📅 Используйте календарь или нажмите ✏️ для ручного ввода.",
+    "date_manual_prompt": "✏️ Введите дату в формате <code>YYYY-MM-DD</code>\n(например, <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Ввести вручную",
+    "time": "Шаг 4/5 — Введите <b>время</b> в формате <code>HH:MM</code>\n(например, <code>09:00</code>):",
+    "time_format_12": "Шаг 4/5 — Выберите <b>время</b>:\n\nВыберите AM или PM:",
+    "time_format_24": "Шаг 4/5 — Выберите <b>время</b>:\n\nВыберите <b>час</b>:",
+    "time_select_hour": "Теперь выберите <b>час</b>:",
+    "time_select_minute": "Теперь выберите <b>минуты</b>:",
+    "back": "⬅️ Назад",
+    "recurrence": "Шаг 5/5 — Выберите <b>повторение</b>:",
+    "confirm": "✅ <b>Уведомление создано!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Неверный формат даты. Используйте <code>YYYY-MM-DD</code> (например, <code>2025-12-31</code>):",
+    "invalid_time": "❌ Неверный формат времени. Используйте <code>HH:MM</code> (например, <code>09:00</code>):",
+    "date_in_past": "❌ Дата и время должны быть в будущем. Попробуйте ещё раз:",
+    "cancelled": "❌ Создание уведомления отменено."
+  },
+  "recurrence": {
+    "once": "Однократно",
+    "daily": "Ежедневно",
+    "weekly": "Еженедельно",
+    "monthly": "Ежемесячно",
+    "yearly": "Ежегодно"
+  },
+  "scheduled": {
+    "title": "📅 <b>Запланированные уведомления</b>",
+    "week": "📆 Следующие 7 дней",
+    "month": "📆 Следующие 30 дней",
+    "year": "📆 Следующие 365 дней",
+    "empty": "Уведомлений за этот период не найдено.",
+    "view_month": "🗓 Просмотр месяца",
+    "view_year": "📅 Просмотр года",
+    "back": "⬅️ Назад"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Дата:</b> {date}\n⏰ <b>Время:</b> {time}\n🔁 <b>Повторение:</b> {recurrence}\n📊 <b>Отправлено:</b> {count} раз(а)",
+    "edit": "✏️ Редактировать",
+    "delete": "🗑 Удалить",
+    "back": "⬅️ Назад",
+    "deleted": "🗑 Уведомление удалено.",
+    "edit_field": "Что вы хотите изменить?",
+    "edit_title": "Введите новое <b>название</b>:",
+    "edit_description": "Введите новое <b>описание</b>:",
+    "edit_date": "Введите новую <b>дату</b> в формате <code>YYYY-MM-DD</code>:",
+    "edit_time": "Введите новое <b>время</b> в формате <code>HH:MM</code>:",
+    "edit_recurrence": "Выберите новое <b>повторение</b>:",
+    "updated": "✅ Уведомление обновлено!",
+    "not_found": "❌ Уведомление не найдено."
+  },
+  "send": {
+    "message": "🔔 <b>Напоминание!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Отмена",
+  "config": {
+    "menu": "⚙️ <b>Настройки</b>\n\nВыберите опцию:",
+    "change_timezone": "🕐 Изменить часовой пояс",
+    "change_language": "🌐 Изменить язык",
+    "language_menu": "🌐 Выберите язык:",
+    "language_set": "✅ Язык изменён на <b>{language}</b>.",
+    "back": "⬅️ Назад"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Для отправки уведомлений в нужное время, пожалуйста, укажите свой часовой пояс.\n\nВыберите опцию:",
+    "share_location_button": "📍 Поделиться местоположением",
+    "select_manually_button": "🗺 Выбрать вручную",
+    "detected": "✅ Ваш часовой пояс установлен: <b>{timezone}</b>.",
+    "detection_failed": "❌ Не удалось определить часовой пояс по местоположению. Пожалуйста, выберите вручную.",
+    "select_region": "🌍 Выберите регион:",
+    "select_city": "🏙 Выберите город в регионе <b>{region}</b>:",
+    "saved": "✅ Часовой пояс установлен: <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Назад к регионам"
+  },
+  "edit_fields": {
+    "title": "📝 Название",
+    "description": "📄 Описание",
+    "date": "🗓 Дата",
+    "time": "⏰ Время",
+    "recurrence": "🔁 Повторение"
+  },
+  "remind_later": {
+    "5min": "⏰ Напомнить через 5 минут",
+    "10min": "⏰ Напомнить через 10 минут",
+    "1day": "⏰ Напомнить через 1 день",
+    "1month": "⏰ Напомнить через 1 месяц",
+    "1year": "⏰ Напомнить через 1 год",
+    "confirmed": "✅ Напоминание перенесено на {time}.",
+    "button": "🔔 Напомни мне",
+    "will_remind": "✅ Мы напомним вам об этом событии через {delay}",
+    "delay_5min": "5 минут",
+    "delay_10min": "10 минут",
+    "delay_1day": "1 день",
+    "delay_1month": "1 месяц",
+    "delay_1year": "1 год"
+  },
+  "commands": {
+    "create": "Создать новое уведомление",
+    "notifications": "Просмотр запланированных уведомлений",
+    "settings": "Настройки часового пояса и языка"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Лента",
+      "settings": "Настройки"
+    },
+    "timeline": {
+      "today": "Сегодня",
+      "no_notifications": "Нет уведомлений",
+      "tap_to_add": "Нажмите + чтобы добавить",
+      "retry": "Повторить",
+      "delete_notification": "Удалить уведомление"
+    },
+    "create": {
+      "page_title": "Новое уведомление",
+      "title_label": "Название",
+      "title_required": "* обязательно",
+      "title_placeholder": "напр. Утренняя тренировка",
+      "description_label": "Описание (необязательно)",
+      "description_placeholder": "Добавьте краткое описание…",
+      "datetime_label": "Дата и время",
+      "repeat_label": "Повтор",
+      "submit": "Добавить уведомление",
+      "submitting": "Сохранение…",
+      "back": "Назад",
+      "error_title_required": "Название обязательно.",
+      "error_datetime_required": "Дата и время обязательны.",
+      "error_invalid_datetime": "Неверная дата / время.",
+      "error_future_required": "Время уведомления должно быть в будущем."
+    },
+    "settings": {
+      "page_title": "Настройки",
+      "greeting": "Привет, {name}!",
+      "language_section": "Язык",
+      "timezone_section": "Часовой пояс",
+      "timezone_hint": "Часовой пояс устанавливается через Telegram-бот. Используйте /settings для изменения.",
+      "language_updated": "Язык обновлён ✓",
+      "language_update_failed": "Не удалось обновить язык"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Welcome, {name}!\n\nChoose an option from the menu below:",
+  "main_menu": {
+    "create_notification": "➕ Create Notification",
+    "scheduled_notifications": "📅 Scheduled Notifications",
+    "configuration": "⚙️ Configuration",
+    "open_webapp": "🌐 Open Web App"
+  },
+  "create": {
+    "start": "Let's create a new notification!\n\nStep 1/5 — Enter the notification <b>title</b>:",
+    "description": "Step 2/5 — Enter the notification <b>description</b>:",
+    "date": "Step 3/5 — Enter the <b>date</b> in format <code>YYYY-MM-DD</code>\n(e.g. <code>2025-12-31</code>):",
+    "date_calendar": "Step 3/5 — Select the <b>date</b>:\n\n📅 Use the calendar below, or tap ✏️ to enter the date manually.",
+    "date_manual_prompt": "✏️ Enter the date in format <code>YYYY-MM-DD</code>\n(e.g. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Enter manually",
+    "time": "Step 4/5 — Enter the <b>time</b> in format <code>HH:MM</code>\n(e.g. <code>09:00</code>):",
+    "time_format_12": "Step 4/5 — Select the <b>time</b>:\n\nChoose AM or PM:",
+    "time_format_24": "Step 4/5 — Select the <b>time</b>:\n\nChoose the <b>hour</b>:",
+    "time_select_hour": "Now choose the <b>hour</b>:",
+    "time_select_minute": "Now choose the <b>minute</b>:",
+    "back": "⬅️ Back",
+    "recurrence": "Step 5/5 — Choose the <b>recurrence</b>:",
+    "confirm": "✅ <b>Notification created!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Invalid date format. Please use <code>YYYY-MM-DD</code> (e.g. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Invalid time format. Please use <code>HH:MM</code> (e.g. <code>09:00</code>):",
+    "date_in_past": "❌ The date and time must be in the future. Please try again:",
+    "cancelled": "❌ Notification creation cancelled."
+  },
+  "recurrence": {
+    "once": "Once",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly"
+  },
+  "scheduled": {
+    "title": "📅 <b>Scheduled Notifications</b>",
+    "week": "📆 Next 7 days",
+    "month": "📆 Next 30 days",
+    "year": "📆 Next 365 days",
+    "empty": "No notifications found for this period.",
+    "view_month": "🗓 View Month",
+    "view_year": "📅 View Year",
+    "back": "⬅️ Back"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Date:</b> {date}\n⏰ <b>Time:</b> {time}\n🔁 <b>Recurrence:</b> {recurrence}\n📊 <b>Sent:</b> {count} time(s)",
+    "edit": "✏️ Edit",
+    "delete": "🗑 Delete",
+    "back": "⬅️ Back",
+    "deleted": "🗑 Notification deleted.",
+    "edit_field": "What would you like to edit?",
+    "edit_title": "Enter the new <b>title</b>:",
+    "edit_description": "Enter the new <b>description</b>:",
+    "edit_date": "Enter the new <b>date</b> in format <code>YYYY-MM-DD</code>:",
+    "edit_time": "Enter the new <b>time</b> in format <code>HH:MM</code>:",
+    "edit_recurrence": "Choose the new <b>recurrence</b>:",
+    "updated": "✅ Notification updated!",
+    "not_found": "❌ Notification not found."
+  },
+  "send": {
+    "message": "🔔 <b>Reminder!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Cancel",
+  "config": {
+    "menu": "⚙️ <b>Configuration</b>\n\nChoose an option:",
+    "change_timezone": "🕐 Change Timezone",
+    "change_language": "🌐 Change Language",
+    "language_menu": "🌐 Select your language:",
+    "language_set": "✅ Language changed to <b>{language}</b>.",
+    "back": "⬅️ Back"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 To send notifications at the right time, please set your timezone.\n\nChoose an option:",
+    "share_location_button": "📍 Share Location",
+    "select_manually_button": "🗺 Select manually",
+    "detected": "✅ Your timezone has been set to <b>{timezone}</b>.",
+    "detection_failed": "❌ Could not detect your timezone from the location. Please select manually.",
+    "select_region": "🌍 Select your region:",
+    "select_city": "🏙 Select your city in <b>{region}</b>:",
+    "saved": "✅ Timezone set to <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Back to regions"
+  },
+  "edit_fields": {
+    "title": "📝 Title",
+    "description": "📄 Description",
+    "date": "🗓 Date",
+    "time": "⏰ Time",
+    "recurrence": "🔁 Recurrence"
+  },
+  "remind_later": {
+    "5min": "⏰ Remind in 5 minutes",
+    "10min": "⏰ Remind in 10 minutes",
+    "1day": "⏰ Remind in 1 day",
+    "1month": "⏰ Remind in 1 month",
+    "1year": "⏰ Remind in 1 year",
+    "confirmed": "✅ Reminder rescheduled for {time}.",
+    "button": "🔔 Remind me",
+    "will_remind": "✅ We will remind you about this event in {delay}",
+    "delay_5min": "5 minutes",
+    "delay_10min": "10 minutes",
+    "delay_1day": "1 day",
+    "delay_1month": "1 month",
+    "delay_1year": "1 year"
+  },
+  "commands": {
+    "create": "Create a new notification",
+    "notifications": "View scheduled notifications",
+    "settings": "Timezone and language settings"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Timeline",
+      "settings": "Settings"
+    },
+    "timeline": {
+      "today": "Today",
+      "no_notifications": "No notifications",
+      "tap_to_add": "Tap + to add one",
+      "retry": "Retry",
+      "delete_notification": "Delete notification"
+    },
+    "create": {
+      "page_title": "New Notification",
+      "title_label": "Title",
+      "title_required": "* required",
+      "title_placeholder": "e.g. Morning workout",
+      "description_label": "Description (optional)",
+      "description_placeholder": "Add a short description…",
+      "datetime_label": "Date & Time",
+      "repeat_label": "Repeat",
+      "submit": "Add Notification",
+      "submitting": "Saving…",
+      "back": "Back",
+      "error_title_required": "Title is required.",
+      "error_datetime_required": "Date and time are required.",
+      "error_invalid_datetime": "Invalid date / time.",
+      "error_future_required": "The notification time must be in the future."
+    },
+    "settings": {
+      "page_title": "Settings",
+      "greeting": "Hi, {name}!",
+      "language_section": "Language",
+      "timezone_section": "Timezone",
+      "timezone_hint": "Timezone is set via the Telegram bot. Use /settings to change it.",
+      "language_updated": "Language updated ✓",
+      "language_update_failed": "Failed to update language"
+    }
+  }
+}

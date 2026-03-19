@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -13,13 +14,7 @@ import {
 } from '@/components/ui/select'
 import { api } from '@/lib/api'
 
-const RECURRENCE_OPTIONS = [
-  { value: 'once', label: 'Once' },
-  { value: 'daily', label: 'Daily' },
-  { value: 'weekly', label: 'Weekly' },
-  { value: 'monthly', label: 'Monthly' },
-  { value: 'yearly', label: 'Yearly' },
-]
+const RECURRENCE_VALUES = ['once', 'daily', 'weekly', 'monthly', 'yearly']
 
 /** Return the current local datetime formatted for datetime-local input. */
 function defaultDatetimeLocal() {
@@ -32,6 +27,7 @@ function defaultDatetimeLocal() {
 
 export function CreatePage() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [form, setForm] = useState({
     title: '',
     description: '',
@@ -54,22 +50,22 @@ export function CreatePage() {
     setError(null)
 
     if (!form.title.trim()) {
-      setError('Title is required.')
+      setError(t('web.create.error_title_required'))
       return
     }
     if (!form.datetimeLocal) {
-      setError('Date and time are required.')
+      setError(t('web.create.error_datetime_required'))
       return
     }
 
     // Convert the local datetime string to a UTC ISO string.
     const localDate = new Date(form.datetimeLocal)
     if (isNaN(localDate.getTime())) {
-      setError('Invalid date / time.')
+      setError(t('web.create.error_invalid_datetime'))
       return
     }
     if (localDate <= new Date()) {
-      setError('The notification time must be in the future.')
+      setError(t('web.create.error_future_required'))
       return
     }
 
@@ -96,21 +92,21 @@ export function CreatePage() {
         <button
           onClick={() => navigate(-1)}
           className="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-gray-100 transition-colors"
-          aria-label="Back"
+          aria-label={t('web.create.back')}
         >
           <ArrowLeft size={20} className="text-gray-600" />
         </button>
-        <h2 className="text-lg font-bold text-gray-900">New Notification</h2>
+        <h2 className="text-lg font-bold text-gray-900">{t('web.create.page_title')}</h2>
       </div>
 
       {/* Form */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 px-5 py-6 flex-1">
         {/* Title */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="title">Title *</Label>
+          <Label htmlFor="title">{t('web.create.title_label')} *</Label>
           <Input
             id="title"
-            placeholder="e.g. Morning workout"
+            placeholder={t('web.create.title_placeholder')}
             value={form.title}
             onChange={handleChange('title')}
             maxLength={255}
@@ -120,10 +116,10 @@ export function CreatePage() {
 
         {/* Description */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="description">Description (optional)</Label>
+          <Label htmlFor="description">{t('web.create.description_label')}</Label>
           <textarea
             id="description"
-            placeholder="Add a short description…"
+            placeholder={t('web.create.description_placeholder')}
             value={form.description}
             onChange={handleChange('description')}
             rows={3}
@@ -133,7 +129,7 @@ export function CreatePage() {
 
         {/* Date & Time */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="datetimeLocal">Date &amp; Time *</Label>
+          <Label htmlFor="datetimeLocal">{t('web.create.datetime_label')} *</Label>
           <Input
             id="datetimeLocal"
             type="datetime-local"
@@ -145,15 +141,15 @@ export function CreatePage() {
 
         {/* Repeat */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="recurrence">Repeat</Label>
+          <Label htmlFor="recurrence">{t('web.create.repeat_label')}</Label>
           <Select value={form.recurrence_type} onValueChange={handleRecurrence}>
             <SelectTrigger id="recurrence">
-              <SelectValue placeholder="Select…" />
+              <SelectValue placeholder={t('web.create.repeat_label')} />
             </SelectTrigger>
             <SelectContent>
-              {RECURRENCE_OPTIONS.map((opt) => (
-                <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+              {RECURRENCE_VALUES.map((value) => (
+                <SelectItem key={value} value={value}>
+                  {t(`recurrence.${value}`)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -166,7 +162,7 @@ export function CreatePage() {
 
         <div className="mt-auto pt-4">
           <Button type="submit" className="w-full" size="lg" disabled={submitting}>
-            {submitting ? 'Saving…' : 'Add Notification'}
+            {submitting ? t('web.create.submitting') : t('web.create.submit')}
           </Button>
         </div>
       </form>

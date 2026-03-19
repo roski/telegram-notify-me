@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 ਜੀ ਆਇਆਂ ਨੂੰ, {name}!\n\nਹੇਠਾਂ ਦਿੱਤੇ ਮੀਨੂ ਵਿੱਚੋਂ ਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+  "main_menu": {
+    "create_notification": "➕ ਸੂਚਨਾ ਬਣਾਓ",
+    "scheduled_notifications": "📅 ਨਿਰਧਾਰਿਤ ਸੂਚਨਾਵਾਂ",
+    "configuration": "⚙️ ਸੰਰਚਨਾ",
+    "open_webapp": "🌐 ਵੈੱਬ ਐਪ ਖੋਲੋ"
+  },
+  "create": {
+    "start": "ਆਓ ਇੱਕ ਨਵੀਂ ਸੂਚਨਾ ਬਣਾਈਏ!\n\nਕਦਮ 1/5 — ਸੂਚਨਾ ਦਾ <b>ਸਿਰਲੇਖ</b> ਦਰਜ ਕਰੋ:",
+    "description": "ਕਦਮ 2/5 — ਸੂਚਨਾ ਦਾ <b>ਵੇਰਵਾ</b> ਦਰਜ ਕਰੋ:",
+    "date": "ਕਦਮ 3/5 — <code>YYYY-MM-DD</code> ਫਾਰਮੈਟ ਵਿੱਚ <b>ਤਾਰੀਖ਼</b> ਦਰਜ ਕਰੋ\n(ਉਦਾ. <code>2025-12-31</code>):",
+    "date_calendar": "ਕਦਮ 3/5 — <b>ਤਾਰੀਖ਼</b> ਚੁਣੋ:\n\n📅 ਕੈਲੰਡਰ ਵਰਤੋ ਜਾਂ ✏️ ਦਬਾਓ।",
+    "date_manual_prompt": "✏️ ਤਾਰੀਖ਼ <code>YYYY-MM-DD</code> ਫਾਰਮੈਟ ਵਿੱਚ ਦਾਖਲ ਕਰੋ\n(ਉਦਾ. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ ਦਸਤੀ ਦਾਖਲ ਕਰੋ",
+    "time": "ਕਦਮ 4/5 — <code>HH:MM</code> ਫਾਰਮੈਟ ਵਿੱਚ <b>ਸਮਾਂ</b> ਦਰਜ ਕਰੋ\n(ਉਦਾ. <code>09:00</code>):",
+    "time_format_12": "ਕਦਮ 4/5 — <b>ਸਮਾਂ</b> ਚੁਣੋ:\n\nAM ਜਾਂ PM ਚੁਣੋ:",
+    "time_format_24": "ਕਦਮ 4/5 — <b>ਸਮਾਂ</b> ਚੁਣੋ:\n\n<b>ਘੰਟਾ</b> ਚੁਣੋ:",
+    "time_select_hour": "ਹੁਣ <b>ਘੰਟਾ</b> ਚੁਣੋ:",
+    "time_select_minute": "ਹੁਣ <b>ਮਿੰਟ</b> ਚੁਣੋ:",
+    "back": "⬅️ ਵਾਪਸ",
+    "recurrence": "ਕਦਮ 5/5 — <b>ਦੁਹਰਾਓ</b> ਚੁਣੋ:",
+    "confirm": "✅ <b>ਸੂਚਨਾ ਬਣਾਈ ਗਈ!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ ਤਾਰੀਖ਼ ਦਾ ਫਾਰਮੈਟ ਗਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ <code>YYYY-MM-DD</code> ਵਰਤੋ (ਉਦਾ. <code>2025-12-31</code>):",
+    "invalid_time": "❌ ਸਮੇਂ ਦਾ ਫਾਰਮੈਟ ਗਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ <code>HH:MM</code> ਵਰਤੋ (ਉਦਾ. <code>09:00</code>):",
+    "date_in_past": "❌ ਤਾਰੀਖ਼ ਅਤੇ ਸਮਾਂ ਭਵਿੱਖ ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ:",
+    "cancelled": "❌ ਸੂਚਨਾ ਬਣਾਉਣਾ ਰੱਦ ਕੀਤਾ ਗਿਆ।"
+  },
+  "recurrence": {
+    "once": "ਇੱਕ ਵਾਰ",
+    "daily": "ਰੋਜ਼ਾਨਾ",
+    "weekly": "ਹਫ਼ਤਾਵਾਰ",
+    "monthly": "ਮਹੀਨਾਵਾਰ",
+    "yearly": "ਸਾਲਾਨਾ"
+  },
+  "scheduled": {
+    "title": "📅 <b>ਨਿਰਧਾਰਿਤ ਸੂਚਨਾਵਾਂ</b>",
+    "week": "📆 ਅਗਲੇ 7 ਦਿਨ",
+    "month": "📆 ਅਗਲੇ 30 ਦਿਨ",
+    "year": "📆 ਅਗਲੇ 365 ਦਿਨ",
+    "empty": "ਇਸ ਸਮੇਂ ਲਈ ਕੋਈ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੀ।",
+    "view_month": "🗓 ਮਹੀਨਾ ਦੇਖੋ",
+    "view_year": "📅 ਸਾਲ ਦੇਖੋ",
+    "back": "⬅️ ਵਾਪਸ"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>ਤਾਰੀਖ਼:</b> {date}\n⏰ <b>ਸਮਾਂ:</b> {time}\n🔁 <b>ਦੁਹਰਾਓ:</b> {recurrence}\n📊 <b>ਭੇਜੀ ਗਈ:</b> {count} ਵਾਰ",
+    "edit": "✏️ ਸੰਪਾਦਿਤ ਕਰੋ",
+    "delete": "🗑 ਮਿਟਾਓ",
+    "back": "⬅️ ਵਾਪਸ",
+    "deleted": "🗑 ਸੂਚਨਾ ਮਿਟਾਈ ਗਈ।",
+    "edit_field": "ਤੁਸੀਂ ਕੀ ਸੰਪਾਦਿਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?",
+    "edit_title": "ਨਵਾਂ <b>ਸਿਰਲੇਖ</b> ਦਰਜ ਕਰੋ:",
+    "edit_description": "ਨਵਾਂ <b>ਵੇਰਵਾ</b> ਦਰਜ ਕਰੋ:",
+    "edit_date": "<code>YYYY-MM-DD</code> ਫਾਰਮੈਟ ਵਿੱਚ ਨਵੀਂ <b>ਤਾਰੀਖ਼</b> ਦਰਜ ਕਰੋ:",
+    "edit_time": "<code>HH:MM</code> ਫਾਰਮੈਟ ਵਿੱਚ ਨਵਾਂ <b>ਸਮਾਂ</b> ਦਰਜ ਕਰੋ:",
+    "edit_recurrence": "ਨਵਾਂ <b>ਦੁਹਰਾਓ</b> ਚੁਣੋ:",
+    "updated": "✅ ਸੂਚਨਾ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ!",
+    "not_found": "❌ ਸੂਚਨਾ ਨਹੀਂ ਮਿਲੀ।"
+  },
+  "send": {
+    "message": "🔔 <b>ਯਾਦ ਦਿਵਾਉਣਾ!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ ਰੱਦ ਕਰੋ",
+  "config": {
+    "menu": "⚙️ <b>ਸੰਰਚਨਾ</b>\n\nਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+    "change_timezone": "🕐 ਸਮਾਂ ਖੇਤਰ ਬਦਲੋ",
+    "change_language": "🌐 ਭਾਸ਼ਾ ਬਦਲੋ",
+    "language_menu": "🌐 ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ:",
+    "language_set": "✅ ਭਾਸ਼ਾ <b>{language}</b> ਵਿੱਚ ਬਦਲ ਦਿੱਤੀ ਗਈ।",
+    "back": "⬅️ ਵਾਪਸ"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 ਸਹੀ ਸਮੇਂ 'ਤੇ ਸੂਚਨਾਵਾਂ ਭੇਜਣ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਸਮਾਂ ਖੇਤਰ ਸੈੱਟ ਕਰੋ।\n\nਇੱਕ ਵਿਕਲਪ ਚੁਣੋ:",
+    "share_location_button": "📍 ਟਿਕਾਣਾ ਸਾਂਝਾ ਕਰੋ",
+    "select_manually_button": "🗺 ਹੱਥੀਂ ਚੁਣੋ",
+    "detected": "✅ ਤੁਹਾਡਾ ਸਮਾਂ ਖੇਤਰ <b>{timezone}</b> 'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਹੈ।",
+    "detection_failed": "❌ ਟਿਕਾਣੇ ਤੋਂ ਸਮਾਂ ਖੇਤਰ ਦਾ ਪਤਾ ਨਹੀਂ ਲਗਾਇਆ ਜਾ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਹੱਥੀਂ ਚੁਣੋ।",
+    "select_region": "🌍 ਆਪਣਾ ਖੇਤਰ ਚੁਣੋ:",
+    "select_city": "🏙 <b>{region}</b> ਵਿੱਚ ਆਪਣਾ ਸ਼ਹਿਰ ਚੁਣੋ:",
+    "saved": "✅ ਸਮਾਂ ਖੇਤਰ <b>{timezone}</b> 'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ।",
+    "back_to_regions": "⬅️ ਖੇਤਰਾਂ 'ਤੇ ਵਾਪਸ"
+  },
+  "edit_fields": {
+    "title": "📝 ਸਿਰਲੇਖ",
+    "description": "📄 ਵੇਰਵਾ",
+    "date": "🗓 ਤਾਰੀਖ਼",
+    "time": "⏰ ਸਮਾਂ",
+    "recurrence": "🔁 ਦੁਹਰਾਓ"
+  },
+  "remind_later": {
+    "5min": "⏰ 5 ਮਿੰਟਾਂ ਵਿੱਚ ਯਾਦ ਦਿਵਾਓ",
+    "10min": "⏰ 10 ਮਿੰਟਾਂ ਵਿੱਚ ਯਾਦ ਦਿਵਾਓ",
+    "1day": "⏰ 1 ਦਿਨ ਵਿੱਚ ਯਾਦ ਦਿਵਾਓ",
+    "1month": "⏰ 1 ਮਹੀਨੇ ਵਿੱਚ ਯਾਦ ਦਿਵਾਓ",
+    "1year": "⏰ 1 ਸਾਲ ਵਿੱਚ ਯਾਦ ਦਿਵਾਓ",
+    "confirmed": "✅ ਯਾਦ ਦਿਵਾਉਣਾ {time} ਲਈ ਮੁੜ-ਨਿਯਤ ਕੀਤਾ ਗਿਆ।",
+    "button": "🔔 ਮੈਨੂੰ ਯਾਦ ਦਿਵਾਓ",
+    "will_remind": "✅ ਅਸੀਂ {delay} ਵਿੱਚ ਇਸ ਸਮਾਗਮ ਬਾਰੇ ਤੁਹਾਨੂੰ ਯਾਦ ਕਰਾਵਾਂਗੇ",
+    "delay_5min": "5 ਮਿੰਟ",
+    "delay_10min": "10 ਮਿੰਟ",
+    "delay_1day": "1 ਦਿਨ",
+    "delay_1month": "1 ਮਹੀਨਾ",
+    "delay_1year": "1 ਸਾਲ"
+  },
+  "commands": {
+    "create": "ਨਵੀਂ ਸੂਚਨਾ ਬਣਾਓ",
+    "notifications": "ਨਿਯਤ ਸੂਚਨਾਵਾਂ ਦੇਖੋ",
+    "settings": "ਟਾਈਮਜ਼ੋਨ ਅਤੇ ਭਾਸ਼ਾ ਸੈਟਿੰਗਾਂ"
+  },
+  "web": {
+    "nav": {
+      "timeline": "ਟਾਈਮਲਾਈਨ",
+      "settings": "ਸੈਟਿੰਗਾਂ"
+    },
+    "timeline": {
+      "today": "ਅੱਜ",
+      "no_notifications": "ਕੋਈ ਸੂਚਨਾ ਨਹੀਂ",
+      "tap_to_add": "ਇੱਕ ਜੋੜਨ ਲਈ + ਦਬਾਓ",
+      "retry": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+      "delete_notification": "ਸੂਚਨਾ ਮਿਟਾਓ"
+    },
+    "create": {
+      "page_title": "ਨਵੀਂ ਸੂਚਨਾ",
+      "title_label": "ਸ਼ਿਰਲੇਖ",
+      "title_required": "* ਲਾਜ਼ਮੀ",
+      "title_placeholder": "ਜਿਵੇਂ: ਸਵੇਰ ਦੀ ਕਸਰਤ",
+      "description_label": "ਵੇਰਵਾ (ਵਿਕਲਪਿਕ)",
+      "description_placeholder": "ਇੱਕ ਛੋਟਾ ਵੇਰਵਾ ਜੋੜੋ…",
+      "datetime_label": "ਮਿਤੀ ਅਤੇ ਸਮਾਂ",
+      "repeat_label": "ਦੁਹਰਾਓ",
+      "submit": "ਸੂਚਨਾ ਜੋੜੋ",
+      "submitting": "ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…",
+      "back": "ਵਾਪਸ",
+      "error_title_required": "ਸ਼ਿਰਲੇਖ ਲਾਜ਼ਮੀ ਹੈ।",
+      "error_datetime_required": "ਮਿਤੀ ਅਤੇ ਸਮਾਂ ਲਾਜ਼ਮੀ ਹੈ।",
+      "error_invalid_datetime": "ਅਮਾਨਯੋਗ ਮਿਤੀ / ਸਮਾਂ।",
+      "error_future_required": "ਸੂਚਨਾ ਦਾ ਸਮਾਂ ਭਵਿੱਖ ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+    },
+    "settings": {
+      "page_title": "ਸੈਟਿੰਗਾਂ",
+      "greeting": "ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ, {name}!",
+      "language_section": "ਭਾਸ਼ਾ",
+      "timezone_section": "ਸਮਾਂ ਖੇਤਰ",
+      "timezone_hint": "ਸਮਾਂ ਖੇਤਰ Telegram ਬੋਟ ਰਾਹੀਂ ਸੈੱਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਬਦਲਣ ਲਈ /settings ਵਰਤੋ।",
+      "language_updated": "ਭਾਸ਼ਾ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ ✓",
+      "language_update_failed": "ਭਾਸ਼ਾ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
+    }
+  }
+}

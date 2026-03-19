@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { format, isToday } from 'date-fns'
 import { Plus } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { WeeklyCalendar } from '@/components/WeeklyCalendar'
 import { Timeline } from '@/components/Timeline'
 import { BottomNav } from '@/components/BottomNav'
@@ -13,6 +14,7 @@ export function TimelinePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const fetchNotifications = useCallback(async (date) => {
     setLoading(true)
@@ -45,7 +47,7 @@ export function TimelinePage() {
     }
   }
 
-  const dateLabel = isToday(selectedDate) ? 'Today' : format(selectedDate, 'EEEE')
+  const dateLabel = isToday(selectedDate) ? t('web.timeline.today') : format(selectedDate, 'EEEE')
   const formattedDate = format(selectedDate, 'MMMM d, yyyy')
 
   return (
@@ -71,7 +73,7 @@ export function TimelinePage() {
               onClick={() => fetchNotifications(selectedDate)}
               className="mt-4 text-blue-500 text-sm font-medium"
             >
-              Retry
+              {t('web.timeline.retry')}
             </button>
           </div>
         ) : (
@@ -87,7 +89,7 @@ export function TimelinePage() {
       <button
         onClick={() => navigate('/create')}
         className="fixed bottom-20 left-1/2 -translate-x-1/2 z-30 w-14 h-14 bg-blue-500 rounded-2xl shadow-lg flex items-center justify-center active:scale-95 transition-transform hover:bg-blue-600"
-        aria-label="Add notification"
+        aria-label={t('web.create.submit')}
       >
         <Plus size={28} className="text-white" strokeWidth={2.5} />
       </button>

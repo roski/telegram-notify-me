@@ -21,7 +21,7 @@ def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
         [InlineKeyboardButton(text=get_text("main_menu.scheduled_notifications", lang), callback_data="scheduled_notifications")],
         [InlineKeyboardButton(text=get_text("main_menu.configuration", lang), callback_data="configuration")],
     ]
-    webapp_url = os.environ.get("WEBAPP_URL", "").strip()
+    webapp_url = (os.environ.get("WEBAPP_URL") or os.environ.get("SERVICE_URL_WEBAPP", "")).strip()
     if webapp_url:
         rows.insert(0, [
             InlineKeyboardButton(

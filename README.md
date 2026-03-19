@@ -93,6 +93,8 @@ telegram-notify-me/
 
 ## Setup
 
+> **Deploying with Coolify?** See the dedicated [Coolify setup guide](docs/coolify.md) for step-by-step instructions including automatic `WEBAPP_URL` configuration.
+
 ### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/)
@@ -160,14 +162,17 @@ python -m bot.main
 
 ## Environment Variables
 
-| Variable           | Description                            | Default        |
-|--------------------|----------------------------------------|----------------|
-| `TELEGRAM_BOT_TOKEN` | Bot token from @BotFather           | **required**   |
-| `POSTGRES_USER`    | PostgreSQL username                    | `postgres`     |
-| `POSTGRES_PASSWORD`| PostgreSQL password                    | `postgres`     |
-| `POSTGRES_DB`      | PostgreSQL database name               | `telegram_notify` |
-| `POSTGRES_HOST`    | PostgreSQL host                        | `localhost`    |
-| `POSTGRES_PORT`    | PostgreSQL port                        | `5432`         |
+| Variable             | Description                                               | Default        |
+|----------------------|-----------------------------------------------------------|----------------|
+| `TELEGRAM_BOT_TOKEN` | Bot token from @BotFather                                 | **required**   |
+| `POSTGRES_USER`      | PostgreSQL username                                       | `postgres`     |
+| `POSTGRES_PASSWORD`  | PostgreSQL password                                       | `postgres`     |
+| `POSTGRES_DB`        | PostgreSQL database name                                  | `notifications`|
+| `POSTGRES_HOST`      | PostgreSQL host (`db` in Docker Compose, `localhost` for local dev) | `db` |
+| `POSTGRES_PORT`      | PostgreSQL port                                           | `5432`         |
+| `WEBAPP_URL`         | Public HTTPS URL of the webapp (enables the mini-app button) | *(empty)*  |
+| `SERVICE_URL_WEBAPP` | Coolify-injected webapp URL — used automatically as a fallback for `WEBAPP_URL` | *(Coolify only)* |
+| `WEBAPP_PORT`        | Local port the webapp is exposed on (Docker Compose)      | `3000`         |
 
 ---
 

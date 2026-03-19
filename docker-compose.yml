@@ -25,6 +25,9 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-notifications}
       WEBAPP_URL: ${WEBAPP_URL:-}
+      # Coolify automatically sets SERVICE_URL_WEBAPP to the webapp's public URL.
+      # The bot reads this as a fallback when WEBAPP_URL is not explicitly set.
+      SERVICE_URL_WEBAPP: ${SERVICE_URL_WEBAPP:-}
     depends_on:
       db:
         condition: service_healthy

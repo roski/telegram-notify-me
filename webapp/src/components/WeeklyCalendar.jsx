@@ -1,5 +1,7 @@
 import { format, startOfWeek, addDays, isToday, isSameDay } from 'date-fns'
+import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
+import { getDateFnsLocale } from '@/lib/locale'
 
 /**
  * Horizontal 7-day calendar showing the current week (Mon–Sun).
@@ -7,6 +9,8 @@ import { cn } from '@/lib/utils'
  * @param {{ selectedDate: Date, onSelectDate: (d: Date) => void }} props
  */
 export function WeeklyCalendar({ selectedDate, onSelectDate }) {
+  const { i18n } = useTranslation()
+  const locale = getDateFnsLocale(i18n.language)
   const weekStart = startOfWeek(new Date(), { weekStartsOn: 1 })
   const days = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i))
 
@@ -28,7 +32,7 @@ export function WeeklyCalendar({ selectedDate, onSelectDate }) {
             )}
           >
             <span className={cn('text-xs font-medium', selected && 'text-white')}>
-              {format(day, 'EEE')}
+              {format(day, 'EEE', { locale })}
             </span>
             <span
               className={cn(

@@ -1,7 +1,11 @@
 import json
 from pathlib import Path
 
-_LOCALES_DIR = Path(__file__).parent / "locales"
+# Canonical translation files are in shared/i18n/ (one level above the bot package).
+# Fall back to the legacy bot/locales/ directory so the bot continues to work even
+# when running outside the full repository tree (e.g. standalone testing).
+_SHARED_DIR = Path(__file__).parent.parent / "shared" / "i18n"
+_LOCALES_DIR = _SHARED_DIR if _SHARED_DIR.is_dir() else Path(__file__).parent / "locales"
 _DEFAULT_LANG = "en"
 _SUPPORTED_LANGS = {"en", "zh", "hi", "es", "fr", "ar", "bn", "ru", "pt", "id", "de", "ja", "pa", "jv", "ko", "uk"}
 

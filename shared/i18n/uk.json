@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Ласкаво просимо, {name}!\n\nОберіть опцію з меню нижче:",
+  "main_menu": {
+    "create_notification": "➕ Створити сповіщення",
+    "scheduled_notifications": "📅 Заплановані сповіщення",
+    "configuration": "⚙️ Налаштування",
+    "open_webapp": "🌐 Відкрити веб-додаток"
+  },
+  "create": {
+    "start": "Давайте створимо нове сповіщення!\n\nКрок 1/5 — Введіть <b>назву</b> сповіщення:",
+    "description": "Крок 2/5 — Введіть <b>опис</b> сповіщення:",
+    "date": "Крок 3/5 — Введіть <b>дату</b> у форматі <code>YYYY-MM-DD</code>\n(наприклад, <code>2025-12-31</code>):",
+    "date_calendar": "Крок 3/5 — Виберіть <b>дату</b>:\n\n📅 Використайте календар або натисніть ✏️ для ручного введення.",
+    "date_manual_prompt": "✏️ Введіть дату у форматі <code>YYYY-MM-DD</code>\n(наприклад, <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Ввести вручну",
+    "time": "Крок 4/5 — Введіть <b>час</b> у форматі <code>HH:MM</code>\n(наприклад, <code>09:00</code>):",
+    "time_format_12": "Крок 4/5 — Виберіть <b>час</b>:\n\nВиберіть AM або PM:",
+    "time_format_24": "Крок 4/5 — Виберіть <b>час</b>:\n\nВиберіть <b>годину</b>:",
+    "time_select_hour": "Тепер виберіть <b>годину</b>:",
+    "time_select_minute": "Тепер виберіть <b>хвилини</b>:",
+    "back": "⬅️ Назад",
+    "recurrence": "Крок 5/5 — Оберіть <b>повторення</b>:",
+    "confirm": "✅ <b>Сповіщення створено!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Невірний формат дати. Використовуйте <code>YYYY-MM-DD</code> (наприклад, <code>2025-12-31</code>):",
+    "invalid_time": "❌ Невірний формат часу. Використовуйте <code>HH:MM</code> (наприклад, <code>09:00</code>):",
+    "date_in_past": "❌ Дата та час мають бути в майбутньому. Спробуйте ще раз:",
+    "cancelled": "❌ Створення сповіщення скасовано."
+  },
+  "recurrence": {
+    "once": "Одноразово",
+    "daily": "Щодня",
+    "weekly": "Щотижня",
+    "monthly": "Щомісяця",
+    "yearly": "Щороку"
+  },
+  "scheduled": {
+    "title": "📅 <b>Заплановані сповіщення</b>",
+    "week": "📆 Наступні 7 днів",
+    "month": "📆 Наступні 30 днів",
+    "year": "📆 Наступні 365 днів",
+    "empty": "Сповіщень за цей період не знайдено.",
+    "view_month": "🗓 Переглянути місяць",
+    "view_year": "📅 Переглянути рік",
+    "back": "⬅️ Назад"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Дата:</b> {date}\n⏰ <b>Час:</b> {time}\n🔁 <b>Повторення:</b> {recurrence}\n📊 <b>Надіслано:</b> {count} раз(и)",
+    "edit": "✏️ Редагувати",
+    "delete": "🗑 Видалити",
+    "back": "⬅️ Назад",
+    "deleted": "🗑 Сповіщення видалено.",
+    "edit_field": "Що ви бажаєте редагувати?",
+    "edit_title": "Введіть нову <b>назву</b>:",
+    "edit_description": "Введіть новий <b>опис</b>:",
+    "edit_date": "Введіть нову <b>дату</b> у форматі <code>YYYY-MM-DD</code>:",
+    "edit_time": "Введіть новий <b>час</b> у форматі <code>HH:MM</code>:",
+    "edit_recurrence": "Оберіть нове <b>повторення</b>:",
+    "updated": "✅ Сповіщення оновлено!",
+    "not_found": "❌ Сповіщення не знайдено."
+  },
+  "send": {
+    "message": "🔔 <b>Нагадування!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Скасувати",
+  "config": {
+    "menu": "⚙️ <b>Налаштування</b>\n\nОберіть опцію:",
+    "change_timezone": "🕐 Змінити часовий пояс",
+    "change_language": "🌐 Змінити мову",
+    "language_menu": "🌐 Оберіть мову:",
+    "language_set": "✅ Мову змінено на <b>{language}</b>.",
+    "back": "⬅️ Назад"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Щоб надсилати сповіщення у правильний час, будь ласка, вкажіть свій часовий пояс.\n\nОберіть варіант:",
+    "share_location_button": "📍 Поділитися локацією",
+    "select_manually_button": "🗺 Вибрати вручну",
+    "detected": "✅ Ваш часовий пояс встановлено: <b>{timezone}</b>.",
+    "detection_failed": "❌ Не вдалося визначити часовий пояс за локацією. Будь ласка, виберіть вручну.",
+    "select_region": "🌍 Оберіть ваш регіон:",
+    "select_city": "🏙 Оберіть місто в регіоні <b>{region}</b>:",
+    "saved": "✅ Часовий пояс встановлено: <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Назад до регіонів"
+  },
+  "edit_fields": {
+    "title": "📝 Назва",
+    "description": "📄 Опис",
+    "date": "🗓 Дата",
+    "time": "⏰ Час",
+    "recurrence": "🔁 Повторення"
+  },
+  "remind_later": {
+    "5min": "⏰ Нагадати через 5 хвилин",
+    "10min": "⏰ Нагадати через 10 хвилин",
+    "1day": "⏰ Нагадати через 1 день",
+    "1month": "⏰ Нагадати через 1 місяць",
+    "1year": "⏰ Нагадати через 1 рік",
+    "confirmed": "✅ Нагадування перенесено на {time}.",
+    "button": "🔔 Нагадай мені",
+    "will_remind": "✅ Ми нагадаємо вам про цю подію через {delay}",
+    "delay_5min": "5 хвилин",
+    "delay_10min": "10 хвилин",
+    "delay_1day": "1 день",
+    "delay_1month": "1 місяць",
+    "delay_1year": "1 рік"
+  },
+  "commands": {
+    "create": "Створити нове сповіщення",
+    "notifications": "Переглянути заплановані сповіщення",
+    "settings": "Налаштування часового поясу та мови"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Стрічка",
+      "settings": "Налаштування"
+    },
+    "timeline": {
+      "today": "Сьогодні",
+      "no_notifications": "Немає сповіщень",
+      "tap_to_add": "Натисніть + щоб додати",
+      "retry": "Повторити",
+      "delete_notification": "Видалити сповіщення"
+    },
+    "create": {
+      "page_title": "Нове сповіщення",
+      "title_label": "Заголовок",
+      "title_required": "* обов’язково",
+      "title_placeholder": "напр. Ранкове тренування",
+      "description_label": "Опис (необов’язково)",
+      "description_placeholder": "Додайте короткий опис…",
+      "datetime_label": "Дата і час",
+      "repeat_label": "Повтор",
+      "submit": "Додати сповіщення",
+      "submitting": "Збереження…",
+      "back": "Назад",
+      "error_title_required": "Заголовок є обов’язковим.",
+      "error_datetime_required": "Дата і час є обов’язковими.",
+      "error_invalid_datetime": "Невірна дата / час.",
+      "error_future_required": "Час сповіщення має бути у майбутньому."
+    },
+    "settings": {
+      "page_title": "Налаштування",
+      "greeting": "Привіт, {name}!",
+      "language_section": "Мова",
+      "timezone_section": "Часовий пояс",
+      "timezone_hint": "Часовий пояс встановлюється через Telegram-бот. Використовуйте /settings для зміни.",
+      "language_updated": "Мову оновлено ✓",
+      "language_update_failed": "Не вдалося оновити мову"
+    }
+  }
+}

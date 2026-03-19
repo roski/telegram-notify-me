@@ -6,6 +6,9 @@ WORKDIR /app
 COPY api/requirements.txt /app/api/requirements.txt
 RUN pip install --no-cache-dir -r /app/api/requirements.txt
 
+# Copy shared translation files
+COPY shared /app/shared
+
 # Copy bot package (shared models + i18n)
 COPY bot /app/bot
 

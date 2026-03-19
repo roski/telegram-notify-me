@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 স্বাগতম, {name}!\n\nনিচের মেনু থেকে একটি বিকল্প বেছে নিন:",
+  "main_menu": {
+    "create_notification": "➕ বিজ্ঞপ্তি তৈরি করুন",
+    "scheduled_notifications": "📅 নির্ধারিত বিজ্ঞপ্তি",
+    "configuration": "⚙️ কনফিগারেশন",
+    "open_webapp": "🌐 ওয়েব অ্যাপ খুলুন"
+  },
+  "create": {
+    "start": "চলুন একটি নতুন বিজ্ঞপ্তি তৈরি করি!\n\nধাপ 1/5 — বিজ্ঞপ্তির <b>শিরোনাম</b> লিখুন:",
+    "description": "ধাপ 2/5 — বিজ্ঞপ্তির <b>বিবরণ</b> লিখুন:",
+    "date": "ধাপ 3/5 — <code>YYYY-MM-DD</code> ফরম্যাটে <b>তারিখ</b> লিখুন\n(যেমন <code>2025-12-31</code>):",
+    "date_calendar": "ধাপ 3/5 — <b>তারিখ</b> বেছে নিন:\n\n📅 ক্যালেন্ডার ব্যবহার করুন বা ✏️ চাপুন।",
+    "date_manual_prompt": "✏️ তারিখটি <code>YYYY-MM-DD</code> ফরম্যাটে লিখুন\n(যেমন <code>2025-12-31</code>):",
+    "enter_manually": "✏️ ম্যানুয়ালি লিখুন",
+    "time": "ধাপ 4/5 — <code>HH:MM</code> ফরম্যাটে <b>সময়</b> লিখুন\n(যেমন <code>09:00</code>):",
+    "time_format_12": "ধাপ 4/5 — <b>সময়</b> বেছে নিন:\n\nAM বা PM বেছে নিন:",
+    "time_format_24": "ধাপ 4/5 — <b>সময়</b> বেছে নিন:\n\n<b>ঘণ্টা</b> বেছে নিন:",
+    "time_select_hour": "এখন <b>ঘণ্টা</b> বেছে নিন:",
+    "time_select_minute": "এখন <b>মিনিট</b> বেছে নিন:",
+    "back": "⬅️ পিছে",
+    "recurrence": "ধাপ 5/5 — <b>পুনরাবৃত্তি</b> বেছে নিন:",
+    "confirm": "✅ <b>বিজ্ঞপ্তি তৈরি হয়েছে!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ অবৈধ তারিখ ফরম্যাট। অনুগ্রহ করে <code>YYYY-MM-DD</code> ব্যবহার করুন (যেমন <code>2025-12-31</code>):",
+    "invalid_time": "❌ অবৈধ সময় ফরম্যাট। অনুগ্রহ করে <code>HH:MM</code> ব্যবহার করুন (যেমন <code>09:00</code>):",
+    "date_in_past": "❌ তারিখ ও সময় ভবিষ্যতে হতে হবে। অনুগ্রহ করে আবার চেষ্টা করুন:",
+    "cancelled": "❌ বিজ্ঞপ্তি তৈরি বাতিল করা হয়েছে।"
+  },
+  "recurrence": {
+    "once": "একবার",
+    "daily": "প্রতিদিন",
+    "weekly": "প্রতি সপ্তাহ",
+    "monthly": "প্রতি মাস",
+    "yearly": "প্রতি বছর"
+  },
+  "scheduled": {
+    "title": "📅 <b>নির্ধারিত বিজ্ঞপ্তি</b>",
+    "week": "📆 পরবর্তী ৭ দিন",
+    "month": "📆 পরবর্তী ৩০ দিন",
+    "year": "📆 পরবর্তী ৩৬৫ দিন",
+    "empty": "এই সময়ের জন্য কোনো বিজ্ঞপ্তি পাওয়া যায়নি।",
+    "view_month": "🗓 মাস দেখুন",
+    "view_year": "📅 বছর দেখুন",
+    "back": "⬅️ ফিরে যান"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>তারিখ:</b> {date}\n⏰ <b>সময়:</b> {time}\n🔁 <b>পুনরাবৃত্তি:</b> {recurrence}\n📊 <b>পাঠানো হয়েছে:</b> {count} বার",
+    "edit": "✏️ সম্পাদনা করুন",
+    "delete": "🗑 মুছুন",
+    "back": "⬅️ ফিরে যান",
+    "deleted": "🗑 বিজ্ঞপ্তি মুছে দেওয়া হয়েছে।",
+    "edit_field": "আপনি কী সম্পাদনা করতে চান?",
+    "edit_title": "নতুন <b>শিরোনাম</b> লিখুন:",
+    "edit_description": "নতুন <b>বিবরণ</b> লিখুন:",
+    "edit_date": "<code>YYYY-MM-DD</code> ফরম্যাটে নতুন <b>তারিখ</b> লিখুন:",
+    "edit_time": "<code>HH:MM</code> ফরম্যাটে নতুন <b>সময়</b> লিখুন:",
+    "edit_recurrence": "নতুন <b>পুনরাবৃত্তি</b> বেছে নিন:",
+    "updated": "✅ বিজ্ঞপ্তি আপডেট করা হয়েছে!",
+    "not_found": "❌ বিজ্ঞপ্তি পাওয়া যায়নি।"
+  },
+  "send": {
+    "message": "🔔 <b>অনুস্মারক!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ বাতিল করুন",
+  "config": {
+    "menu": "⚙️ <b>কনফিগারেশন</b>\n\nএকটি বিকল্প বেছে নিন:",
+    "change_timezone": "🕐 টাইমজোন পরিবর্তন করুন",
+    "change_language": "🌐 ভাষা পরিবর্তন করুন",
+    "language_menu": "🌐 আপনার ভাষা বেছে নিন:",
+    "language_set": "✅ ভাষা <b>{language}</b>-এ পরিবর্তিত হয়েছে।",
+    "back": "⬅️ ফিরে যান"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 সঠিক সময়ে বিজ্ঞপ্তি পাঠাতে, অনুগ্রহ করে আপনার টাইমজোন সেট করুন।\n\nএকটি বিকল্প বেছে নিন:",
+    "share_location_button": "📍 অবস্থান শেয়ার করুন",
+    "select_manually_button": "🗺 ম্যানুয়ালি নির্বাচন করুন",
+    "detected": "✅ আপনার টাইমজোন <b>{timezone}</b> হিসেবে সেট করা হয়েছে।",
+    "detection_failed": "❌ অবস্থান থেকে টাইমজোন শনাক্ত করা যায়নি। অনুগ্রহ করে ম্যানুয়ালি নির্বাচন করুন।",
+    "select_region": "🌍 আপনার অঞ্চল নির্বাচন করুন:",
+    "select_city": "🏙 <b>{region}</b>-এ আপনার শহর নির্বাচন করুন:",
+    "saved": "✅ টাইমজোন <b>{timezone}</b> হিসেবে সেট করা হয়েছে।",
+    "back_to_regions": "⬅️ অঞ্চলে ফিরে যান"
+  },
+  "edit_fields": {
+    "title": "📝 শিরোনাম",
+    "description": "📄 বিবরণ",
+    "date": "🗓 তারিখ",
+    "time": "⏰ সময়",
+    "recurrence": "🔁 পুনরাবৃত্তি"
+  },
+  "remind_later": {
+    "5min": "⏰ ৫ মিনিটে মনে করিয়ে দাও",
+    "10min": "⏰ ১০ মিনিটে মনে করিয়ে দাও",
+    "1day": "⏰ ১ দিনে মনে করিয়ে দাও",
+    "1month": "⏰ ১ মাসে মনে করিয়ে দাও",
+    "1year": "⏰ ১ বছরে মনে করিয়ে দাও",
+    "confirmed": "✅ অনুস্মারক {time}-এর জন্য পুনর্নির্ধারিত হয়েছে।",
+    "button": "🔔 মনে করিয়ে দাও",
+    "will_remind": "✅ আমরা {delay} পরে এই ইভেন্টটি আপনাকে মনে করিয়ে দেব",
+    "delay_5min": "৫ মিনিট",
+    "delay_10min": "১০ মিনিট",
+    "delay_1day": "১ দিন",
+    "delay_1month": "১ মাস",
+    "delay_1year": "১ বছর"
+  },
+  "commands": {
+    "create": "নতুন বিজ্ঞপ্তি তৈরি করুন",
+    "notifications": "নির্ধারিত বিজ্ঞপ্তি দেখুন",
+    "settings": "টাইমজোন এবং ভাষা সেটিংস"
+  },
+  "web": {
+    "nav": {
+      "timeline": "টাইমলাইন",
+      "settings": "সেটিংস"
+    },
+    "timeline": {
+      "today": "আজ",
+      "no_notifications": "কোনো বিজ্ঞপ্তি নেই",
+      "tap_to_add": "একটি যোগ করতে + ট্যাপ করুন",
+      "retry": "পুনরায় চেষ্টা করুন",
+      "delete_notification": "বিজ্ঞপ্তি মুছুন"
+    },
+    "create": {
+      "page_title": "নতুন বিজ্ঞপ্তি",
+      "title_label": "শিরোনাম",
+      "title_required": "* প্রয়োজনীয়",
+      "title_placeholder": "যেমন: সকালের ব্যায়াম",
+      "description_label": "বিবরণ (নেচ্ছামূলক)",
+      "description_placeholder": "একটি সংক্ষিপ্ত বিবরণ যোগ করুন…",
+      "datetime_label": "তারিখ ও সময়",
+      "repeat_label": "পুনরাবৃত্তি",
+      "submit": "বিজ্ঞপ্তি যোগ করুন",
+      "submitting": "সংরক্ষণ হচ্ছে…",
+      "back": "ফিরে যান",
+      "error_title_required": "শিরোনাম প্রয়োজনীয়।",
+      "error_datetime_required": "তারিখ ও সময় প্রয়োজনীয়।",
+      "error_invalid_datetime": "অবৈধ তারিখ / সময়।",
+      "error_future_required": "বিজ্ঞপ্তির সময় ভবিষ্যতে হতে হবে।"
+    },
+    "settings": {
+      "page_title": "সেটিংস",
+      "greeting": "হ্যালো, {name}!",
+      "language_section": "ভাষা",
+      "timezone_section": "সময় অঞ্চল",
+      "timezone_hint": "সময় অঞ্চল Telegram বটের মাধ্যমে সেট করা হয়। পরিবর্তন করতে /settings ব্যবহার করুন।",
+      "language_updated": "ভাষা আপডেট হয়েছে ✓",
+      "language_update_failed": "ভাষা আপডেট করতে ব্যর্থ"
+    }
+  }
+}

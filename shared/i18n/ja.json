@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 ようこそ、{name}！\n\n以下のメニューからオプションを選択してください：",
+  "main_menu": {
+    "create_notification": "➕ 通知を作成",
+    "scheduled_notifications": "📅 スケジュール済み通知",
+    "configuration": "⚙️ 設定",
+    "open_webapp": "🌐 ウェブアプリを開く"
+  },
+  "create": {
+    "start": "新しい通知を作成しましょう！\n\nステップ 1/5 — 通知の<b>タイトル</b>を入力してください：",
+    "description": "ステップ 2/5 — 通知の<b>説明</b>を入力してください：",
+    "date": "ステップ 3/5 — <code>YYYY-MM-DD</code> 形式で<b>日付</b>を入力してください\n（例：<code>2025-12-31</code>）：",
+    "date_calendar": "ステップ 3/5 — <b>日付</b>を選択してください：\n\n📅 カレンダーを使うか、✏️ をタップして日付を手動入力。",
+    "date_manual_prompt": "✏️ 日付を <code>YYYY-MM-DD</code> 形式で入力してください\n（例：<code>2025-12-31</code>）：",
+    "enter_manually": "✏️ 手動で入力",
+    "time": "ステップ 4/5 — <code>HH:MM</code> 形式で<b>時刻</b>を入力してください\n（例：<code>09:00</code>）：",
+    "time_format_12": "ステップ 4/5 — <b>時刻</b>を選択してください：\n\nAM または PM を選択：",
+    "time_format_24": "ステップ 4/5 — <b>時刻</b>を選択してください：\n\n<b>時</b>を選択：",
+    "time_select_hour": "<b>時</b>を選択してください：",
+    "time_select_minute": "<b>分</b>を選択してください：",
+    "back": "⬅️ 戻る",
+    "recurrence": "ステップ 5/5 — <b>繰り返し</b>を選択してください：",
+    "confirm": "✅ <b>通知が作成されました！</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ 日付の形式が無効です。<code>YYYY-MM-DD</code> 形式を使用してください（例：<code>2025-12-31</code>）：",
+    "invalid_time": "❌ 時刻の形式が無効です。<code>HH:MM</code> 形式を使用してください（例：<code>09:00</code>）：",
+    "date_in_past": "❌ 日付と時刻は将来のものである必要があります。もう一度お試しください：",
+    "cancelled": "❌ 通知の作成がキャンセルされました。"
+  },
+  "recurrence": {
+    "once": "一回",
+    "daily": "毎日",
+    "weekly": "毎週",
+    "monthly": "毎月",
+    "yearly": "毎年"
+  },
+  "scheduled": {
+    "title": "📅 <b>スケジュール済み通知</b>",
+    "week": "📆 今後 7 日間",
+    "month": "📆 今後 30 日間",
+    "year": "📆 今後 365 日間",
+    "empty": "この期間の通知は見つかりませんでした。",
+    "view_month": "🗓 月を表示",
+    "view_year": "📅 年を表示",
+    "back": "⬅️ 戻る"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>日付：</b> {date}\n⏰ <b>時刻：</b> {time}\n🔁 <b>繰り返し：</b> {recurrence}\n📊 <b>送信済み：</b> {count} 回",
+    "edit": "✏️ 編集",
+    "delete": "🗑 削除",
+    "back": "⬅️ 戻る",
+    "deleted": "🗑 通知が削除されました。",
+    "edit_field": "何を編集しますか？",
+    "edit_title": "新しい<b>タイトル</b>を入力してください：",
+    "edit_description": "新しい<b>説明</b>を入力してください：",
+    "edit_date": "<code>YYYY-MM-DD</code> 形式で新しい<b>日付</b>を入力してください：",
+    "edit_time": "<code>HH:MM</code> 形式で新しい<b>時刻</b>を入力してください：",
+    "edit_recurrence": "新しい<b>繰り返し</b>を選択してください：",
+    "updated": "✅ 通知が更新されました！",
+    "not_found": "❌ 通知が見つかりませんでした。"
+  },
+  "send": {
+    "message": "🔔 <b>リマインダー！</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ キャンセル",
+  "config": {
+    "menu": "⚙️ <b>設定</b>\n\nオプションを選択してください：",
+    "change_timezone": "🕐 タイムゾーンを変更",
+    "change_language": "🌐 言語を変更",
+    "language_menu": "🌐 言語を選択してください：",
+    "language_set": "✅ 言語が <b>{language}</b> に変更されました。",
+    "back": "⬅️ 戻る"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 正しい時間に通知を送信するために、タイムゾーンを設定してください。\n\nオプションを選択してください：",
+    "share_location_button": "📍 位置情報を共有",
+    "select_manually_button": "🗺 手動で選択",
+    "detected": "✅ タイムゾーンが <b>{timezone}</b> に設定されました。",
+    "detection_failed": "❌ 位置情報からタイムゾーンを検出できませんでした。手動で選択してください。",
+    "select_region": "🌍 地域を選択してください：",
+    "select_city": "🏙 <b>{region}</b> の都市を選択してください：",
+    "saved": "✅ タイムゾーンが <b>{timezone}</b> に設定されました。",
+    "back_to_regions": "⬅️ 地域に戻る"
+  },
+  "edit_fields": {
+    "title": "📝 タイトル",
+    "description": "📄 説明",
+    "date": "🗓 日付",
+    "time": "⏰ 時刻",
+    "recurrence": "🔁 繰り返し"
+  },
+  "remind_later": {
+    "5min": "⏰ 5分後にリマインド",
+    "10min": "⏰ 10分後にリマインド",
+    "1day": "⏰ 1日後にリマインド",
+    "1month": "⏰ 1ヶ月後にリマインド",
+    "1year": "⏰ 1年後にリマインド",
+    "confirmed": "✅ リマインダーを {time} に変更しました。",
+    "button": "🔔 リマインドする",
+    "will_remind": "✅ {delay}後にこのイベントをお知らせします",
+    "delay_5min": "5分",
+    "delay_10min": "10分",
+    "delay_1day": "1日",
+    "delay_1month": "1ヶ月",
+    "delay_1year": "1年"
+  },
+  "commands": {
+    "create": "新しい通知を作成する",
+    "notifications": "スケジュールされた通知を表示する",
+    "settings": "タイムゾーンと言語の設定"
+  },
+  "web": {
+    "nav": {
+      "timeline": "タイムライン",
+      "settings": "設定"
+    },
+    "timeline": {
+      "today": "今日",
+      "no_notifications": "通知はありません",
+      "tap_to_add": "+ をタップして追加",
+      "retry": "再試行",
+      "delete_notification": "通知を削除"
+    },
+    "create": {
+      "page_title": "新しい通知",
+      "title_label": "タイトル",
+      "title_required": "* 必須",
+      "title_placeholder": "例: 朝のトレーニング",
+      "description_label": "説明（任意）",
+      "description_placeholder": "短い説明を追加…",
+      "datetime_label": "日付と時刻",
+      "repeat_label": "繰り返し",
+      "submit": "通知を追加",
+      "submitting": "保存中…",
+      "back": "戻る",
+      "error_title_required": "タイトルは必須です。",
+      "error_datetime_required": "日付と時刻は必須です。",
+      "error_invalid_datetime": "無効な日付 / 時刻。",
+      "error_future_required": "通知時刻は未来でなければなりません。"
+    },
+    "settings": {
+      "page_title": "設定",
+      "greeting": "こんにちは、{name}さん！",
+      "language_section": "言語",
+      "timezone_section": "タイムゾーン",
+      "timezone_hint": "タイムゾーンはTelegramボットで設定されます。変更するには /settings を使用してください。",
+      "language_updated": "言語が更新されました ✓",
+      "language_update_failed": "言語の更新に失敗しました"
+    }
+  }
+}

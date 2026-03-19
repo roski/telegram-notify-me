@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { initTelegram, getColorScheme, getThemeParams } from './lib/telegram'
 import { TimelinePage } from './pages/TimelinePage'
 import { CreatePage } from './pages/CreatePage'
 import { SettingsPage } from './pages/SettingsPage'
+import './lib/i18n'
+import i18n from './lib/i18n'
+import { api } from './lib/api'
 
 function App() {
   useEffect(() => {
@@ -26,15 +29,29 @@ function App() {
       root.style.setProperty('--hint-color', params.hint_color ?? '#7f8c8d')
       root.style.setProperty('--secondary-bg', params.secondary_bg_color ?? '#ffffff')
     }
+
+    // Load the user's saved language and apply it to the UI.
+    api
+      .getUser()
+      .then((user) => {
+        if (user?.language_code) {
+          i18n.changeLanguage(user.language_code)
+        }
+      })
+      .catch(() => {
+        // Ignore auth errors (e.g. during local development outside Telegram).
+      })
   }, [])
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TimelinePage />} />
-        <Route path="/create" element={<CreatePage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<TimelinePage />} />
+          <Route path="/create" element={<CreatePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }

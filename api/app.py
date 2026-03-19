@@ -17,7 +17,7 @@ from sqlalchemy.orm import Session
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from bot.database.models import Notification, RecurrenceType, User  # noqa: E402
-from bot.i18n import normalize_language_code  # noqa: E402
+from bot.i18n import _LOCALES_DIR, _SUPPORTED_LANGS, normalize_language_code  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -90,6 +90,28 @@ def _get_current_user(session: Session) -> User | None:
         return None
     result = session.execute(select(User).where(User.telegram_id == int(telegram_id)))
     return result.scalar_one_or_none()
+
+
+# ---------------------------------------------------------------------------
+# i18n – serve translation JSON for the Web App
+# ---------------------------------------------------------------------------
+
+@app.route("/api/i18n/<string:lang>", methods=["GET"])
+def get_translations(lang: str):
+    """Return the translation JSON for the requested language.
+
+    Falls back to English when the requested language is not supported.
+    The response is intentionally unauthenticated so the Web App can fetch
+    translations before (or without) a valid Telegram session.
+    """
+    safe_lang = lang if lang in _SUPPORTED_LANGS else "en"
+    path = _LOCALES_DIR / f"{safe_lang}.json"
+    try:
+        with open(path, encoding="utf-8") as fh:
+            data = json.load(fh)
+    except OSError:
+        return jsonify({"error": "Translations not found"}), 404
+    return jsonify(data)
 
 
 # ---------------------------------------------------------------------------

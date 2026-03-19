@@ -1,0 +1,150 @@
+{
+  "welcome": "👋 Selamat datang, {name}!\n\nPilih opsi dari menu di bawah:",
+  "main_menu": {
+    "create_notification": "➕ Buat Notifikasi",
+    "scheduled_notifications": "📅 Notifikasi Terjadwal",
+    "configuration": "⚙️ Konfigurasi",
+    "open_webapp": "🌐 Buka Aplikasi Web"
+  },
+  "create": {
+    "start": "Mari buat notifikasi baru!\n\nLangkah 1/5 — Masukkan <b>judul</b> notifikasi:",
+    "description": "Langkah 2/5 — Masukkan <b>deskripsi</b> notifikasi:",
+    "date": "Langkah 3/5 — Masukkan <b>tanggal</b> dalam format <code>YYYY-MM-DD</code>\n(mis. <code>2025-12-31</code>):",
+    "date_calendar": "Langkah 3/5 — Pilih <b>tanggal</b>:\n\n📅 Gunakan kalender atau ketuk ✏️ untuk memasukkan secara manual.",
+    "date_manual_prompt": "✏️ Masukkan tanggal dengan format <code>YYYY-MM-DD</code>\n(mis. <code>2025-12-31</code>):",
+    "enter_manually": "✏️ Masukkan secara manual",
+    "time": "Langkah 4/5 — Masukkan <b>waktu</b> dalam format <code>HH:MM</code>\n(mis. <code>09:00</code>):",
+    "time_format_12": "Langkah 4/5 — Pilih <b>waktu</b>:\n\nPilih AM atau PM:",
+    "time_format_24": "Langkah 4/5 — Pilih <b>waktu</b>:\n\nPilih <b>jam</b>:",
+    "time_select_hour": "Sekarang pilih <b>jam</b>:",
+    "time_select_minute": "Sekarang pilih <b>menit</b>:",
+    "back": "⬅️ Kembali",
+    "recurrence": "Langkah 5/5 — Pilih <b>pengulangan</b>:",
+    "confirm": "✅ <b>Notifikasi dibuat!</b>\n\n📌 <b>{title}</b>\n{description}\n\n🗓 {date} {time}\n🔁 {recurrence}",
+    "invalid_date": "❌ Format tanggal tidak valid. Gunakan <code>YYYY-MM-DD</code> (mis. <code>2025-12-31</code>):",
+    "invalid_time": "❌ Format waktu tidak valid. Gunakan <code>HH:MM</code> (mis. <code>09:00</code>):",
+    "date_in_past": "❌ Tanggal dan waktu harus di masa depan. Silakan coba lagi:",
+    "cancelled": "❌ Pembuatan notifikasi dibatalkan."
+  },
+  "recurrence": {
+    "once": "Sekali",
+    "daily": "Harian",
+    "weekly": "Mingguan",
+    "monthly": "Bulanan",
+    "yearly": "Tahunan"
+  },
+  "scheduled": {
+    "title": "📅 <b>Notifikasi Terjadwal</b>",
+    "week": "📆 7 hari ke depan",
+    "month": "📆 30 hari ke depan",
+    "year": "📆 365 hari ke depan",
+    "empty": "Tidak ada notifikasi untuk periode ini.",
+    "view_month": "🗓 Lihat Bulan",
+    "view_year": "📅 Lihat Tahun",
+    "back": "⬅️ Kembali"
+  },
+  "notification": {
+    "details": "📌 <b>{title}</b>\n\n{description}\n\n🗓 <b>Tanggal:</b> {date}\n⏰ <b>Waktu:</b> {time}\n🔁 <b>Pengulangan:</b> {recurrence}\n📊 <b>Terkirim:</b> {count} kali",
+    "edit": "✏️ Edit",
+    "delete": "🗑 Hapus",
+    "back": "⬅️ Kembali",
+    "deleted": "🗑 Notifikasi dihapus.",
+    "edit_field": "Apa yang ingin Anda edit?",
+    "edit_title": "Masukkan <b>judul</b> baru:",
+    "edit_description": "Masukkan <b>deskripsi</b> baru:",
+    "edit_date": "Masukkan <b>tanggal</b> baru dalam format <code>YYYY-MM-DD</code>:",
+    "edit_time": "Masukkan <b>waktu</b> baru dalam format <code>HH:MM</code>:",
+    "edit_recurrence": "Pilih <b>pengulangan</b> baru:",
+    "updated": "✅ Notifikasi diperbarui!",
+    "not_found": "❌ Notifikasi tidak ditemukan."
+  },
+  "send": {
+    "message": "🔔 <b>Pengingat!</b>\n\n📌 <b>{title}</b>\n{description}\n\n⏰ {time}"
+  },
+  "cancel": "❌ Batal",
+  "config": {
+    "menu": "⚙️ <b>Konfigurasi</b>\n\nPilih opsi:",
+    "change_timezone": "🕐 Ubah Zona Waktu",
+    "change_language": "🌐 Ubah Bahasa",
+    "language_menu": "🌐 Pilih bahasa Anda:",
+    "language_set": "✅ Bahasa diubah ke <b>{language}</b>.",
+    "back": "⬅️ Kembali"
+  },
+  "timezone": {
+    "setup_prompt": "🌍 Untuk mengirim notifikasi pada waktu yang tepat, silakan atur zona waktu Anda.\n\nPilih opsi:",
+    "share_location_button": "📍 Bagikan Lokasi",
+    "select_manually_button": "🗺 Pilih secara manual",
+    "detected": "✅ Zona waktu Anda telah diatur ke <b>{timezone}</b>.",
+    "detection_failed": "❌ Tidak dapat mendeteksi zona waktu dari lokasi. Silakan pilih secara manual.",
+    "select_region": "🌍 Pilih wilayah Anda:",
+    "select_city": "🏙 Pilih kota Anda di <b>{region}</b>:",
+    "saved": "✅ Zona waktu diatur ke <b>{timezone}</b>.",
+    "back_to_regions": "⬅️ Kembali ke wilayah"
+  },
+  "edit_fields": {
+    "title": "📝 Judul",
+    "description": "📄 Deskripsi",
+    "date": "🗓 Tanggal",
+    "time": "⏰ Waktu",
+    "recurrence": "🔁 Pengulangan"
+  },
+  "remind_later": {
+    "5min": "⏰ Ingatkan dalam 5 menit",
+    "10min": "⏰ Ingatkan dalam 10 menit",
+    "1day": "⏰ Ingatkan dalam 1 hari",
+    "1month": "⏰ Ingatkan dalam 1 bulan",
+    "1year": "⏰ Ingatkan dalam 1 tahun",
+    "confirmed": "✅ Pengingat dijadwalkan ulang ke {time}.",
+    "button": "🔔 Ingatkan saya",
+    "will_remind": "✅ Kami akan mengingatkan Anda tentang acara ini dalam {delay}",
+    "delay_5min": "5 menit",
+    "delay_10min": "10 menit",
+    "delay_1day": "1 hari",
+    "delay_1month": "1 bulan",
+    "delay_1year": "1 tahun"
+  },
+  "commands": {
+    "create": "Buat notifikasi baru",
+    "notifications": "Lihat notifikasi terjadwal",
+    "settings": "Pengaturan zona waktu dan bahasa"
+  },
+  "web": {
+    "nav": {
+      "timeline": "Linimasa",
+      "settings": "Pengaturan"
+    },
+    "timeline": {
+      "today": "Hari ini",
+      "no_notifications": "Tidak ada notifikasi",
+      "tap_to_add": "Ketuk + untuk menambahkan",
+      "retry": "Coba lagi",
+      "delete_notification": "Hapus notifikasi"
+    },
+    "create": {
+      "page_title": "Notifikasi Baru",
+      "title_label": "Judul",
+      "title_required": "* wajib",
+      "title_placeholder": "mis. Olahraga pagi",
+      "description_label": "Deskripsi (opsional)",
+      "description_placeholder": "Tambahkan deskripsi singkat…",
+      "datetime_label": "Tanggal & Waktu",
+      "repeat_label": "Ulangi",
+      "submit": "Tambah Notifikasi",
+      "submitting": "Menyimpan…",
+      "back": "Kembali",
+      "error_title_required": "Judul wajib diisi.",
+      "error_datetime_required": "Tanggal dan waktu wajib diisi.",
+      "error_invalid_datetime": "Tanggal / waktu tidak valid.",
+      "error_future_required": "Waktu notifikasi harus di masa depan."
+    },
+    "settings": {
+      "page_title": "Pengaturan",
+      "greeting": "Halo, {name}!",
+      "language_section": "Bahasa",
+      "timezone_section": "Zona Waktu",
+      "timezone_hint": "Zona waktu diatur melalui bot Telegram. Gunakan /settings untuk mengubahnya.",
+      "language_updated": "Bahasa diperbarui ✓",
+      "language_update_failed": "Gagal memperbarui bahasa"
+    }
+  }
+}
